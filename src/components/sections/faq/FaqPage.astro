@@ -51,9 +51,18 @@ const faqCategories = faqEntries.map(entry => entry.data).sort((a, b) => a.order
                     <span aria-hidden="true">+</span>
                   </summary>
                   <div>
-                    {answer.split('\n\n').map(paragraph => (
-                      <p>{paragraph}</p>
-                    ))}
+                    {answer.split('\n\n').map(paragraph => {
+                      if (paragraph.trim().startsWith('- ')) {
+                        return (
+                          <ul class="faq-bullet-list">
+                            {paragraph.split('\n').map(item => (
+                              <li>{item.replace(/^- /, '')}</li>
+                            ))}
+                          </ul>
+                        );
+                      }
+                      return <p>{paragraph}</p>;
+                    })}
                     {question === 'How much does physical therapy cost?' && (
                       <a class="text-link" href="/pricing/">View full pricing <span aria-hidden="true">→</span></a>
                     )}
@@ -300,7 +309,9 @@ const faqCategories = faqEntries.map(entry => entry.data).sort((a, b) => a.order
     line-height: 1.65;
   }
 
-  .faq-item > div p { margin: 0 0 .55rem; }
+  .faq-item > div p, .faq-bullet-list { margin: 0 0 .55rem; }
+  .faq-bullet-list { padding-left: 1.25rem; }
+  .faq-bullet-list li { margin-bottom: .25rem; }
 
   .faq-close {
     padding-block: clamp(2.5rem, 4.5vw, 4rem);
