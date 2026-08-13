@@ -47,13 +47,11 @@ import { faqCategories } from '../../../data/faq';
                     <strong>{question}</strong>
                     <span aria-hidden="true">+</span>
                   </summary>
-                  <div class="faq-item__wrapper">
-                    <div class="faq-item__content">
-                      <p>{answer}</p>
-                      {question === 'How much does physical therapy cost?' && (
-                        <a class="text-link" href="/concept-01/pricing/">View full pricing <span aria-hidden="true">→</span></a>
-                      )}
-                    </div>
+                  <div>
+                    <p>{answer}</p>
+                    {question === 'How much does physical therapy cost?' && (
+                      <a class="text-link" href="/concept-01/pricing/">View full pricing <span aria-hidden="true">→</span></a>
+                    )}
                   </div>
                 </details>
               ))}
@@ -137,24 +135,6 @@ import { faqCategories } from '../../../data/faq';
       }
     });
   }
-
-  document.querySelectorAll('.faq-item summary').forEach(summary => {
-    summary.addEventListener('click', (e) => {
-      e.preventDefault();
-      const details = summary.parentElement;
-      if (!details) return;
-      
-      if (details.hasAttribute('open')) {
-        details.classList.add('is-closing');
-        setTimeout(() => {
-          details.removeAttribute('open');
-          details.classList.remove('is-closing');
-        }, 200); // Matches CSS transition duration
-      } else {
-        details.setAttribute('open', '');
-      }
-    });
-  });
 </script>
 
 <style>
@@ -305,38 +285,15 @@ import { faqCategories } from '../../../data/faq';
 
   .faq-item[open] summary span { transform: rotate(45deg); }
 
-  .faq-item__wrapper {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.2s ease-out, opacity 0.15s ease-out;
-    opacity: 0;
-  }
-
-  .faq-item[open] .faq-item__wrapper {
-    grid-template-rows: 1fr;
-    opacity: 1;
-  }
-
-  .faq-item[open].is-closing .faq-item__wrapper {
-    grid-template-rows: 0fr;
-    opacity: 0;
-  }
-
-  .faq-item__content {
-    overflow: hidden;
-    min-height: 0;
+  .faq-item > div {
     max-width: 48rem;
-    padding: 0 2rem 0 0;
+    padding: 0 2rem 1rem 0;
     color: var(--text-dim);
     font-size: .8rem;
     line-height: 1.65;
   }
 
-  .faq-item__content > *:last-child {
-    margin-bottom: 1rem;
-  }
-
-  .faq-item__content p { margin: 0 0 .55rem; }
+  .faq-item > div p { margin: 0 0 .55rem; }
 
   .faq-v7-close {
     padding-block: clamp(2.5rem, 4.5vw, 4rem);
@@ -446,7 +403,7 @@ import { faqCategories } from '../../../data/faq';
       padding: .72rem 0;
     }
 
-    .faq-item__content {
+    .faq-item > div {
       padding-right: .5rem;
     }
   }
