@@ -27,7 +27,11 @@ import BookingStatus from '../../BookingStatus.astro';
       </header>
 
       <div class="services-v8__layout">
-        <aside class="services-v8__sidebar">
+        <details class="services-v8__sidebar mobile-jump-menu">
+          <summary class="mobile-jump-menu__summary">
+            <span class="mobile-jump-menu__active-text" data-jump-text>Jump to section...</span>
+            <span class="mobile-jump-menu__icon" aria-hidden="true">↓</span>
+          </summary>
           <nav aria-label="Services Directory">
             <ul>
               <li><a href="#service-ortho" data-scroll-spy-link="service-ortho">Orthopedic Physical Therapy</a></li>
@@ -37,7 +41,7 @@ import BookingStatus from '../../BookingStatus.astro';
               <li><a href="#service-strength" data-scroll-spy-link="service-strength">Strength &amp; Performance</a></li>
             </ul>
           </nav>
-        </aside>
+        </details>
 
         <div class="services-v8__feed">
           <article id="service-ortho">
@@ -154,8 +158,10 @@ import BookingStatus from '../../BookingStatus.astro';
             link.classList.remove('is-active');
             if (link.getAttribute('data-scroll-spy-link') === id) {
               link.classList.add('is-active');
-              if (window.innerWidth <= 832) {
-                link.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+              // Update mobile summary text
+              const jumpText = document.querySelector('.services-v8__sidebar [data-jump-text]');
+              if (jumpText) {
+                jumpText.textContent = link.textContent;
               }
             }
           });
@@ -175,6 +181,11 @@ import BookingStatus from '../../BookingStatus.astro';
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
           targetElement.scrollIntoView({ behavior: 'smooth' });
+          // Close details on mobile
+          const details = link.closest('.mobile-jump-menu');
+          if (details) {
+            details.removeAttribute('open');
+          }
         }
       });
     });
@@ -227,6 +238,14 @@ import BookingStatus from '../../BookingStatus.astro';
   .services-v8__sidebar {
     position: sticky;
     top: 6rem;
+  }
+
+  .services-v8__sidebar:not([open]) nav {
+    display: block;
+  }
+
+  .mobile-jump-menu__summary {
+    display: none;
   }
 
   .services-v8__sidebar ul {
@@ -410,32 +429,62 @@ import BookingStatus from '../../BookingStatus.astro';
     }
 
     .services-v8__sidebar {
-      display: flex;
+      display: block;
       position: sticky;
       top: 0;
       background: var(--surface-1, #131413);
       z-index: 10;
-      padding: 1rem 0;
+      padding: 0;
       border-bottom: 1px solid var(--line, #282a27);
       margin: 0 -1.5rem;
     }
 
-    .services-v8__sidebar nav {
-      width: 100%;
-      overflow-x: auto;
-      /* hide scrollbar */
-      scrollbar-width: none; 
-      -ms-overflow-style: none;
-    }
-    .services-v8__sidebar nav::-webkit-scrollbar {
+    .services-v8__sidebar:not([open]) nav {
       display: none;
     }
 
+    .mobile-jump-menu__summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--ivory, #fff);
+      list-style: none;
+    }
+
+    .mobile-jump-menu__summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .services-v8__sidebar[open] .mobile-jump-menu__icon {
+      transform: rotate(180deg);
+    }
+    
+    .mobile-jump-menu__icon {
+      transition: transform 0.2s ease;
+      color: var(--gold-bright, #dda947);
+    }
+
+    .services-v8__sidebar nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: var(--surface-1, #131413);
+      border-bottom: 1px solid var(--line, #282a27);
+      padding: 1rem 1.5rem;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5);
+    }
+
     .services-v8__sidebar ul {
-      flex-direction: row;
-      gap: 1.5rem;
-      padding: 0 1.5rem;
-      white-space: nowrap;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 0;
+      white-space: normal;
     }
 
     .services-v8__condition-list {
