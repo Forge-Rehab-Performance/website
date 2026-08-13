@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import { primaryNavigation } from '../../config/navigation';
 import { siteConfig } from '../../config/site';
+import logoImage from '../../assets/forge-logo-transparent.png';
 const contact = siteConfig.contact;
 ---
 <footer class="site-footer-wrapper">
@@ -8,7 +10,7 @@ const contact = siteConfig.contact;
     <div class="site-footer__grid">
       <div class="footer-brand">
         <a class="brand brand--footer" href={`${siteConfig.basePath}/`} aria-label={`${siteConfig.accessibleName} home`}>
-          <img src={siteConfig.logo} alt="" width="1280" height="1280" loading="lazy" decoding="async" />
+          <Image src={logoImage} alt="" />
           <span>{siteConfig.shortName} <small>Rehab &amp; Performance</small></span>
         </a>
         <p>Recover. <b>Build.</b> Perform.</p>

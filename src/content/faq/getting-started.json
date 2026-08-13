@@ -1,0 +1,23 @@
+{
+  "id": "getting-started",
+  "title": "Getting Started",
+  "order": 1,
+  "questions": [
+    [
+      "What should I wear to my first appointment?",
+      "Wear comfortable athletic clothing that allows us to evaluate the area you’re having trouble with and observe your movement."
+    ],
+    [
+      "What should I bring to my first visit?",
+      "If applicable, bring any relevant imaging reports, surgical information, physician notes, or other medical documentation. Most importantly, come prepared to talk about what you’re experiencing and what you want to get back to doing."
+    ],
+    [
+      "How do I schedule an appointment?",
+      "You can request an appointment through our online scheduling system or contact Forge directly."
+    ],
+    [
+      "What if I’m not sure whether physical therapy is right for me?",
+      "Reach out. We can discuss what’s going on and determine whether an evaluation at Forge makes sense or whether another type of medical care would be more appropriate."
+    ]
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "difference",
+  "title": "The Forge Difference",
+  "order": 6,
+  "questions": [
+    [
+      "Why is Forge located inside a gym?",
+      "Because rehabilitation shouldn’t stop when you leave the treatment table. Being located inside a training environment allows us to transition seamlessly from hands-on treatment and movement assessment into strength, conditioning, and functional exercise."
+    ],
+    [
+      "Do I need to be a member of the gym?",
+      "No. Your physical therapy services at Forge are separate from gym membership."
+    ],
+    [
+      "Will I be able to use the gym equipment during my treatment?",
+      "Yes. Your treatment may incorporate the gym’s available strength and conditioning equipment when appropriate for your rehabilitation and goals."
+    ],
+    [
+      "Is Forge just physical therapy or is it personal training?",
+      "Forge is a physical therapy practice. Treatment is provided by a licensed physical therapist and is individualized based on your injury, movement limitations, and goals. For appropriate patients, rehabilitation can progress into strength and performance-focused training as part of the return-to-activity process."
+    ]
+  ]
+}

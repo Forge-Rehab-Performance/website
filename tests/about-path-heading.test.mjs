@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 
 const root = resolve(import.meta.dirname, '..');
 const about = readFileSync(resolve(root, 'src/components/sections/about/AboutPage.astro'), 'utf8');
-const styles = readFileSync(resolve(root, 'src/styles/precision.css'), 'utf8');
+const styles = readFileSync(resolve(root, 'src/styles/global.css'), 'utf8');
 
 test('about path uses a two-column layout with heading left and journey right', () => {
   assert.match(about, /class="section-shell about-path__layout"/);

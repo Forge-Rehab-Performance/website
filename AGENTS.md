@@ -14,8 +14,9 @@ Produce fast, maintainable, accessible static marketing sites that can be handed
 4. **Centralize navigation.** Add or rename primary routes through `src/config/navigation.ts`.
 5. **Separate structured content.** Repeated data such as FAQs, service lists, packages, testimonials, and staff records belongs in typed modules under `src/data/` when it improves reuse/readability.
 6. **Keep global CSS intentional.** Design tokens, resets/base styles, utilities, and truly site-wide theme rules may live in `src/styles/`. Prefer component-scoped styles for component-specific presentation.
-7. **Prefer Astro's static model.** Do not add React/Vue/Svelte or client-side JavaScript unless a real interaction requires it. Use native HTML behavior such as `<details>` for individual disclosures; use small framework-free scripts for interaction patterns such as the V7 FAQ category explorer when native HTML alone cannot express the requested behavior cleanly.
+7. **Prefer Astro's static model.** Do not add React/Vue/Svelte or client-side JavaScript unless a real interaction requires it. Use native HTML behavior such as `<details>` for individual disclosures. For isolated component logic (e.g. form validation), encapsulate it natively using Web Components / Custom Elements rather than raw inline scripts. When passing data from Astro to Web Components, use native data attributes (`data-*`) on the custom element rather than inline script tags or global variables.
 8. **Preserve accessibility.** Maintain semantic headings, landmarks, labels, keyboard operation, visible focus, reduced-motion behavior, alt text, and contrast.
+9. **Use Serverless Forms.** We use Netlify Forms via the `data-netlify="true"` attribute to handle submissions statically. Ensure `name` and `method="POST"` are present on all forms.
 
 
 ## SEO rules
@@ -67,6 +68,7 @@ Before claiming implementation is complete, run fresh verification from the repo
 
 ```bash
 npm run check
+npm run test
 npm run build
 ```
 

@@ -1,0 +1,11 @@
+{
+  "id": "cancellation",
+  "title": "Cancellation Policy",
+  "order": 7,
+  "questions": [
+    [
+      "What is your cancellation policy?",
+      "We understand that things come up. Because appointments are reserved specifically for you, we ask that you provide at least 24 hours’ notice when you need to cancel or reschedule. Appointments cancelled with less than 24 hours’ notice or missed appointments may be subject to a cancellation fee."
+    ]
+  ]
+}

@@ -1,6 +1,9 @@
 ---
 import BookingStatus from '../../BookingStatus.astro';
-import { faqCategories } from '../../../data/faq';
+import { getCollection } from 'astro:content';
+
+const faqEntries = await getCollection('faq');
+const faqCategories = faqEntries.map(entry => entry.data).sort((a, b) => a.order - b.order);
 ---
 
 <section class="inner-hero faq-hero" aria-labelledby="faq-title">

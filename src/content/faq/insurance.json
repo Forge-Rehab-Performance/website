@@ -1,0 +1,27 @@
+{
+  "id": "insurance",
+  "title": "Insurance & Payment",
+  "order": 4,
+  "questions": [
+    [
+      "Do you accept insurance?",
+      "Forge Rehab & Performance operates primarily as an out-of-network physical therapy practice. This allows us to focus on individualized care without the restrictions and high-volume requirements of traditional insurance-based clinics."
+    ],
+    [
+      "Why choose a cash-based, out-of-network physical therapist instead of an in-network clinic?",
+      "Cash-based care allows Forge to provide individualized, one-on-one physical therapy without the restrictions of traditional insurance-based care. Your treatment is built around your injury, goals, lifestyle, and desired outcome—not around insurance limitations or a high-volume treatment model.\n\nYou’ll spend your time working directly with your physical therapist, with a plan designed to help you recover, build strength, and return to the activities you enjoy.\n\nDepending on your insurance plan, you may also be eligible for out-of-network reimbursement, and Forge can provide the documentation needed to submit a claim.\n\nIf you’re looking for the lowest upfront cost, an in-network clinic may be the right choice. If you’re looking for personalized, one-on-one care, Forge was built for you."
+    ],
+    [
+      "Can I use my out-of-network insurance benefits?",
+      "Depending on your insurance plan, you may be eligible for reimbursement for out-of-network physical therapy services. We can provide you with the documentation you need to submit to your insurance company. Because every insurance plan is different, we recommend contacting your insurance provider to understand your specific out-of-network benefits, deductible, and reimbursement policies."
+    ],
+    [
+      "What forms of payment do you accept?",
+      "We accept major forms of electronic payment. Payment is due at the time of service unless otherwise arranged."
+    ],
+    [
+      "Can I use my HSA or FSA?",
+      "Physical therapy services are generally eligible for HSA/FSA spending, although individual plan rules vary. We recommend confirming eligibility with your plan administrator."
+    ]
+  ]
+}
