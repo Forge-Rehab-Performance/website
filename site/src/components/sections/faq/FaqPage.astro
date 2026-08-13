@@ -17,12 +17,12 @@ import { faqCategories } from '../../../data/faq';
   <div class="section-shell">
     <div class="faq-directory-v8__grid">
       <!-- Left Sidebar -->
-      <details class="faq-sidebar mobile-jump-menu">
-        <summary class="mobile-jump-menu__summary">
+      <div class="faq-sidebar mobile-jump-menu">
+        <button type="button" class="mobile-jump-menu__summary" id="faq-jump-toggle" aria-expanded="false" aria-controls="faq-jump-nav">
           <span class="mobile-jump-menu__active-text" data-jump-text>Jump to section...</span>
           <span class="mobile-jump-menu__icon" aria-hidden="true">↓</span>
-        </summary>
-        <nav aria-label="FAQ Categories">
+        </button>
+        <nav id="faq-jump-nav" aria-label="FAQ Categories">
           <ul class="faq-sidebar__list">
             {faqCategories.map((category) => (
               <li>
@@ -33,7 +33,7 @@ import { faqCategories } from '../../../data/faq';
             ))}
           </ul>
         </nav>
-      </details>
+      </div>
 
       <!-- Right Content -->
       <div class="faq-content">
@@ -114,14 +114,27 @@ import { faqCategories } from '../../../data/faq';
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: 'smooth' });
-        // Close details on mobile
-        const details = link.closest('.mobile-jump-menu');
-        if (details) {
-          details.removeAttribute('open');
+        // Close menu on mobile
+        const menu = link.closest('.mobile-jump-menu');
+        if (menu) {
+          menu.classList.remove('is-open');
+          const toggle = menu.querySelector('#faq-jump-toggle');
+          if (toggle) toggle.setAttribute('aria-expanded', 'false');
         }
       }
     });
   });
+
+  const jumpToggle = document.getElementById('faq-jump-toggle');
+  if (jumpToggle) {
+    jumpToggle.addEventListener('click', () => {
+      const menu = jumpToggle.closest('.mobile-jump-menu');
+      if (menu) {
+        const isOpen = menu.classList.toggle('is-open');
+        jumpToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      }
+    });
+  }
 </script>
 
 <style>
@@ -150,12 +163,17 @@ import { faqCategories } from '../../../data/faq';
     align-self: start;
   }
 
-  .faq-sidebar:not([open]) nav {
+  .faq-sidebar nav {
     display: block;
   }
 
   .mobile-jump-menu__summary {
     display: none;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 0;
   }
 
   .faq-sidebar__list {
@@ -289,7 +307,7 @@ import { faqCategories } from '../../../data/faq';
       margin: 0 -1.25rem;
     }
 
-    .faq-sidebar:not([open]) nav {
+    .faq-sidebar:not(.is-open) nav {
       display: none;
     }
 
@@ -310,7 +328,7 @@ import { faqCategories } from '../../../data/faq';
       display: none;
     }
 
-    .faq-sidebar[open] .mobile-jump-menu__icon {
+    .faq-sidebar.is-open .mobile-jump-menu__icon {
       transform: rotate(180deg);
     }
     

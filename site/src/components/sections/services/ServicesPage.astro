@@ -27,12 +27,12 @@ import BookingStatus from '../../BookingStatus.astro';
       </header>
 
       <div class="services-v8__layout">
-        <details class="services-v8__sidebar mobile-jump-menu">
-          <summary class="mobile-jump-menu__summary">
+        <div class="services-v8__sidebar mobile-jump-menu">
+          <button type="button" class="mobile-jump-menu__summary" id="services-jump-toggle" aria-expanded="false" aria-controls="services-jump-nav">
             <span class="mobile-jump-menu__active-text" data-jump-text>Jump to section...</span>
             <span class="mobile-jump-menu__icon" aria-hidden="true">↓</span>
-          </summary>
-          <nav aria-label="Services Directory">
+          </button>
+          <nav id="services-jump-nav" aria-label="Services Directory">
             <ul>
               <li><a href="#service-ortho" data-scroll-spy-link="service-ortho">Orthopedic Physical Therapy</a></li>
               <li><a href="#service-sports" data-scroll-spy-link="service-sports">Sports &amp; Injury Rehabilitation</a></li>
@@ -41,7 +41,7 @@ import BookingStatus from '../../BookingStatus.astro';
               <li><a href="#service-strength" data-scroll-spy-link="service-strength">Strength &amp; Performance</a></li>
             </ul>
           </nav>
-        </details>
+        </div>
 
         <div class="services-v8__feed">
           <article id="service-ortho">
@@ -181,14 +181,27 @@ import BookingStatus from '../../BookingStatus.astro';
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
           targetElement.scrollIntoView({ behavior: 'smooth' });
-          // Close details on mobile
-          const details = link.closest('.mobile-jump-menu');
-          if (details) {
-            details.removeAttribute('open');
+          // Close menu on mobile
+          const menu = link.closest('.mobile-jump-menu');
+          if (menu) {
+            menu.classList.remove('is-open');
+            const toggle = menu.querySelector('#services-jump-toggle');
+            if (toggle) toggle.setAttribute('aria-expanded', 'false');
           }
         }
       });
     });
+
+    const jumpToggle = document.getElementById('services-jump-toggle');
+    if (jumpToggle) {
+      jumpToggle.addEventListener('click', () => {
+        const menu = jumpToggle.closest('.mobile-jump-menu');
+        if (menu) {
+          const isOpen = menu.classList.toggle('is-open');
+          jumpToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+      });
+    }
   });
 </script>
 
@@ -240,12 +253,17 @@ import BookingStatus from '../../BookingStatus.astro';
     top: 6rem;
   }
 
-  .services-v8__sidebar:not([open]) nav {
+  .services-v8__sidebar nav {
     display: block;
   }
 
   .mobile-jump-menu__summary {
     display: none;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 0;
   }
 
   .services-v8__sidebar ul {
@@ -439,7 +457,7 @@ import BookingStatus from '../../BookingStatus.astro';
       margin: 0 -1.5rem;
     }
 
-    .services-v8__sidebar:not([open]) nav {
+    .services-v8__sidebar:not(.is-open) nav {
       display: none;
     }
 
@@ -460,7 +478,7 @@ import BookingStatus from '../../BookingStatus.astro';
       display: none;
     }
 
-    .services-v8__sidebar[open] .mobile-jump-menu__icon {
+    .services-v8__sidebar.is-open .mobile-jump-menu__icon {
       transform: rotate(180deg);
     }
     
