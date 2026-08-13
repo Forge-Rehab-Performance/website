@@ -59,7 +59,7 @@
 }
 .booking-status span { color: var(--muted); font-size: .74rem; }
 
-main { overflow: hidden; }
+
 section { width: 100%; }
 .section-shell {
   width: min(var(--shell), calc(100% - 3rem));

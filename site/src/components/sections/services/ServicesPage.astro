@@ -272,14 +272,19 @@ import BookingStatus from '../../BookingStatus.astro';
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
   }
 
   .services-v8__sidebar a {
+    display: block;
+    color: var(--text-faint, #6f716b);
     text-decoration: none;
-    color: var(--text-dim, #999a94);
-    font: 700 .85rem/1.3 'Oswald', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.5rem 0;
     transition: color 0.2s ease;
   }
 
