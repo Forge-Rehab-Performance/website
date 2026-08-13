@@ -27,25 +27,28 @@ test('about path stacks to single column on mobile', () => {
   assert.match(styles, /\.about-path__layout\s*\{[^}]*grid-template-columns:\s*1fr;/s);
 });
 
-test('journey path has four steps with rail nodes and content', () => {
+test('journey path has five steps with rail nodes and content', () => {
   const steps = about.match(/journey-path__step/g);
-  assert.equal(steps.length, 4, 'should have exactly 4 steps');
+  assert.equal(steps.length, 5, 'should have exactly 5 steps');
 
   const rails = about.match(/journey-path__rail/g);
-  assert.equal(rails.length, 4, 'each step should have a rail');
+  assert.equal(rails.length, 5, 'each step should have a rail');
 
   const nodes = about.match(/journey-path__node/g);
-  assert.equal(nodes.length, 4, 'each step should have a node');
+  assert.equal(nodes.length, 5, 'each step should have a node');
 });
 
 test('journey path contains the correct milestones in order', () => {
   const years = [...about.matchAll(/journey-path__year">([^<]+)/g)].map(m => m[1].trim());
-  assert.deepEqual(years, ['2015', '2018', '8', '2024']);
+  assert.deepEqual(years, ['2015', '2018', '8', '2024', '2024']);
 
   assert.match(about, /Montclair State University/);
   assert.match(about, /Sacred Heart University/);
   assert.match(about, /Outpatient Orthopedic Experience/);
-  assert.match(about, /Orthopedic Clinical Specialist/);
+  assert.match(about, /Orthopedic Physical Therapy Residency/);
+  assert.match(about, /Hospital for Special Surgery/);
+  assert.match(about, /Board Certified Orthopedic Clinical Specialist/);
+  assert.match(about, /American Board of Physical Therapy Specialties/);
 });
 
 test('journey path has a continuous vertical line via ::before pseudo-element', () => {
@@ -60,7 +63,7 @@ test('journey path nodes are styled as gold-bordered circles', () => {
 
 test('journey path rail nodes use aria-hidden', () => {
   const railMatches = [...about.matchAll(/<div class="journey-path__rail"[^>]*>/g)];
-  assert.equal(railMatches.length, 4);
+  assert.equal(railMatches.length, 5);
   for (const match of railMatches) {
     assert.match(match[0], /aria-hidden="true"/, 'rail should be aria-hidden');
   }
