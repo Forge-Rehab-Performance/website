@@ -10,7 +10,10 @@
     "check": "astro check",
     "build": "astro build",
     "test": "astro check && astro build",
-    "verify": "npm run test"
+    "verify": "npm run test",
+    "preview": "astro preview",
+    "cf:preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "@astrojs/check": "0.9.10",
@@ -22,7 +25,9 @@
     "chrome-launcher": "1.2.1",
     "lighthouse": "13.4.1",
     "playwright": "1.62.1",
-    "typescript": "5.9.3",
-    "wrangler": "4.121.0"
+    "typescript": "5.9.3"
+  },
+  "devDependencies": {
+    "wrangler": "^4.122.0"
   }
 }
