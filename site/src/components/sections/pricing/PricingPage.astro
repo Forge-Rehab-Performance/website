@@ -19,6 +19,20 @@ import BookingStatus from '../../BookingStatus.astro';
 
   <section class="pricing-v7__main" aria-labelledby="ala-title">
     <div class="section-shell">
+      <div class="founding-banner">
+        <div class="founding-banner__content">
+          <p class="eyebrow">LIMITED AVAILABILITY</p>
+          <h2 id="founding-title">Founding Forge 20</h2>
+          <p>Forge is starting with a small group of founding members. As we get closer to launch, we'll be offering exclusive pricing to the first 20 members who commit to their rehabilitation at Forge.</p>
+          <div class="founding-banner__status">
+            <span>More details coming soon</span>
+          </div>
+        </div>
+        <div class="founding-banner__visual" aria-hidden="true">
+          <div class="founding-banner__number">20</div>
+        </div>
+      </div>
+
       <header class="pricing-v7__heading">
         <div>
           <p class="eyebrow">À LA CARTE</p>
@@ -114,18 +128,6 @@ import BookingStatus from '../../BookingStatus.astro';
     </div>
   </section>
 
-  <section class="pricing-v7__founding" aria-labelledby="founding-title">
-    <div class="section-shell pricing-v7__founding-grid">
-      <div>
-        <p class="eyebrow">FOUNDING FORGE 20</p>
-        <h2 id="founding-title">Something special for the first ones through the door.</h2>
-      </div>
-      <div>
-        <p>Forge is starting with a small group of founding members. As we get closer to launch, we'll be offering Founding Forge 20 pricing to the first 20 members who commit to their rehabilitation at Forge.</p>
-        <p>More details coming soon.</p>
-      </div>
-    </div>
-  </section>
 
   <section class="home-v3-close pricing-v7__close" aria-labelledby="pricing-close-title">
     <div class="section-shell home-v3-close__grid">
@@ -163,6 +165,7 @@ import BookingStatus from '../../BookingStatus.astro';
   }
 
   .pricing-v7__heading {
+    margin-top: clamp(3rem, 6vw, 5rem);
     margin-bottom: 1.5rem;
   }
 
@@ -433,32 +436,84 @@ import BookingStatus from '../../BookingStatus.astro';
 
   .pricing-v7__tagline span { color: #8b6316; }
 
-  .pricing-v7__founding {
-    padding: clamp(2.2rem, 3.7vw, 3.2rem) 0;
-    background: linear-gradient(105deg, rgba(201,154,58,.1), transparent 55%), #171917;
-  }
-
-  .pricing-v7__founding-grid {
+  .founding-banner {
     display: grid;
-    grid-template-columns: 1fr .95fr;
-    gap: clamp(1.5rem, 4vw, 4rem);
-    align-items: center;
+    grid-template-columns: 1.25fr .75fr;
+    background: #111311;
+    border: 1px solid rgba(221,169,71,0.3);
+    border-radius: var(--radius);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15), inset 0 0 0 1px rgba(255,255,255,0.03);
+    overflow: hidden;
+    position: relative;
   }
 
-  .pricing-v7__founding h2 {
-    max-width: 18ch;
-    margin: 0;
-    font-size: clamp(1.8rem, 3vw, 2.6rem);
+  .founding-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(221,169,71,0.8), transparent);
   }
 
-  .pricing-v7__founding-grid > div:last-child p {
-    margin: 0;
-    color: #b2b1ab;
-    font-size: .78rem;
+  .founding-banner__content {
+    padding: clamp(2rem, 4vw, 3.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .founding-banner__content .eyebrow {
+    color: var(--gold-bright);
+    margin-bottom: .75rem;
+  }
+
+  .founding-banner__content h2 {
+    margin: 0 0 1rem;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    color: var(--ivory);
+  }
+
+  .founding-banner__content p {
+    margin: 0 0 1.5rem;
+    color: var(--text-dim);
+    font-size: .85rem;
     line-height: 1.6;
+    max-width: 38ch;
   }
 
-  .pricing-v7__founding-grid > div:last-child p + p { margin-top: .45rem; }
+  .founding-banner__status {
+    display: inline-flex;
+    align-items: center;
+    padding: .65rem 1rem;
+    background: rgba(221,169,71,0.1);
+    border: 1px solid rgba(221,169,71,0.25);
+    border-radius: 4px;
+    width: max-content;
+  }
+
+  .founding-banner__status span {
+    color: var(--gold-bright);
+    font-size: .65rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  .founding-banner__visual {
+    background: linear-gradient(135deg, #171917, #0a0b0a);
+    display: grid;
+    place-items: center;
+    border-left: 1px solid rgba(255,255,255,0.03);
+    padding: 2rem;
+  }
+
+  .founding-banner__number {
+    font: 700 clamp(7rem, 15vw, 11rem)/1 'Oswald', sans-serif;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(221,169,71,0.25);
+    letter-spacing: -0.02em;
+    user-select: none;
+  }
 
   .pricing-v7__close {
     padding-block: clamp(2.5rem, 4.5vw, 4rem);
@@ -478,7 +533,7 @@ import BookingStatus from '../../BookingStatus.astro';
     .pricing-v7__summary,
     .pricing-v7__packages,
     .pricing-v7__support-grid,
-    .pricing-v7__founding-grid {
+    .founding-banner {
       grid-template-columns: 1fr;
     }
 
@@ -504,6 +559,16 @@ import BookingStatus from '../../BookingStatus.astro';
 
     .pricing-v7__package-top {
       grid-template-columns: 1.7rem 1fr auto;
+    }
+
+    .founding-banner__visual {
+      border-left: none;
+      border-top: 1px solid rgba(255,255,255,0.03);
+      padding: 3rem 1rem;
+    }
+    
+    .founding-banner__number {
+      -webkit-text-stroke: 1px rgba(221,169,71,0.25);
     }
   }
 
