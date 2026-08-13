@@ -2147,33 +2147,98 @@ figcaption {
   border-block: 1px solid var(--line);
 }
 
-.timeline-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid var(--line);
-}
-
-.timeline-list li {
+.about-path__layout {
   display: grid;
-  grid-template-columns: 8rem 1fr;
-  gap: 2rem;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--line);
+  grid-template-columns: .42fr .58fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: start;
 }
 
-.timeline-list li>span {
+.about-path__heading {
+}
+
+.about-path__heading h2 {
+  max-width: 14ch;
+}
+
+/* Journey path — vertical rail + content */
+.journey-path {
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+/* Continuous vertical line */
+.journey-path::before {
+  content: '';
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  left: 5px;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    var(--gold) 0%,
+    rgba(201, 154, 58, 0.35) 100%
+  );
+}
+
+.journey-path__step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0;
+  position: relative;
+}
+
+.journey-path__step:not(:last-child) {
+  padding-bottom: clamp(2.5rem, 4vw, 3.5rem);
+}
+
+/* Rail column — holds the node dot */
+.journey-path__rail {
+  position: absolute;
+  left: -2.5rem;
+  top: 0.45rem;
+  width: 11px;
+  display: flex;
+  justify-content: center;
+}
+
+.journey-path__node {
+  display: block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  background: #111311;
+  box-shadow: 0 0 0 4px rgba(201, 154, 58, 0.08);
+  flex-shrink: 0;
+}
+
+.journey-path__content {
+  grid-column: 1 / -1;
+}
+
+.journey-path__year {
+  display: block;
+  margin-bottom: 0.35rem;
   color: var(--gold-bright);
-  font: 700 clamp(1.8rem, 3vw, 2.8rem)/1 'Oswald', sans-serif;
-}
-
-.timeline-list h3 {
-  margin: 0 0 .35rem;
+  font: 700 clamp(1.1rem, 1.6vw, 1.35rem)/1 'Oswald', sans-serif;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
-.timeline-list p {
-  max-width: 50rem;
+.journey-path__unit {
+  font-size: 0.85em;
+  opacity: 0.7;
+}
+
+.journey-path__content h3 {
+  margin: 0 0 0.4rem;
+  text-transform: uppercase;
+}
+
+.journey-path__content p {
+  max-width: 38rem;
   margin: 0;
   color: var(--text-dim);
 }
@@ -2320,9 +2385,21 @@ figcaption {
     columns: 1;
   }
 
-  .timeline-list li {
-    grid-template-columns: 4rem 1fr;
-    gap: 1rem;
+  .about-path__layout {
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+
+  .about-path__heading {
+    position: static;
+  }
+
+  .journey-path {
+    padding-left: 2rem;
+  }
+
+  .journey-path__rail {
+    left: -2rem;
   }
 }
 

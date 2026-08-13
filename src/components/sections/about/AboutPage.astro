@@ -22,14 +22,42 @@ import BookingStatus from '../../BookingStatus.astro';
   </section>
 
   <section class="about-path" aria-labelledby="path-title">
-    <div class="section-shell">
-      <header class="interior-heading"><p class="eyebrow">MY PATH TO PHYSICAL THERAPY</p><h2 id="path-title">Built through education, experience, and continued development.</h2></header>
-      <ol class="timeline-list">
-        <li><span>2015</span><div><h3>Montclair State University</h3><p>Bachelor of Science in Biology.</p></div></li>
-        <li><span>2018</span><div><h3>Sacred Heart University</h3><p>Doctorate in Physical Therapy.</p></div></li>
-        <li><span>8+</span><div><h3>Outpatient Orthopedic Experience</h3><p>More than eight years helping people recover from injuries, return to favorite activities, and build confidence to move again.</p></div></li>
-        <li><span>2024</span><div><h3>Orthopedic Clinical Specialist</h3><p>Became a Board-Certified Orthopedic Clinical Specialist (OCS) through the American Board of Physical Therapy Specialties.</p></div></li>
-      </ol>
+    <div class="section-shell about-path__layout">
+      <header class="about-path__heading"><p class="eyebrow">MY PATH TO PHYSICAL THERAPY</p><h2 id="path-title">Built through education, experience, and continued development.</h2></header>
+      <div class="journey-path" role="list">
+        <div class="journey-path__step" role="listitem">
+          <div class="journey-path__rail" aria-hidden="true"><span class="journey-path__node"></span></div>
+          <div class="journey-path__content">
+            <span class="journey-path__year">2015</span>
+            <h3>Montclair State University</h3>
+            <p>Bachelor of Science in Biology.</p>
+          </div>
+        </div>
+        <div class="journey-path__step" role="listitem">
+          <div class="journey-path__rail" aria-hidden="true"><span class="journey-path__node"></span></div>
+          <div class="journey-path__content">
+            <span class="journey-path__year">2018</span>
+            <h3>Sacred Heart University</h3>
+            <p>Doctorate in Physical Therapy.</p>
+          </div>
+        </div>
+        <div class="journey-path__step" role="listitem">
+          <div class="journey-path__rail" aria-hidden="true"><span class="journey-path__node"></span></div>
+          <div class="journey-path__content">
+            <span class="journey-path__year">8<span class="journey-path__unit">+</span> years</span>
+            <h3>Outpatient Orthopedic Experience</h3>
+            <p>More than eight years helping people recover from injuries, return to favorite activities, and build confidence to move again.</p>
+          </div>
+        </div>
+        <div class="journey-path__step" role="listitem">
+          <div class="journey-path__rail" aria-hidden="true"><span class="journey-path__node"></span></div>
+          <div class="journey-path__content">
+            <span class="journey-path__year">2024</span>
+            <h3>Orthopedic Clinical Specialist</h3>
+            <p>Became a Board-Certified Orthopedic Clinical Specialist (OCS) through the American Board of Physical Therapy Specialties.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
