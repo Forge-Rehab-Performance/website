@@ -79,9 +79,16 @@ All commands are run from the root of the project, from your terminal:
 
 ## Deployment
 
-The project is built as a completely static site (`npm run build`).
+This project is built as a completely static site (`npm run build`) and is specifically configured to be hosted on **Netlify**. This ensures that our static HTML form integration (Netlify Forms) works natively out-of-the-box without any backend code.
 
-It is currently configured with deployment in mind for **Netlify** to support the Netlify Forms integration out-of-the-box. The `dist/` folder will be served statically.
+### Required Environment Variables
+
+When setting up the project in the Netlify Dashboard, ensure the following environment variables are configured:
+
+| Variable | Description |
+| :--- | :--- |
+| `SITE_URL` | The primary production URL of the site (e.g., `https://forgerehab.com`). Required by Astro to generate absolute canonical URLs and the `sitemap-index.xml`. |
+| `PUBLIC_GA_MEASUREMENT_ID` | (Optional) Your Google Analytics 4 Measurement ID (e.g., `G-XXXXXXXXXX`). If provided, the site will automatically inject the GA tracking script. |
 
 ## Maintenance & AI Guidelines
 
