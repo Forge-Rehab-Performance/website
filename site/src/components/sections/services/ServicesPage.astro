@@ -166,6 +166,18 @@ import BookingStatus from '../../BookingStatus.astro';
     document.querySelectorAll('.services-v8__feed article').forEach(article => {
       observer.observe(article);
     });
+
+    document.querySelectorAll('[data-scroll-spy-link]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        if (!targetId) return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
   });
 </script>
 

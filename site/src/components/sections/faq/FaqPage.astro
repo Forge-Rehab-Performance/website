@@ -94,6 +94,18 @@ import { faqCategories } from '../../../data/faq';
   document.querySelectorAll('section[id^="faq-category-"]').forEach(section => {
     observer.observe(section);
   });
+
+  document.querySelectorAll('[data-scroll-spy-link]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href');
+      if (!targetId) return;
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
 </script>
 
 <style>
