@@ -11,6 +11,7 @@ This project is built using [Astro](https://astro.build/) with a strict static-f
 - **Forms**: [Netlify Forms](https://docs.netlify.com/forms/setup/) for serverless form submissions
 - **Interactivity**: Native HTML5 elements (e.g., `<details>` for accordions) and standard Web Components / Custom Elements for isolated client-side logic
 - **Testing**: Node.js native test runner (`node --test`)
+- **Analytics**: Built-in, opt-in Google Analytics 4 integration via environment variables
 
 ## Project Structure
 
@@ -59,6 +60,9 @@ The site uses **Netlify Forms**. Forms are built natively in HTML using the `dat
 
 ### Client Data Centralization
 Do not hardcode business details into page markup. The practice name, practitioner details, phone, email, address, and booking links are maintained centrally in `src/config/site.ts`.
+
+### Analytics
+Google Analytics (GA4) is pre-configured but strictly opt-in. The integration lives in `src/components/integrations/analytics/GoogleAnalytics.astro` and is automatically injected into the `<head>` of all pages via `BaseLayout`. It only executes if a valid `PUBLIC_GA_MEASUREMENT_ID` environment variable is provided during the build or at runtime. Raw analytics scripts should never be pasted directly into page markup.
 
 ## Development Commands
 
