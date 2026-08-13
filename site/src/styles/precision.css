@@ -670,8 +670,8 @@ h3 { margin-bottom: .7rem; font-size: clamp(1.25rem, 2vw, 1.9rem); line-height: 
 .contact-direct { padding: clamp(4rem, 6vw, 5.5rem) 0; background: #111311; border-block: 1px solid var(--line); }
 .contact-cards { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .contact-cards article { min-height: 13rem; padding: 1.3rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); border-radius: var(--radius); }
-.contact-cards span { color: var(--gold-bright); font: 700 .67rem/1 'Oswald', sans-serif; }
-.contact-cards h3 { margin: 2rem 0 .7rem; text-transform: uppercase; }
+.contact-icon { display: block; margin-top: .15rem; }
+.contact-cards h3 { margin: 1.6rem 0 .7rem; text-transform: uppercase; }
 .contact-cards p { margin: .25rem 0; color: var(--text-dim); font-size: .77rem; }
 .contact-location__grid { display: grid; grid-template-columns: 1fr .9fr; gap: clamp(3rem, 7vw, 7rem); align-items: center; }
 .contact-location h2 { max-width: 11ch; }
