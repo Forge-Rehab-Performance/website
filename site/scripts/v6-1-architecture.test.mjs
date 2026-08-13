@@ -100,9 +100,9 @@ test('SEO verifier checks canonical and indexability output', async () => {
 test('standalone agency verification does not depend on factory schemas', async () => {
   const pkg = JSON.parse(await read('package.json'));
   assert.match(pkg.scripts.test, /v6-1-architecture\.test\.mjs/);
-  assert.match(pkg.scripts.test, /concept-01-v7\.test\.mjs/);
+  assert.match(pkg.scripts.test, /concept-01-v8\.test\.mjs/);
   assert.match(pkg.scripts.verify, /v6-1-architecture\.test\.mjs/);
-  assert.match(pkg.scripts.verify, /concept-01-v7\.test\.mjs/);
+  assert.match(pkg.scripts.verify, /concept-01-v8\.test\.mjs/);
   assert.match(pkg.scripts.verify, /astro check/);
   assert.match(pkg.scripts.verify, /astro build/);
   assert.match(pkg.scripts.verify, /verify-seo-output/);
