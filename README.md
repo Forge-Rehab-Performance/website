@@ -1,9 +1,27 @@
-# Forge PT Design Package
+# Forge Rehab & Performance
 
-This package preserves the full Forge Rehab & Performance design history, discovery/QA artifacts, and the active Astro site.
+A fast, statically generated Astro website for Forge Rehab & Performance.
 
-- Active implementation and agency architecture: [`site/`](site/)
-- Setup, Google Analytics, SEO/sitemap, and deployment guidance: [`site/README.md`](site/README.md)
-- Coding-agent rules: [`site/AGENTS.md`](site/AGENTS.md)
+## Development
 
-Concepts 02 and 03 are retained for design provenance while Concept 01 V7 is the active direction. V7 keeps the V6.1 agency architecture and compacts the FAQ, Pricing, and Services experiences for desktop and mobile.
+```bash
+# Install dependencies
+npm install
+
+# Start the dev server
+npm run dev
+
+# Run type/astro checking
+npm run check
+
+# Build for production
+npm run build
+```
+
+## Architecture
+
+This site uses Astro for fast, zero-JS-by-default static generation. It is built on a custom design system with plain CSS, using a `precision.css` theme over a lightweight `base.css` and `tokens.css` foundation. 
+
+Content is structured in `src/pages/` (thin routers) and `src/components/sections/` (heavy markup), pulling configuration from `src/config/site.ts`.
+
+All SEO metadata, canonicals, and sitemaps are handled automatically by `BaseLayout.astro`.

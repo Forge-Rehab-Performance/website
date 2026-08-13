@@ -1,0 +1,60 @@
+---
+import GoogleAnalytics from '../components/integrations/analytics/GoogleAnalytics.astro';
+import StructuredData from '../components/seo/StructuredData.astro';
+import { seoConfig } from '../config/seo';
+import { ClientRouter } from 'astro:transitions';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+  noindex?: boolean;
+  image?: string;
+  imageAlt?: string;
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const {
+  title = seoConfig.defaultTitle,
+  description = seoConfig.defaultDescription,
+  canonicalPath,
+  noindex = false,
+  image = seoConfig.defaultImage,
+  imageAlt = '',
+  structuredData,
+} = Astro.props;
+const site = Astro.site ?? new URL('https://example.com');
+const canonicalUrl = new URL(canonicalPath ?? Astro.url.pathname, site);
+const imageUrl = new URL(image, site);
+const robots = noindex ? 'noindex, nofollow' : 'index, follow';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <GoogleAnalytics />
+    <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
+    <meta name="theme-color" content={seoConfig.themeColor} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={imageUrl} />
+    {imageAlt && <meta property="og:image:alt" content={imageAlt} />}
+    <meta name="twitter:card" content={seoConfig.twitterCard} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <title>{title}</title>
+    <StructuredData data={structuredData} />
+    <ClientRouter />
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

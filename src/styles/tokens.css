@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600 700;
+  font-display: swap;
+  src: url('/assets/oswald-latin.woff2') format('woff2');
+}
+
+:root {
+  color-scheme: dark;
+  --black: #0b0c0b;
+  --ink: #121412;
+  --ink-soft: #181a18;
+  --gold: #c99a3a;
+  --gold-bright: #dda947;
+  --gold-dark: #76591f;
+  --ivory: #f5f2ea;
+  --paper: #f2f0ea;
+  --paper-deep: #e8e4db;
+  --paper-ink: #191b19;
+  --muted: #b7b6b0;
+  --muted-dark: #696b67;
+  --line: #343732;
+  --paper-line: #d8d4ca;
+  --shell: 1320px;
+  --radius: 4px;
+  --surface-1: #101210;
+  --surface-2: #131513;
+  --surface-3: #151715;
+  --surface-4: #181a18;
+  --gold-muted: #9b6f19;
+  --text-dim: #aaa9a4;
+  --text-faint: #777a73;
+  --shadow-card: 0 1px 3px rgba(0,0,0,.3), 0 0 0 1px rgba(255,255,255,.04);
+  color: var(--ivory);
+  background: var(--black);
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  line-height: 1.55;
+}

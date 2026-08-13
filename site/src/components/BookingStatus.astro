@@ -1,8 +1,0 @@
----
-import { siteConfig } from '../config/site';
-const bookingUrl = siteConfig.booking.url;
----
-<div class="booking-status">
-  {bookingUrl ? <a class="booking-link" href={bookingUrl}>Book an Evaluation</a> : <button type="button" disabled>Book an Evaluation</button>}
-  <span>{bookingUrl ? 'Online scheduling available' : 'Online scheduling coming soon'}</span>
-</div>

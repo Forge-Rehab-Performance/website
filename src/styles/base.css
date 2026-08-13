@@ -1,0 +1,9 @@
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--black); }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-underline-offset: .3em; }
+a:hover { color: var(--gold-bright); }
+a:focus-visible, summary:focus-visible, button:focus-visible { outline: 3px solid var(--gold-bright); outline-offset: 4px; }
+.skip-link { position: fixed; z-index: 30; top: 1rem; left: 1rem; padding: .75rem 1rem; color: var(--black); background: var(--gold-bright); border-radius: var(--radius); transform: translateY(-200%); }
+.skip-link:focus { transform: none; }
