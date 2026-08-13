@@ -10,6 +10,6 @@ test('site header uses a full-width border wrapper around constrained content', 
   const styles = readFileSync(resolve(root, 'src/styles/precision.css'), 'utf8');
 
   assert.match(header, /<div class="site-header-wrapper">\s*<header class="site-header">/);
-  assert.match(styles, /\.site-header-wrapper\s*\{[^}]*width: 100%;[^}]*border-bottom: 1px solid rgba\(255,255,255,\.09\);/s);
+  assert.match(styles, /\.site-header-wrapper\s*\{[^}]*width: 100%;[^}]*border-bottom: 1px solid rgba\(\s*255\s*,\s*255\s*,\s*255\s*,\s*\.09\s*\);/s);
   assert.match(styles, /\.site-header\s*\{[^}]*border-bottom: 0;/s);
 });
