@@ -472,28 +472,36 @@ import BookingStatus from '../../BookingStatus.astro';
       display: block;
       position: sticky;
       top: 0;
-      background: var(--surface-1, #131413);
-      z-index: 10;
+      z-index: 20;
       padding: 0;
-      border-bottom: 1px solid var(--line, #282a27);
       margin: 0 -1.5rem;
     }
 
     .services-v8__sidebar:not(.is-open) nav {
-      display: none;
+      /* Handled by opacity/visibility now */
     }
 
     .mobile-jump-menu__summary {
+      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 1.5rem;
+      background: rgba(19, 20, 19, 0.85); /* Frosted --surface-1 */
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line, #282a27);
       cursor: pointer;
-      font-family: 'Oswald', sans-serif;
-      font-weight: 700;
-      text-transform: uppercase;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.9rem;
       color: var(--ivory, #fff);
-      list-style: none;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .services-v8__sidebar.is-open .mobile-jump-menu__summary {
+      background: var(--surface-1, #131413);
+      border-bottom-color: transparent;
     }
 
     .mobile-jump-menu__summary::-webkit-details-marker {
@@ -505,7 +513,7 @@ import BookingStatus from '../../BookingStatus.astro';
     }
     
     .mobile-jump-menu__icon {
-      transition: transform 0.2s ease;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       color: var(--gold-bright, #dda947);
     }
 
@@ -516,8 +524,19 @@ import BookingStatus from '../../BookingStatus.astro';
       width: 100%;
       background: var(--surface-1, #131413);
       border-bottom: 1px solid var(--line, #282a27);
-      padding: 1rem 1.5rem;
-      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5);
+      padding: 0.5rem 1.5rem 1.5rem;
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.5);
+      
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .services-v8__sidebar.is-open nav {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
     }
 
     .services-v8__sidebar ul {
