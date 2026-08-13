@@ -1,0 +1,35 @@
+{
+  "name": "forge-pt-demo",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "check": "astro check",
+    "build": "astro build",
+    "test": "node --test scripts/v6-1-architecture.test.mjs scripts/concept-01-v7.test.mjs",
+    "verify": "node --test scripts/v6-1-architecture.test.mjs scripts/concept-01-v7.test.mjs && astro check && astro build && node scripts/verify-seo-output.mjs",
+    "test:architecture": "node --test scripts/v6-1-architecture.test.mjs",
+    "verify:seo": "node scripts/verify-seo-output.mjs",
+    "validate": "node scripts/validate-artifacts.mjs",
+    "qa": "node scripts/qa.mjs",
+    "test:repro": "node --test scripts/qa-helpers.test.mjs && node scripts/qa-reproducibility.mjs",
+    "test:factory": "npm run validate && npm run test:repro",
+    "test:v7": "node --test scripts/concept-01-v7.test.mjs"
+  },
+  "dependencies": {
+    "@astrojs/check": "0.9.10",
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "astro": "7.2.1",
+    "axe-core": "4.13.0",
+    "chrome-launcher": "1.2.1",
+    "lighthouse": "13.4.1",
+    "playwright": "1.62.1",
+    "typescript": "5.9.3",
+    "wrangler": "4.121.0",
+    "@astrojs/sitemap": "3.7.3"
+  }
+}

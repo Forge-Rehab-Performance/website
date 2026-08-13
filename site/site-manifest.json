@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "2.0.0",
+  "concepts": [
+    {
+      "id": "concept-01",
+      "name": "Cinematic Clinic",
+      "route": "/concept-01",
+      "entryFile": "src/pages/concept-01/index.astro",
+      "approachRoute": "/concept-01/approach/",
+      "customComponents": [
+        "BaseLayout",
+        "SiteLayout",
+        "layout/Header",
+        "layout/Navigation",
+        "layout/Footer",
+        "BookingStatus",
+        "sections/home/HomePage",
+        "sections/approach/ApproachPage",
+        "sections/services/ServicesPage",
+        "sections/about/AboutPage",
+        "sections/pricing/PricingPage",
+        "sections/faq/FaqPage",
+        "sections/contact/ContactPage"
+      ],
+      "assetIds": [
+        "forge-approved-logo",
+        "forward-movement",
+        "forward-strength",
+        "forward-court"
+      ],
+      "routes": [
+        "/concept-01/",
+        "/concept-01/approach/",
+        "/concept-01/services/",
+        "/concept-01/about/",
+        "/concept-01/pricing/",
+        "/concept-01/faq/",
+        "/concept-01/contact/"
+      ]
+    },
+    {
+      "id": "concept-02",
+      "name": "Performance Journal",
+      "route": "/concept-02",
+      "entryFile": "src/pages/concept-02/index.astro",
+      "approachRoute": "/concept-02/approach/",
+      "customComponents": [
+        "ConceptNav",
+        "BookingStatus",
+        "PlannedItem",
+        "BlueprintLayout"
+      ],
+      "assetIds": [
+        "forge-approved-logo",
+        "forward-movement",
+        "forward-court"
+      ]
+    },
+    {
+      "id": "concept-03",
+      "name": "Training Culture",
+      "route": "/concept-03",
+      "entryFile": "src/pages/concept-03/index.astro",
+      "approachRoute": "/concept-03/approach/",
+      "customComponents": [
+        "ConceptNav",
+        "BookingStatus",
+        "PlannedItem",
+        "ForwardLayout"
+      ],
+      "assetIds": [
+        "forge-approved-logo",
+        "forward-movement",
+        "forward-strength",
+        "forward-court"
+      ]
+    }
+  ]
+}

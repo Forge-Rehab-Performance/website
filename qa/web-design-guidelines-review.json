@@ -1,0 +1,156 @@
+{
+  "schemaVersion": "1.0.0",
+  "guidelines": {
+    "sourceUrl": "https://raw.githubusercontent.com/vercel-labs/web-interface-guidelines/main/command.md",
+    "fetchedAt": "2026-08-12T18:07:30.000Z",
+    "skillPath": ".agents/skills/web-design-guidelines/SKILL.md"
+  },
+  "review": {
+    "reviewer": "OpenCode agent, independent manual source review",
+    "method": "Fetched the current Vercel Web Interface Guidelines, independently read exactly the 17 listed final source files, applied every relevant rule, and checked the approved redesign contract, semantics, focus, responsive behavior, image metadata, motion, content boundaries, and deferred minor findings. Scores and findings were authored from current source; qa.mjs only validates and consumes them.",
+    "scope": "Exactly the 17 listed Astro page, layout, component, and CSS files in src/",
+    "completedAt": "2026-08-12T18:07:30.000Z"
+  },
+  "files": [
+    { "path": "src/components/BookingStatus.astro", "sha256": "5af38536acee97ffe64bceea45038fb42503e240606b17be9b9641921aa6f9ff", "evidence": "Native disabled button has an explicit type and adjacent scheduling status; it cannot navigate or submit." },
+    { "path": "src/components/ConceptNav.astro", "sha256": "48fb058837f34cf2ea191cd1ab64dc52f447fe54e646691a705f11b55c284855", "evidence": "Semantic nav and anchors support navigation, aria-current exposes state, and native details/summary provides the mobile disclosure." },
+    { "path": "src/components/PlannedItem.astro", "sha256": "e5797040989295d559a3ec25a7280800faa9f0e3557b55407b5f163aaf04a8bb", "evidence": "Planned destinations are honest non-interactive spans with aria-disabled rather than fake links." },
+    { "path": "src/layouts/BlueprintLayout.astro", "sha256": "d4686a22dacbb152d12625aa0dc9476d3eabce8f0c8ae300c298dfb8898ae672", "evidence": "Skip link, one main, metadata, theme color, dimensioned decorative logo, and complete two-image credits are present." },
+    { "path": "src/layouts/ForwardLayout.astro", "sha256": "7f971a66a0a2a214b0019f25fa73c641ea3528f96f3854aecf805ba79a1bb9ef", "evidence": "Skip link, one main, matching theme color, local-font preload, dimensioned logo, current lime tone metadata, and conditional complete three-image credits are present." },
+    { "path": "src/layouts/PrecisionLayout.astro", "sha256": "8285f07f68b02b3132bd74bfca4d7477d723f422c5a6cf250f9ec5305a53db04", "evidence": "Skip link, one main, dark theme color, dimensioned logo, and complete stock credits are present; the critical local display font is not preloaded." },
+    { "path": "src/pages/index.astro", "sha256": "eaee46fea38dc28d59eb294eb6dda17a75bb9d87a4f79e829ce4db6f7dc0c366", "evidence": "One h1, hierarchical concept cards, specific concept links, and explicit two-page prototype scope are present; the selector has no skip link or theme-color metadata." },
+    { "path": "src/pages/concept-01/approach.astro", "sha256": "0331e49442f8051f50e5c21839e2a46ab5014a9c2b0a4aa79bd7f2112f198c61", "evidence": "One h1 leads six semantic modules, native FAQ disclosures, and an honest disabled final action." },
+    { "path": "src/pages/concept-01/index.astro", "sha256": "4161345d044415e735a33c1761248384a6d6f7b9ba752d233d1a83eb2499fb44", "evidence": "Hero and below-fold images have descriptive alt text and dimensions; hero has high fetch priority, later image is lazy, and both have adjacent demo-stock disclosure." },
+    { "path": "src/pages/concept-02/approach.astro", "sha256": "4f019a2a964ea9da2c2565a5d62416fe280caa10914142d5522266d46bdd6dc5", "evidence": "Eight semantic chapter links resolve to offset anchor targets; the primary audience passage explains applications for active adults, athletes and weekend warriors, and strength and fitness enthusiasts; native FAQ controls and disabled booking preserve honest behavior." },
+    { "path": "src/pages/concept-02/index.astro", "sha256": "ad1a0f5fd4e77c6e7ba68fd6e05b9a0b8fcd3922584b0f193d61b75a3cf83e2b", "evidence": "Editorial hierarchy, semantic audience list, dimensioned images, high-priority hero, lazy below-fold image, and adjacent stock disclosures are present." },
+    { "path": "src/pages/concept-03/approach.astro", "sha256": "7f3b017f9863b581d5be12c8adf04ec6c66a985c561fbcb4f57398da98fd4b68", "evidence": "Conventional source order, semantic progression and application lists, native FAQ disclosures, and honest disabled booking are present; the progression anchor lacks scroll margin." },
+    { "path": "src/pages/concept-03/index.astro", "sha256": "0be28b7bfa089c35f640aea5ec4a640de043ffebe3d56871738d874a0b4c2f57", "evidence": "One h1, semantic audience/process lists, all images dimensioned with alt and disclosures, and below-fold images lazy; the hero omits high fetch priority." },
+    { "path": "src/styles/blueprint.css", "sha256": "74b1b2572d5936e1dd053b8807e8ad1064485bb8301b5c80ec8ae224811b7943", "evidence": "Visible focus and hover, 44px controls, balanced headings, anchor offsets, responsive grids, and reduced-motion scrolling are present." },
+    { "path": "src/styles/forward.css", "sha256": "3dcb62fe026b7fdf01265ef6ccad58adbc8b3c149731e1b23fbcbaab0702644b", "evidence": "Dark color-scheme, targeted high-contrast hover and focus feedback, 44px direct links and summaries, contrast-safe stage numbers, responsive single-column order, and reduced-motion fallback are present; headings lack balanced wrapping and hero motion animates clip-path." },
+    { "path": "src/styles/global.css", "sha256": "19d678ec890b1ed5d6a7401499dc6a5fea2af5a31c90e0de30ff21336572622f", "evidence": "Selector links have visible focus and cards collapse responsively; links have no explicit hover treatment and headings lack balanced wrapping." },
+    { "path": "src/styles/precision.css", "sha256": "ea5659852c1b022692277262c6a28c4840476d8d11c54a26c65f4552765652a0", "evidence": "Dark color scheme, visible focus and hover, 44px links and summaries, balanced headings, responsive grids, and reduced-motion fallback are present; hero motion animates clip-path." }
+  ],
+  "sharedFindings": [
+    { "severity": "medium", "file": "src/pages/index.astro", "line": 20, "summary": "Concept selector has no skip link to its main content." },
+    { "severity": "low", "file": "src/pages/index.astro", "line": 16, "summary": "Concept selector has no theme-color meta matching its light background." },
+    { "severity": "low", "file": "src/styles/global.css", "line": 27, "summary": "Concept selector headings do not use text-wrap: balance or text-pretty." },
+    { "severity": "low", "file": "src/styles/global.css", "line": 65, "summary": "Concept selector links have no explicit hover feedback." },
+    { "severity": "low", "file": "src/styles/global.css", "line": 65, "summary": "Interactive controls do not set touch-action: manipulation or an intentional tap-highlight color." }
+  ],
+  "concepts": [
+    {
+      "id": "concept-01",
+      "score": 85,
+      "categories": {
+        "informationHierarchy": { "score": 13, "evidence": "Image-led h1 leads a compact proof band, three pathways, numbered protocol, practitioner authority, and final state; Approach groups the model into six distinct modules." },
+        "conversionClarity": { "score": 12, "evidence": "Explore the Forge Approach is the functional next step while both Book an Evaluation controls are disabled and paired with Online scheduling coming soon." },
+        "navigationFindability": { "score": 9, "evidence": "Persistent semantic Home and Forge Approach links expose aria-current; planned routes remain labeled non-actions in desktop and native mobile disclosure." },
+        "trustCredibility": { "score": 9, "evidence": "The page identifies Brandon Coveney, PT, DPT, OCS, Sacred Heart DPT 2018, one-on-one care, and explicit stock limitations without reviews or outcome claims." },
+        "contentClarity": { "score": 9, "evidence": "Rehabilitation, Return to activity, Performance and Recover, Build, Perform provide clear parallel ways to understand the individualized progression." },
+        "mobileErgonomics": { "score": 13, "evidence": "At 48rem image overlays remain readable, grids collapse to conventional one-column source order, controls retain practical height, and navigation uses native details." },
+        "interactionFeedback": { "score": 8, "evidence": "Gold focus-visible and hover states, aria-current, disabled cursor, and status copy are clear; touch-action/tap-highlight are unspecified." },
+        "visualUsability": { "score": 12, "evidence": "High-contrast black/ivory/gold, bounded measures, balanced condensed headings, compact proof cells, and controlled crops support scanning; clip-path animation and missing font preload are minor costs." }
+      },
+      "blockingFindings": [],
+      "findings": [
+        { "severity": "low", "file": "src/styles/precision.css", "line": 61, "summary": "Hero reveal animates clip-path rather than transform or opacity; reduced-motion disables it." },
+        { "severity": "low", "file": "src/layouts/PrecisionLayout.astro", "line": 20, "summary": "Critical local Oswald display font is not preloaded." },
+        { "severity": "low", "file": "src/styles/precision.css", "line": 28, "summary": "Interactive controls do not set touch-action: manipulation or an intentional tap-highlight color." }
+      ]
+    },
+    {
+      "id": "concept-02",
+      "score": 91,
+      "categories": {
+        "informationHierarchy": { "score": 14, "evidence": "Editorial h1/h2 hierarchy, folios, margin notes, numbered modules, semantic lists, and an eight-link Approach index expose the reading sequence." },
+        "conversionClarity": { "score": 12, "evidence": "Read the Forge Approach is consistently active while evaluation booking remains visibly disabled and explicitly unavailable." },
+        "navigationFindability": { "score": 10, "evidence": "Persistent semantic navigation plus an eight-link chapter index provides direct access to every offset Approach destination." },
+        "trustCredibility": { "score": 9, "evidence": "Verified credentials, one-on-one care, factual progression, and complete two-image disclosure establish trust without invented proof." },
+        "contentClarity": { "score": 10, "evidence": "Premise, audiences, three stages, practitioner note, decision principles, expectations, and next step are explicit; the Approach audience module directly explains applications for active adults, athletes and weekend warriors, and strength and fitness enthusiasts." },
+        "mobileErgonomics": { "score": 14, "evidence": "At 64rem navigation simplifies and at 44rem editorial grids collapse in source order, while controls retain 44px height and reading measures remain bounded." },
+        "interactionFeedback": { "score": 9, "evidence": "Visible focus and hover, active-page contrast, anchor offsets, native details, disabled cursor, and scheduling status provide clear feedback; touch styling is unspecified." },
+        "visualUsability": { "score": 13, "evidence": "Warm paper contrast, readable serif measure, fine rules, deliberate crops, and restrained folios create the clearest long-form reading direction." }
+      },
+      "blockingFindings": [],
+      "findings": [
+        { "severity": "low", "file": "src/pages/concept-02/approach.astro", "line": 41, "summary": "Compressed one-line FAQ markup reduces source reviewability without changing rendered semantics." },
+        { "severity": "low", "file": "src/styles/blueprint.css", "line": 6, "summary": "Interactive controls do not set touch-action: manipulation or an intentional tap-highlight color." }
+      ]
+    },
+    {
+      "id": "concept-03",
+      "score": 86,
+      "categories": {
+        "informationHierarchy": { "score": 13, "evidence": "Hero, proof, audience cards, progression, practitioner evidence, and close form a compact sports-magazine sequence; Approach uses five clearly headed modules." },
+        "conversionClarity": { "score": 12, "evidence": "Explore the Forge Approach is repeated as the active route while every booking control and FAQ answer honestly states scheduling is unavailable." },
+        "navigationFindability": { "score": 9, "evidence": "Persistent semantic navigation, aria-current, mobile details, progression jump link, and return-home link are present; the jump target lacks offset." },
+        "trustCredibility": { "score": 9, "evidence": "Verified credentials, one-on-one care, activity examples framed as non-promises, and complete three-image disclosure avoid fabricated proof." },
+        "contentClarity": { "score": 9, "evidence": "Audience-specific cards and activity applications connect Recover, Build, Perform to concrete goals while explicitly rejecting universal tests and promised outcomes." },
+        "mobileErgonomics": { "score": 13, "evidence": "At 42rem all compositions collapse in conventional source order, stagger offsets reset, controls keep 44px targets, and image crops remain purposeful." },
+        "interactionFeedback": { "score": 9, "evidence": "High-contrast lime hover and focus feedback, active state, native disclosures, and disabled status are present; the progression anchor lacks offset and explicit touch styling remains unspecified." },
+        "visualUsability": { "score": 12, "evidence": "Near-black/off-white contrast, dark native color scheme, electric-lime signals, condensed hierarchy, directional rules, and decisive documentary crops scan well; balanced heading wrapping, hero priority, and compositor-friendly motion remain minor gaps." }
+      },
+      "blockingFindings": [],
+      "findings": [
+        { "severity": "low", "file": "src/pages/concept-03/index.astro", "line": 21, "summary": "Above-fold hero image lacks fetchpriority=high." },
+        { "severity": "low", "file": "src/pages/concept-03/approach.astro", "line": 27, "summary": "The linked #progression destination lacks scroll-margin-top." },
+        { "severity": "low", "file": "src/styles/forward.css", "line": 104, "summary": "Training Culture headings do not use text-wrap: balance or text-pretty." },
+        { "severity": "low", "file": "src/styles/forward.css", "line": 159, "summary": "Hero reveal animates clip-path rather than transform or opacity; reduced-motion disables it." },
+        { "severity": "low", "file": "src/styles/forward.css", "line": 24, "summary": "Interactive controls do not set touch-action: manipulation or an intentional tap-highlight color." }
+      ]
+    }
+  ],
+  "creativePairs": [
+    {
+      "pair": "01/02",
+      "categories": {
+        "typography": { "score": 2, "evidence": "01 uses condensed Oswald for display type with Arial/system sans for body copy; 02 uses large Georgia serif with compact sans-serif folios and notes." },
+        "hero": { "score": 2, "evidence": "01 overlays authority copy on a dark full-frame strength crop; 02 places a quiet editorial premise beside a contained court portrait." },
+        "hierarchy": { "score": 2, "evidence": "01 uses cinematic scale, proof cells, rails, and technical blocks; 02 uses folios, margin notes, reading columns, and journal modules." },
+        "CTA": { "score": 1, "evidence": "Both pair one active Approach text link with the same disabled booking component, though surface treatment and placement differ." },
+        "services": { "score": 2, "evidence": "01 separates clinical pathways from a protocol rail; 02 narrates the stages as numbered journal entries with explanatory notes." },
+        "trust": { "score": 1, "evidence": "Both rely on Brandon's verified credentials and one-on-one care; presentation differs between a technical authority block and practitioner essay." },
+        "sectionOrder": { "score": 2, "evidence": "01 moves proof to pathways, protocol, and authority; 02 moves evidence folio to audiences, stage journal, and practitioner note." },
+        "imagery": { "score": 1, "evidence": "Both use two images from the same stock set, with distinct strength-led cinematic and court-led editorial crops." },
+        "density": { "score": 2, "evidence": "01 packs condensed information into dark rails and cells; 02 uses measured reading passages, notes, and paper whitespace." },
+        "motion": { "score": 2, "evidence": "01 performs a hero clip reveal; 02 is static apart from smooth scrolling, with reduced-motion handling in both." },
+        "navigation": { "score": 1, "evidence": "Both share ConceptNav; 02 adds a full eight-link chapter index while 01 relies on page modules." },
+        "brandPersonality": { "score": 2, "evidence": "01 reads as premium cinematic clinical authority; 02 reads as calm, explanatory performance journalism." }
+      }
+    },
+    {
+      "pair": "01/03",
+      "categories": {
+        "typography": { "score": 1, "evidence": "Both use condensed Oswald for display type with Arial/system sans body copy, but 01 is controlled technical uppercase while 03 uses larger sports-magazine statements and lime emphasis." },
+        "hero": { "score": 2, "evidence": "01 overlays a single-leg strength image under a dark gradient; 03 splits starting-block runners from a bold editorial copy panel." },
+        "hierarchy": { "score": 2, "evidence": "01 uses precise rails and datum-like cells; 03 uses staggered cards, hard color panels, and directional borders." },
+        "CTA": { "score": 1, "evidence": "Both retain the shared disabled booking control and active Approach link despite distinct visual treatments." },
+        "services": { "score": 2, "evidence": "01 leads with clinical pathways and a formal protocol; 03 leads with audience identities before translating them into an activity-oriented progression." },
+        "trust": { "score": 1, "evidence": "Both use the same verified practitioner facts and stock boundaries, arranged as technical authority versus sports-editorial evidence." },
+        "sectionOrder": { "score": 2, "evidence": "01 moves proof, pathways, protocol, authority; 03 moves proof, audience recognition, process, practitioner evidence." },
+        "imagery": { "score": 2, "evidence": "01 uses two desaturated crops led by strength; 03 uses all three images as runner hero, strength process, and court evidence." },
+        "density": { "score": 2, "evidence": "01 uses controlled compact rails; 03 uses staggered cards, broad contrast fields, and short high-impact modules." },
+        "motion": { "score": 0, "evidence": "Both use materially similar one-time clip-path hero reveals with reduced-motion fallbacks." },
+        "navigation": { "score": 1, "evidence": "Both use shared ConceptNav; 03 adds a progression jump link while 01 does not add local navigation." },
+        "brandPersonality": { "score": 2, "evidence": "01 is disciplined premium clinic authority; 03 is kinetic, audience-led training culture." }
+      }
+    },
+    {
+      "pair": "02/03",
+      "categories": {
+        "typography": { "score": 2, "evidence": "02 uses quiet Georgia editorial typography and folios; 03 uses uppercase condensed Oswald sports typography." },
+        "hero": { "score": 2, "evidence": "02 opens on warm paper beside a contained court crop; 03 opens with dark runners, oversized copy, and electric lime." },
+        "hierarchy": { "score": 2, "evidence": "02 uses reading columns, margin notes, and numbered journal modules; 03 uses hard panels, staggered cards, and directional borders." },
+        "CTA": { "score": 1, "evidence": "Both use an Approach link plus the same disabled booking component, with materially different visual weight." },
+        "services": { "score": 2, "evidence": "02 explains stages as reflective clinical journal entries; 03 connects stages to audience and activity demands through compact cards." },
+        "trust": { "score": 1, "evidence": "Both use the same verified credentials and one-on-one model, presented as practitioner note versus high-contrast evidence panel." },
+        "sectionOrder": { "score": 2, "evidence": "02 sequences premise, evidence, audiences, stages, practitioner; 03 sequences emotional hero, proof, audiences, process, practitioner." },
+        "imagery": { "score": 2, "evidence": "02 uses two restrained sepia editorial crops; 03 uses all three high-contrast grayscale crops as structural magazine fields." },
+        "density": { "score": 2, "evidence": "02 favors measured text and margin whitespace; 03 favors compressed statements, staggered cards, and bold fields." },
+        "motion": { "score": 2, "evidence": "02 remains visually static apart from scrolling; 03 performs a one-time hero mask reveal." },
+        "navigation": { "score": 1, "evidence": "Both share ConceptNav; 02 adds eight chapter links while 03 adds one progression jump." },
+        "brandPersonality": { "score": 2, "evidence": "02 is thoughtful clinical journalism; 03 is assertive, energetic training culture." }
+      }
+    }
+  ]
+}

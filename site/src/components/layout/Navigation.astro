@@ -1,0 +1,14 @@
+---
+import { primaryNavigation, type SitePage } from '../../config/navigation';
+interface Props { currentPage: SitePage; }
+const { currentPage } = Astro.props;
+---
+<nav class="concept-nav concept-nav--live" data-tone="precision" aria-label="Primary navigation">
+  <div class="concept-nav__desktop concept-nav__desktop--live">
+    {primaryNavigation.map((item) => <a href={item.href} aria-current={currentPage === item.key ? 'page' : undefined}>{item.label}</a>)}
+  </div>
+  <details class="concept-nav__mobile concept-nav__mobile--live">
+    <summary>Menu</summary>
+    <div>{primaryNavigation.map((item) => <a href={item.href} aria-current={currentPage === item.key ? 'page' : undefined}>{item.label}</a>)}</div>
+  </details>
+</nav>

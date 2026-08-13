@@ -1,0 +1,14 @@
+---
+import { siteConfig } from '../../config/site';
+import Navigation from './Navigation.astro';
+import type { SitePage } from '../../config/navigation';
+interface Props { currentPage: SitePage; }
+const { currentPage } = Astro.props;
+---
+<header class="site-header">
+  <a class="brand" href={`${siteConfig.basePath}/`} aria-label={`${siteConfig.accessibleName} home`}>
+    <img src={siteConfig.logo} alt="" width="1280" height="1280" />
+    <span>{siteConfig.shortName} <small>Rehab &amp; Performance</small></span>
+  </a>
+  <Navigation currentPage={currentPage} />
+</header>

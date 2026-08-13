@@ -1,0 +1,56 @@
+---
+import BookingStatus from '../../components/BookingStatus.astro';
+import ForwardLayout from '../../layouts/ForwardLayout.astro';
+
+const stages = [
+  ['Recover', 'Understand the starting point', 'Evaluation and conversation clarify symptoms, current capacity, individual goals, and the foundation needed for what follows.'],
+  ['Build', 'Develop what the goal demands', 'Strength, mobility, control, capacity, and confidence progress in relation to the person rather than a cookie-cutter protocol.'],
+  ['Perform', 'Connect preparation to activity', 'The progression moves toward chosen activities without treating readiness as a universal test or promising a particular outcome.']
+];
+
+const principles = [
+  ['Individual over generic', 'Goals and current capacity shape progression rather than a rigid timeline.'],
+  ['Reasoning stays close', 'One-on-one care keeps evaluation, explanation, and progression in the same conversation.'],
+  ['Demand sets direction', 'The work considers what sport, training, recreation, work, or daily life actually asks of you.']
+];
+
+const applications = ['Running and field sport', 'Strength training', 'Court sport', 'Weekend recreation', 'Work and family demands', 'Active daily life'];
+---
+
+<ForwardLayout title="The Forge Approach | Training Culture" description="Forge's Recover, Build, Perform progression connects one-on-one care to individual activity goals." currentPage="approach">
+  <header class="approach-hero">
+    <p class="culture-kicker">The Forge Approach</p><h1>Build capacity for what comes next.</h1>
+    <p>Recovery establishes a foundation. Forge uses that foundation to develop capacity for individual goals and chosen activities.</p>
+    <a href="#progression">See the progression</a>
+  </header>
+
+  <section id="progression" class="approach-progression" aria-labelledby="progression-title">
+    <div class="section-heading"><p class="culture-kicker">Three connected stages</p><h2 id="progression-title">Recover. Build. Perform.</h2></div>
+    <ol>{stages.map(([name, heading, body], index) => <li><span>0{index + 1}</span><div><h3>{name}</h3><strong>{heading}</strong><p>{body}</p></div></li>)}</ol>
+  </section>
+
+  <section class="approach-principles" aria-labelledby="principles-title">
+    <div class="section-heading"><p class="culture-kicker">Decision principles</p><h2 id="principles-title">The framework stays human.</h2></div>
+    <ul>{principles.map(([heading, body]) => <li><h3>{heading}</h3><p>{body}</p></li>)}</ul>
+  </section>
+
+  <section class="approach-application" aria-labelledby="application-title">
+    <div><p class="culture-kicker">Activity application</p><h2 id="application-title">The clinic is not the finish line.</h2><p>Preparation is connected to the demands that matter to each person. These are examples of activity contexts, not a list of promised services or outcomes.</p></div>
+    <ul>{applications.map((application, index) => <li><span>0{index + 1}</span>{application}</li>)}</ul>
+  </section>
+
+  <section class="approach-expectations" aria-labelledby="expectations-title">
+    <div><p class="culture-kicker">What to expect</p><h2 id="expectations-title">Clear care. Honest next steps.</h2></div>
+    <div class="approach-faq">
+      <details open><summary>Is the progression a fixed timeline?</summary><p>No. Recover, Build, Perform describes a direction. Individual goals and current capacity shape the pace and details.</p></details>
+      <details><summary>Is Forge only for competitive athletes?</summary><p>No. The approach is for athletes, lifters, weekend warriors, and active adults with individual activity goals.</p></details>
+      <details><summary>Can I schedule online?</summary><p>Not yet. Evaluation booking remains unavailable until a real scheduling destination is supplied.</p></details>
+    </div>
+  </section>
+
+  <section class="approach-close" aria-labelledby="approach-close-title">
+    <p class="culture-kicker">The next step</p><h2 id="approach-close-title">Start with where you are.</h2>
+    <p>Online scheduling coming soon. Explore the homepage or return when a verified booking destination is available.</p>
+    <div class="actions"><BookingStatus /><a href="/concept-03">Return home</a></div>
+  </section>
+</ForwardLayout>

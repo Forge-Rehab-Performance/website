@@ -1,0 +1,54 @@
+---
+import ConceptNav from '../components/ConceptNav.astro';
+import '../styles/blueprint.css';
+
+interface Props {
+  title: string;
+  description: string;
+  currentPage: 'home' | 'approach';
+}
+
+const { title, description, currentPage } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f3eee4" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <!--
+      THESIS: Performance Journal presents Forge as a warm, disciplined editorial account of progressive care.
+      OWN-WORLD: Warm paper, charcoal ink, muted ochre, deliberate photography, numbered modules, and fine rules.
+      STORY: Understand recovery as a foundation, follow Recover / Build / Perform, then read the full approach.
+      FIRST VIEWPORT: A direct premise and honest action state sit beside one editorial movement crop.
+      FORM: Performance Journal, approved warm editorial direction.
+      FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+    -->
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="masthead">
+      <a class="brand" href="/concept-02" aria-label="Forge Rehab and Performance home">
+        <img src="/assets/forge-logo.png" width="120" height="120" alt="" />
+        <span>Forge Rehab <i>&amp;</i> Performance</span>
+      </a>
+      <ConceptNav conceptId="concept-02" currentPage={currentPage} tone="paper" />
+    </header>
+    <main id="main-content"><slot /></main>
+    <footer class="journal-footer">
+      <div class="image-credits" role="region" aria-labelledby="image-credits-title">
+        <h2 id="image-credits-title">Demo image credits</h2>
+        <p>Stock images are licensed demo imagery and do not depict Forge patients or people, clinicians or staff, facilities, treatment, or outcomes.</p>
+        <ul>
+          <li><a href="https://commons.wikimedia.org/wiki/User:Sunnyjoe035">Sunnyjoe035</a>, <a href="https://commons.wikimedia.org/wiki/File:A_Basketball_Player.jpg">source</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; cropped/resized and converted to WebP for this demo.</li>
+          <li><a href="https://commons.wikimedia.org/wiki/User:Indylala">Indylala</a>, <a href="https://commons.wikimedia.org/wiki/File:Luis_Morales_(athlete)_running_in_college.jpg">source</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; cropped/resized and converted to WebP for this demo.</li>
+        </ul>
+      </div>
+      <div class="footer-mark"><strong>Forge Rehab &amp; Performance</strong><span>Northern New Jersey</span></div>
+    </footer>
+  </body>
+</html>

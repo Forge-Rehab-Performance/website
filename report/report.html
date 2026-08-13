@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Website Strategy &amp; Digital Presence Opportunity | Forge Rehab &amp; Performance</title>
+  <style>
+    :root { --ink: #171816; --paper: #f3efe5; --gold: #b18a42; --muted: #68685f; --line: #d5cdbb; --white: #fffdf8; }
+    * { box-sizing: border-box; }
+    html { background: #d7d3ca; color: var(--ink); font-family: sans-serif; }
+    body { margin: 0 auto; max-width: 8.5in; background: var(--paper); }
+    main { display: block; }
+    .page { position: relative; min-height: 11in; padding: .62in .66in .58in; break-after: page; overflow: hidden; }
+    .page:last-child { break-after: auto; }
+    .dark { color: var(--white); background: var(--ink); }
+    .eyebrow { margin: 0 0 .18in; color: var(--gold); font-size: 9px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 6.5in; margin-bottom: .25in; font-family: Georgia, 'Times New Roman', serif; font-size: 45px; font-weight: 400; line-height: .98; letter-spacing: -.035em; }
+    h2 { max-width: 6.7in; margin-bottom: .23in; font-family: Georgia, 'Times New Roman', serif; font-size: 30px; font-weight: 400; line-height: 1.08; letter-spacing: -.02em; }
+    h3 { margin-bottom: .08in; font-size: 12px; line-height: 1.25; text-transform: uppercase; letter-spacing: .08em; }
+    p, li { font-size: 10.2px; line-height: 1.48; }
+    p { margin-bottom: .14in; }
+    ul, ol { margin: 0; padding-left: .2in; }
+    li { margin-bottom: .06in; }
+    .lede { max-width: 5.9in; font-family: Georgia, 'Times New Roman', serif; font-size: 17px; line-height: 1.38; }
+    .rule { width: 100%; height: 1px; margin: .24in 0; background: var(--line); }
+    .dark .rule { background: #42433f; }
+    .meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: .12in; margin-top: .4in; }
+    .meta div { padding-top: .12in; border-top: 1px solid #4b4b46; }
+    .meta strong, .meta span { display: block; }
+    .meta strong { margin-bottom: .04in; color: var(--gold); font-size: 8px; letter-spacing: .12em; text-transform: uppercase; }
+    .meta span { font-family: Georgia, 'Times New Roman', serif; font-size: 12px; line-height: 1.35; }
+    .cover-mark { position: absolute; right: -.45in; bottom: .55in; width: 3.4in; height: 3.4in; border: .09in solid var(--gold); transform: rotate(45deg); opacity: .22; }
+    .cover-mark::after { position: absolute; inset: .38in; border: 1px solid var(--gold); content: ''; }
+    .folio { position: absolute; right: .66in; bottom: .27in; color: var(--muted); font-size: 8px; letter-spacing: .12em; }
+    .dark .folio { color: #92928a; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: .18in; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: .12in; }
+    .card { padding: .17in; border: 1px solid var(--line); background: rgba(255,255,255,.28); break-inside: avoid; }
+    .card p:last-child, .card ul:last-child { margin-bottom: 0; }
+    .number { display: block; margin-bottom: .08in; color: var(--gold); font-family: Georgia, 'Times New Roman', serif; font-size: 25px; }
+    .snapshot { display: grid; grid-template-columns: 1.2fr 1fr; gap: .4in; align-items: start; }
+    .statement { padding: .18in 0; border-top: 2px solid var(--gold); border-bottom: 1px solid var(--gold); font-family: Georgia, 'Times New Roman', serif; font-size: 20px; line-height: 1.27; }
+    .tags { display: flex; flex-wrap: wrap; gap: .06in; margin-top: .12in; }
+    .tag { padding: .055in .09in; border: 1px solid var(--line); border-radius: 1in; font-size: 8.5px; }
+    .evidence { margin-top: .3in; padding: .18in; background: #e8e1d2; }
+    .evidence strong { color: #6d5222; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: .095in .08in; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 9px; line-height: 1.35; }
+    th { color: #6d5222; font-size: 8px; letter-spacing: .08em; text-transform: uppercase; }
+    .concept { padding-top: .55in; }
+    .concept-head { display: grid; grid-template-columns: .58in 1fr 1.1in; gap: .12in; align-items: start; margin-bottom: .27in; }
+    .concept-id { color: var(--gold); font-family: Georgia, 'Times New Roman', serif; font-size: 31px; line-height: 1; }
+    .concept-label { padding-top: .04in; color: var(--muted); font-size: 8px; letter-spacing: .12em; text-align: right; text-transform: uppercase; }
+    .concept h2 { margin-bottom: .05in; font-size: 34px; }
+    .preview { height: 3.45in; margin: .18in 0; overflow: hidden; border: 1px solid rgba(0,0,0,.18); background: #fff; }
+    .preview img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .preview figcaption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    .preview[data-asset-ids] { display: grid; grid-template-rows: minmax(0, 1fr) auto; }
+    .preview.stale-preview { display: grid; grid-template-rows: minmax(0, 1fr) auto; }
+    .preview[data-asset-ids] img { min-height: 0; }
+    .preview .asset-credit { position: static; width: auto; height: auto; margin: .045in .06in 0; overflow: visible; clip: auto; color: var(--ink); background: var(--white); font-size: 6.8px; line-height: 1.25; }
+    .asset-credit a { color: inherit; }
+    .swatches { display: flex; height: .25in; margin: .12in 0; border: 1px solid rgba(0,0,0,.12); }
+    .swatches i { flex: 1; }
+    .palette-name { margin: -.08in 0 .12in; color: var(--muted); font-size: 8px; letter-spacing: .08em; text-transform: uppercase; }
+    .precision { color: #f8f3e8; background: #111210; }
+    .precision .card { border-color: #44453f; background: #181916; }
+    .precision .concept-label, .precision .folio { color: #9d9d92; }
+    .precision .palette-name { color: #9d9d92; }
+    .precision .rule { background: #44453f; }
+    .precision .swatches { border-color: #44453f; }
+    .blueprint { color: #292824; background: #f3eee4; }
+    .blueprint .card { border-color: #aaa18f; background: #fffaf1; }
+    .forward { color: #f4f2e9; background: #10110f; }
+    .forward .card { border: 2px solid #c7f36b; background: #181a17; }
+    .forward .concept-label, .forward .palette-name, .forward .folio { color: #b9baaf; }
+    .forward .eyebrow, .forward .concept-id { color: #c7f36b; }
+    .forward .palette-name { font-size: 9px; }
+    .forward h2 { max-width: 5in; font-family: Impact, 'Arial Narrow', sans-serif; font-size: 44px; line-height: .88; text-transform: uppercase; }
+    .sitemap { display: grid; grid-template-columns: repeat(3, 1fr); gap: .08in; counter-reset: route; }
+    .route { min-height: .72in; padding: .12in; border: 1px solid var(--line); background: var(--white); }
+    .route::before { counter-increment: route; content: '0' counter(route); display: block; margin-bottom: .04in; color: var(--gold); font-size: 8px; }
+    .route strong { display: block; font-family: Georgia, 'Times New Roman', serif; font-size: 12px; }
+    .route span { display: block; margin-top: .035in; color: var(--muted); font-size: 8px; }
+    .route.demo { border: 2px solid var(--gold); }
+    .unknowns { columns: 2; column-gap: .32in; }
+    .unknowns li { break-inside: avoid; }
+    .next { display: grid; grid-template-columns: .4in 1fr; gap: .12in; padding: .15in 0; border-top: 1px solid var(--line); }
+    .next b { color: var(--gold); font-family: Georgia, 'Times New Roman', serif; font-size: 21px; font-weight: 400; }
+    .next p { margin: 0; }
+    .notice { margin-top: .28in; padding: .18in; border: 1px solid var(--gold); }
+    @page { size: Letter; margin: 0; }
+    @media print { html, body { background: var(--paper); } body { max-width: none; } }
+    @media screen and (max-width: 700px) { .page { min-height: auto; padding: 28px 22px 48px; } .grid-2, .grid-3, .snapshot, .meta, .concept-head, .sitemap { grid-template-columns: 1fr; } .concept-label { text-align: left; } .unknowns { columns: 1; } .folio { right: 22px; } }
+  </style>
+</head>
+<body>
+<main>
+  <section class="page dark">
+    <p class="eyebrow">Greenfield concept review / August 2026</p>
+    <h1>Website Strategy &amp;<br>Digital Presence Opportunity</h1>
+    <p class="lede">A focused path for translating Forge Rehab &amp; Performance's one-on-one care model into a clear, credible, and differentiated digital presence.</p>
+    <div class="rule"></div>
+    <div class="meta">
+      <div><strong>Prepared for</strong><span>Forge Rehab &amp; Performance</span></div>
+      <div><strong>Market</strong><span>Northern New Jersey</span></div>
+      <div><strong>Engagement</strong><span>Greenfield website strategy</span></div>
+    </div>
+    <div class="cover-mark" aria-hidden="true"></div>
+    <span class="folio">FORGE / 01</span>
+  </section>
+
+  <section class="page">
+    <p class="eyebrow">Business snapshot</p>
+    <h2>A progression built around the person, not a generic protocol.</h2>
+    <div class="snapshot">
+      <div>
+        <p class="statement">Forge Rehab &amp; Performance is positioned around one-on-one, evidence-based, progressive care built around individual goals.</p>
+        <p>The central opportunity is not to add more claims. It is to make the approved model unmistakable: help active people understand how care can move from symptom reduction toward strength, mobility, control, capacity, confidence, and the demands of chosen activities.</p>
+        <div class="tags"><span class="tag">Active adults</span><span class="tag">Athletes</span><span class="tag">Weekend warriors</span><span class="tag">Strength &amp; fitness enthusiasts</span></div>
+      </div>
+      <div class="card">
+        <h3>Approved Foundation</h3>
+        <p><strong>Business</strong><br>Forge Rehab &amp; Performance</p>
+        <p><strong>Geography</strong><br>Northern New Jersey</p>
+        <p><strong>Practitioner</strong><br>Brandon Coveney, PT, DPT, OCS</p>
+        <p><strong>Primary goal</strong><br>Book an evaluation</p>
+        <p><strong>Core progression</strong><br>Recover. Build. Perform.</p>
+      </div>
+    </div>
+    <div class="evidence"><p><strong>Evidence boundary.</strong> This is a greenfield strategy, not an audit of a current Forge website. Owner-provided content is authoritative. Public sources corroborate selected practitioner details. Market observations describe competitor patterns, not Forge performance. No traffic, ranking, conversion, accessibility, SEO, patient-outcome, or revenue claims are made.</p></div>
+    <span class="folio">FORGE / 02</span>
+  </section>
+
+  <section class="page">
+    <p class="eyebrow">Market findings</p>
+    <h2>Personalized care is expected. The progression can be remembered.</h2>
+    <div class="grid-2">
+      <div>
+        <h3>Observed Across Five Competitors</h3>
+        <ul>
+          <li>One-on-one and personalized care function as category table stakes.</li>
+          <li>Traditional high-volume physical therapy is frequently positioned as the opponent.</li>
+          <li>Rehabilitation is commonly connected to fitness, sport, or performance.</li>
+          <li>Credentials and testimonial sections carry much of the trust burden.</li>
+          <li>Dark sports branding, gym imagery, and broad service menus recur.</li>
+          <li>Long homepages repeat consultation or evaluation prompts.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Strategic White Space</h3>
+        <p class="statement">Own a concise capacity-building narrative instead of another modality catalog.</p>
+        <ul>
+          <li>Make Recover / Build / Perform the memorable organizing idea.</li>
+          <li>Give each page one job and reserve detail for dedicated routes.</li>
+          <li>Use owner-approved pricing transparently on the eventual Pricing page.</li>
+          <li>Build trust with verified credentials and process clarity until real reviews or outcomes exist.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="rule"></div>
+    <h3>Avoid Category Imitation</h3>
+    <div class="grid-3">
+      <div class="card"><span class="number">01</span><p>Do not default to interchangeable black-and-red gym branding.</p></div>
+      <div class="card"><span class="number">02</span><p>Do not borrow anti-traditional-PT slogans or competitor-specific language.</p></div>
+      <div class="card"><span class="number">03</span><p>Do not substitute generic review walls, devices, or readiness scores for evidence.</p></div>
+    </div>
+    <p style="margin-top:.2in;color:var(--muted)">Competitive set reviewed: Ethos Physical Therapy, EDGE Physical Therapy and Sports Medicine, Achieve Physical Therapy, Next Level Physio, and Pursue PT.</p>
+    <span class="folio">FORGE / 03</span>
+  </section>
+
+  <section class="page">
+    <p class="eyebrow">Positioning opportunity</p>
+    <h2>Turn a clinical philosophy into a simple visitor story.</h2>
+    <div class="grid-3">
+      <div class="card"><span class="number">01</span><h3>Recover</h3><p>Begin with evaluation and understanding, reduce symptoms, and establish a foundation.</p></div>
+      <div class="card"><span class="number">02</span><h3>Build</h3><p>Develop strength, mobility, control, capacity, and confidence.</p></div>
+      <div class="card"><span class="number">03</span><h3>Perform</h3><p>Progress toward the demands of the individual's chosen activities.</p></div>
+    </div>
+    <div class="rule"></div>
+    <div class="grid-2">
+      <div>
+        <h3>What The Homepage Must Do</h3>
+        <ol>
+          <li>Make Forge's audience and point of view clear within the first viewport.</li>
+          <li>Introduce, rather than exhaust, the Recover / Build / Perform progression.</li>
+          <li>Establish one-on-one care and verified practitioner authority.</li>
+          <li>Route interested visitors to the substantial Forge Approach page.</li>
+          <li>Show booking as unavailable until a real EMR destination is supplied.</li>
+        </ol>
+      </div>
+      <div>
+        <h3>What The Approach Page Must Do</h3>
+        <ol>
+          <li>Explain each stage in clear, evidence-safe language.</li>
+          <li>Connect progression to individual goals without guaranteeing results.</li>
+          <li>Explain individualized, one-on-one care without attacking alternatives.</li>
+          <li>Make Build Forward a philosophy with substance, not only a slogan.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="notice"><strong>Action state for the concept prototypes:</strong> Every Book an Evaluation control remains disabled and labeled Online scheduling coming soon. Forge Approach is the functional secondary path. Planned pages are identified without fake links.</div>
+    <span class="folio">FORGE / 04</span>
+  </section>
+
+  <section class="page">
+    <p class="eyebrow">Recommended sitemap</p>
+    <h2>Nine focused production routes. Two routes per concept prototype.</h2>
+    <div class="sitemap">
+      <div class="route demo"><strong>Home</strong><span>Included in each concept</span></div>
+      <div class="route demo"><strong>Forge Approach</strong><span>Included in each concept</span></div>
+      <div class="route"><strong>Services</strong><span>Planned production route</span></div>
+      <div class="route"><strong>About Brandon</strong><span>Planned production route</span></div>
+      <div class="route"><strong>Pricing</strong><span>Planned production route</span></div>
+      <div class="route"><strong>FAQ</strong><span>Planned production route</span></div>
+      <div class="route"><strong>Contact</strong><span>Planned production route</span></div>
+      <div class="route"><strong>Privacy Policy</strong><span>Planned production route</span></div>
+      <div class="route"><strong>Notice of Privacy Practices</strong><span>Planned production route</span></div>
+    </div>
+    <div class="rule"></div>
+    <div class="grid-2">
+      <div>
+        <h3>Why Separate Pages</h3>
+        <p>A concise homepage can establish fit and direction without becoming a long sales document. Dedicated pages make pricing, services, biography, policies, and contact information easier to find and maintain.</p>
+      </div>
+      <div>
+        <h3>Concept Prototype Scope</h3>
+        <p>Each concept prototype is intentionally narrower than the recommended production site. It tests the visual and UX direction through Home and Forge Approach only. It is not a deployed website and does not indicate that the other seven routes are built.</p>
+      </div>
+    </div>
+    <span class="folio">FORGE / 05</span>
+  </section>
+
+  <section class="page concept precision">
+    <p class="eyebrow">Concept 01 / Cinematic Authority</p>
+    <div class="concept-head"><span class="concept-id">01</span><div><h2>Cinematic Clinic</h2><p>Image-led clinical authority with a premium black-and-gold edge.</p></div><span class="concept-label">Cinematic<br>Clinical<br>Premium</span></div>
+    <p class="lede">Ready is more than pain-free.</p>
+    <figure class="preview" data-asset-ids="forward-strength forward-movement"><img src="../qa/screenshots/concept-01-desktop.png" alt="Final desktop evidence for Concept 01, Cinematic Clinic"><figcaption class="asset-credit">Final Task 6 full-page capture. Includes strength image by RickyBennison: <a href="https://commons.wikimedia.org/wiki/File:Unilateral_barbell_back_squat_squatting.jpg">Wikimedia Commons source</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; cropped/resized and converted to WebP for this demo. Includes runner image by Indylala: <a href="https://commons.wikimedia.org/wiki/File:Luis_Morales_(athlete)_running_in_college.jpg">Wikimedia Commons source</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; cropped/resized and converted to WebP for this demo.</figcaption></figure>
+    <div class="swatches" aria-hidden="true"><i style="background:#111210"></i><i style="background:#b18a42"></i><i style="background:#85867f"></i><i style="background:#f8f3e8"></i></div>
+    <p class="palette-name">Deep black / forged gold / warm ivory / structural gray</p>
+    <div class="grid-2">
+      <div class="card"><h3>Why choose it</h3><p>The most cinematic clinical direction. Focused movement imagery, compact proof, and a disciplined progression make Forge feel premium and credible without inventing technology or outcomes.</p></div>
+      <div class="card"><h3>Best fit</h3><p>Choose Cinematic Clinic if Forge should lead with premium clinical authority, focused movement imagery, and a structured path beyond pain relief.</p></div>
+    </div>
+    <div class="rule"></div>
+    <div class="grid-3">
+       <div><h3>Type &amp; Layout</h3><p>Condensed display type, legible body copy, sharp rules, compact proof cells, and a controlled asymmetric grid.</p></div>
+       <div><h3>Imagery</h3><p>A dominant strength crop and restrained runner image create atmosphere only; stock does not represent Forge care.</p></div>
+       <div><h3>Motion</h3><p>One short hero reveal with reduced-motion parity. No bounce, parallax, gauges, or motion-dependent meaning.</p></div>
+    </div>
+    <span class="folio">FORGE / 06</span>
+  </section>
+
+  <section class="page concept blueprint">
+    <p class="eyebrow">Concept 02 / Editorial Journal</p>
+    <div class="concept-head"><span class="concept-id">02</span><div><h2>Performance Journal</h2><p>An editorial account of individualized progressive care.</p></div><span class="concept-label">Editorial<br>Measured<br>Human</span></div>
+    <p class="lede">Recovery is a starting point, not the finish line.</p>
+    <figure class="preview" data-asset-ids="forward-court forward-movement"><img src="../qa/screenshots/concept-02-desktop.png" alt="Final desktop evidence for Concept 02, Performance Journal"><figcaption class="asset-credit">Final Task 6 full-page capture. Includes court image by Sunnyjoe035: <a href="https://commons.wikimedia.org/wiki/File:A_Basketball_Player.jpg">Wikimedia Commons source</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; cropped/resized and converted to WebP for this demo. Includes runner image by Indylala: <a href="https://commons.wikimedia.org/wiki/File:Luis_Morales_(athlete)_running_in_college.jpg">Wikimedia Commons source</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; cropped/resized and converted to WebP for this demo.</figcaption></figure>
+    <div class="swatches" aria-hidden="true"><i style="background:#f3eee4"></i><i style="background:#292824"></i><i style="background:#8a682e"></i><i style="background:#aaa18f"></i></div>
+    <p class="palette-name">Warm paper / charcoal ink / muted ochre / fine rule</p>
+    <div class="grid-2">
+      <div class="card"><h3>Why choose it</h3><p>The clearest reading direction. Editorial photography, folios, and numbered modules explain how recovery develops into capacity while keeping the care model personal.</p></div>
+      <div class="card"><h3>Best fit</h3><p>Choose Performance Journal if Forge should lead with thoughtful clinical reasoning, education, and a calm editorial tone.</p></div>
+    </div>
+    <div class="rule"></div>
+    <div class="grid-3">
+       <div><h3>Type &amp; Layout</h3><p>Editorial serif headlines, compact sans-serif folios, warm paper, fine rules, and measured reading width.</p></div>
+       <div><h3>Imagery</h3><p>Restrained court and runner crops support the text without pretending to show Forge's people, facility, treatment, or outcomes.</p></div>
+       <div><h3>Motion</h3><p>A deliberately static reading experience with subtle link feedback and reduced-motion-safe scrolling.</p></div>
+    </div>
+    <span class="folio">FORGE / 07</span>
+  </section>
+
+  <section class="page concept forward">
+    <p class="eyebrow">Concept 03 / Sports Magazine</p>
+    <div class="concept-head"><span class="concept-id">03</span><div><h2>Training Culture</h2><p>A kinetic sports-magazine direction built around meaningful goals.</p></div><span class="concept-label">Kinetic<br>Documentary<br>Direct</span></div>
+    <p class="lede">Recovery is the start. Train forward.</p>
+    <figure class="preview" data-asset-ids="forward-movement forward-strength forward-court"><img src="../qa/screenshots/concept-03-desktop.png" alt="Final desktop evidence for Concept 03, Training Culture"><figcaption class="asset-credit">Final Task 6 full-page capture. Includes runner image by Indylala: <a href="https://commons.wikimedia.org/wiki/File:Luis_Morales_(athlete)_running_in_college.jpg">Wikimedia Commons source</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; cropped/resized and converted to WebP for this demo. Includes strength image by RickyBennison: <a href="https://commons.wikimedia.org/wiki/File:Unilateral_barbell_back_squat_squatting.jpg">Wikimedia Commons source</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; cropped/resized and converted to WebP for this demo. Includes court image by Sunnyjoe035: <a href="https://commons.wikimedia.org/wiki/File:A_Basketball_Player.jpg">Wikimedia Commons source</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; cropped/resized and converted to WebP for this demo.</figcaption></figure>
+    <div class="swatches" aria-hidden="true"><i style="background:#10110f"></i><i style="background:#c7f36b"></i><i style="background:#f4f2e9"></i><i style="background:#b9baaf"></i></div>
+    <p class="palette-name">Near-black / electric lime / off-white / cool gray</p>
+    <div class="grid-2">
+      <div class="card"><h3>Why choose it</h3><p>The most kinetic and audience-led direction. Sports-magazine rhythm, documentary movement, and direct language connect clinical progression to meaningful activities.</p></div>
+      <div class="card"><h3>Best fit</h3><p>Choose Training Culture if Forge should lead with audience identification, training ambition, and a distinctive alternative to conventional clinic branding.</p></div>
+    </div>
+    <div class="rule" style="background:#c7f36b"></div>
+    <div class="grid-3">
+       <div><h3>Type &amp; Layout</h3><p>Oversized condensed statements, sturdy sans body, staggered cards, directional rules, and compact contrast fields.</p></div>
+       <div><h3>Imagery</h3><p>Large generic active-life documentary crops, licensed for this demo and subject to production replacement review.</p></div>
+       <div><h3>Motion</h3><p>One-time hero image mask with reduced-motion parity. No continuous marquee or aggressive autoplay.</p></div>
+    </div>
+    <span class="folio">FORGE / 08</span>
+  </section>
+
+  <section class="page">
+    <p class="eyebrow">Content readiness</p>
+    <h2>The strategic foundation exists. Operational details still control launch readiness.</h2>
+    <table>
+      <thead><tr><th>Ready for concept use</th><th>Reserved for a dedicated route</th><th>Unavailable</th></tr></thead>
+      <tbody>
+        <tr><td>Canonical name and Northern New Jersey geography</td><td>Approved evaluation, follow-up, and package pricing</td><td>Exact city, address, ZIP, facility, and service area</td></tr>
+        <tr><td>One-on-one, evidence-based, progressive positioning</td><td>Full service descriptions and Brandon biography</td><td>Phone, email, hours, social profiles, and EMR URL</td></tr>
+        <tr><td>Recover / Build / Perform progression</td><td>FAQ, privacy, and Notice of Privacy Practices content</td><td>Insurance, reimbursement, superbill, HSA, and FSA policy</td></tr>
+        <tr><td>Brandon Coveney, PT, DPT, OCS and approved credentials</td><td>Contact and booking behavior once destinations exist</td><td>Reviews, ratings, patient counts, outcomes, and guarantees</td></tr>
+        <tr><td>Owner-provided logo</td><td>Founding Forge 20 details after terms are approved</td><td>Real Forge facility, clinician, and patient photography</td></tr>
+      </tbody>
+    </table>
+    <div class="rule"></div>
+    <h3>Missing Inputs To Resolve Before Production Launch</h3>
+    <ul class="unknowns">
+      <li>Exact physical and service-area details</li><li>Contact channels and office hours</li><li>Scheduling platform destination and workflow</li><li>Insurance and payment-policy language</li><li>Approved privacy and practice notices</li><li>Real or fully licensed production photography</li><li>Approved reviews or outcomes, if later supplied</li><li>Launch date and complete Founding Forge 20 terms</li>
+    </ul>
+    <div class="notice"><strong>Truth standard:</strong> Unknown does not mean negative; it means not supplied or verified. It remains unknown until Forge provides authoritative information. Design placeholders must never harden into public claims.</div>
+    <span class="folio">FORGE / 09</span>
+  </section>
+
+  <section class="page dark">
+    <p class="eyebrow">Recommended next steps</p>
+    <h2>Select one direction to carry into production.</h2>
+    <div class="next"><b>1</b><p><strong>Review the three directions.</strong><br>Select the visual and UX approach that best represents Forge's intended market position.</p></div>
+    <div class="next"><b>2</b><p><strong>Test each direction through two routes.</strong><br>Evaluate Home for immediate fit and Forge Approach for depth, clarity, and reading quality.</p></div>
+    <div class="next"><b>3</b><p><strong>Resolve operational inputs.</strong><br>Supply contact, location, scheduling, insurance, policy, photography, and launch information before production completion.</p></div>
+    <div class="next"><b>4</b><p><strong>Advance the selected direction.</strong><br>Extend the selected concept into the nine-route production architecture, preserving the approved evidence boundaries.</p></div>
+    <div class="next"><b>5</b><p><strong>Complete production QA before launch.</strong><br>Verify content, privacy, integrations, responsive behavior, accessibility, performance, and all live destinations on the production website.</p></div>
+    <div class="notice"><strong>Selection next step:</strong> Reply with Cinematic Clinic, Performance Journal, or Training Culture, plus any elements to preserve from another direction. These are completed concept prototypes, not a deployed production website; no live booking integration, production route completion, or business outcome is represented.</div>
+    <p style="position:absolute;left:.66in;bottom:.55in;max-width:5.7in;font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.35">The strongest opportunity is a digital presence as disciplined as the care model: clear progression, verified authority, and no claim ahead of its evidence.</p>
+    <span class="folio">FORGE / 10</span>
+  </section>
+</main>
+</body>
+</html>

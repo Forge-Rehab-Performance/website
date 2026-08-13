@@ -1,0 +1,25 @@
+---
+import PlannedItem from './PlannedItem.astro';
+
+interface Props {
+  conceptId: 'concept-01' | 'concept-02' | 'concept-03';
+  currentPage: 'home' | 'approach';
+  tone: string;
+}
+
+const { conceptId, currentPage, tone } = Astro.props;
+const base = `/${conceptId}`;
+const planned = ['Services', 'About Brandon', 'Pricing', 'FAQ', 'Contact', 'Privacy Policy', 'Notice of Privacy Practices'];
+---
+
+<nav class="concept-nav" data-tone={tone} aria-label="Primary navigation">
+  <a href={base} aria-current={currentPage === 'home' ? 'page' : undefined}>Home</a>
+  <a href={`${base}/approach/`} aria-current={currentPage === 'approach' ? 'page' : undefined}>Forge Approach</a>
+  <div class="concept-nav__desktop">
+    {planned.map((label) => <PlannedItem label={label} />)}
+  </div>
+  <details class="concept-nav__mobile">
+    <summary>Planned pages</summary>
+    <div>{planned.map((label) => <PlannedItem label={label} />)}</div>
+  </details>
+</nav>

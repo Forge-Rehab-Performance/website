@@ -1,0 +1,26 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import type { SitePage } from '../config/navigation';
+import '../styles/tokens.css';
+import '../styles/base.css';
+import '../styles/utilities.css';
+import '../styles/precision.css';
+
+interface Props {
+  title: string;
+  description: string;
+  currentPage: SitePage;
+  canonicalPath?: string;
+  noindex?: boolean;
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
+}
+const { title, description, currentPage, canonicalPath, noindex = false, structuredData } = Astro.props;
+---
+<BaseLayout title={title} description={description} canonicalPath={canonicalPath} noindex={noindex} structuredData={structuredData}>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <Header currentPage={currentPage} />
+  <main id="main-content"><slot /></main>
+  <Footer />
+</BaseLayout>
