@@ -56,12 +56,12 @@ const faqCategories = faqEntries.map(entry => entry.data).sort((a, b) => a.order
                         return (
                           <ul class="faq-bullet-list">
                             {paragraph.split('\n').map(item => (
-                              <li>{item.replace(/^- /, '')}</li>
+                              <li set:html={item.replace(/^- /, '')} />
                             ))}
                           </ul>
                         );
                       }
-                      return <p>{paragraph}</p>;
+                      return <p set:html={paragraph} />;
                     })}
                     {question === 'How much does physical therapy cost?' && (
                       <a class="text-link" href="/pricing/">View full pricing <span aria-hidden="true">→</span></a>
