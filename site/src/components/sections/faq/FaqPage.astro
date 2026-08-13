@@ -76,11 +76,12 @@ import { faqCategories } from '../../../data/faq';
 </section>
 
 <script>
-  const observerOptions = {
-    root: null,
-    rootMargin: '-10% 0px -80% 0px',
-    threshold: 0
-  };
+  document.addEventListener('astro:page-load', () => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-10% 0px -80% 0px',
+      threshold: 0
+    };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -135,6 +136,7 @@ import { faqCategories } from '../../../data/faq';
       }
     });
   }
+  });
 </script>
 
 <style>

@@ -2,6 +2,7 @@
 import GoogleAnalytics from '../components/integrations/analytics/GoogleAnalytics.astro';
 import StructuredData from '../components/seo/StructuredData.astro';
 import { seoConfig } from '../config/seo';
+import { ClientRouter } from 'astro:transitions';
 
 interface Props {
   title?: string;
@@ -50,6 +51,7 @@ const robots = noindex ? 'noindex, nofollow' : 'index, follow';
     <meta name="twitter:image" content={imageUrl} />
     <title>{title}</title>
     <StructuredData data={structuredData} />
+    <ClientRouter />
     <slot name="head" />
   </head>
   <body>
