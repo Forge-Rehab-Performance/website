@@ -1,6 +1,6 @@
 .site-header {
   position: relative;
-  z-index: 20;
+  z-index: 100;
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
