@@ -324,11 +324,16 @@ import { faqCategories } from '../../../data/faq';
 
   .faq-item__content {
     overflow: hidden;
+    min-height: 0;
     max-width: 48rem;
-    padding: 0 2rem 1rem 0;
+    padding: 0 2rem 0 0;
     color: var(--text-dim);
     font-size: .8rem;
     line-height: 1.65;
+  }
+
+  .faq-item__content > *:last-child {
+    margin-bottom: 1rem;
   }
 
   .faq-item__content p { margin: 0 0 .55rem; }
