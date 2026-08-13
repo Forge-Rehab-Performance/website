@@ -7,7 +7,7 @@ A static marketing site built for Forge Rehab & Performance.
 This project is built using [Astro](https://astro.build/) with a strict static-first, zero-framework philosophy. We prioritize fast load times, accessible native HTML patterns, and robust vanilla CSS over heavy JavaScript frameworks (React, Vue, Svelte).
 
 - **Framework**: Astro (Static Site Generation)
-- **Styling**: Vanilla CSS with strict variable design tokens (`precision.css`, `tokens.css`)
+- **Styling**: Vanilla CSS with strict variable design tokens (`global.css`, `tokens.css`)
 - **Forms**: [Netlify Forms](https://docs.netlify.com/forms/setup/) for serverless form submissions
 - **Interactivity**: Native HTML5 elements (e.g., `<details>` for accordions) and standard Web Components / Custom Elements for isolated client-side logic
 - **Testing**: Node.js native test runner (`node --test`)
@@ -45,7 +45,7 @@ All public pages exist inside `src/pages/`. These files remain extremely thin. T
 
 `SiteLayout` manages the site header and footer, while `BaseLayout` is responsible for all HTML `<head>` boilerplate, canonical URLs, Open Graph tags, sitemap discovery, and analytics. 
 
-### Styling (`precision.css` & `tokens.css`)
+### Styling (`global.css` & `tokens.css`)
 Global design tokens, resets, utilities, and site-wide theme rules live in `src/styles/`. 
 We avoid utility-first frameworks like Tailwind in favor of semantic, cascading CSS that maintains a distinctive, intentional visual design.
 
