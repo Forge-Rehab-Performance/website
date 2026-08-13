@@ -1,0 +1,19 @@
+{
+  "id": "packages",
+  "title": "Pricing & Packages",
+  "order": 5,
+  "questions": [
+    [
+      "How much does physical therapy cost?",
+      "Initial Evaluation — $225. Follow-Up Visit — $175. Prepaid care packages are also available: Recover — $700, Build — $1,000, and Perform — $1,300. Package details and savings are available on our Pricing page."
+    ],
+    [
+      "Do I have to purchase a package?",
+      "No. Packages are completely optional. You can pay for visits individually and decide how you’d like to proceed after your evaluation."
+    ],
+    [
+      "How do I know how many visits I’ll need?",
+      "That depends on your injury, goals, and how you respond to treatment. We’ll discuss your expected plan of care after your evaluation rather than automatically scheduling you for a predetermined number of visits."
+    ]
+  ]
+}

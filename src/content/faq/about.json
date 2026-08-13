@@ -1,0 +1,19 @@
+{
+  "id": "about",
+  "title": "About Forge Rehab & Performance",
+  "order": 2,
+  "questions": [
+    [
+      "What is Forge Rehab & Performance?",
+      "Forge Rehab & Performance is a one-on-one physical therapy practice designed for active individuals, athletes, and weekend warriors. Treatment combines hands-on physical therapy, individualized exercise, strength training, and performance-based rehabilitation to help you recover, build, and perform at your best."
+    ],
+    [
+      "Who do you treat?",
+      "We work with active adults, recreational athletes, competitive athletes, and anyone looking to move better, get stronger, recover from injury, or return to the activities they enjoy."
+    ],
+    [
+      "Do I need to be an athlete to come to Forge?",
+      "Not at all. You don’t need to be a competitive athlete or even consider yourself an athlete. If you’re active and want to move, feel, and perform better, Forge is built for you."
+    ]
+  ]
+}

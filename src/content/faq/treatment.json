@@ -1,0 +1,27 @@
+{
+  "id": "treatment",
+  "title": "Physical Therapy & Treatment",
+  "order": 3,
+  "questions": [
+    [
+      "What can I expect at my first visit?",
+      "Your first visit includes a comprehensive evaluation to understand your injury, symptoms, movement, strength, and goals. We’ll discuss what is contributing to the problem and develop an individualized plan to get you back to the activities that matter to you. Your evaluation will also include treatment when appropriate, so you can leave with a clear understanding of what we’re working toward and what you can do between visits."
+    ],
+    [
+      "How long are appointments?",
+      "Appointments are designed to provide individualized, one-on-one care rather than the rushed experience common in traditional high-volume clinics. Your exact appointment length may vary based on your needs and the type of visit."
+    ],
+    [
+      "Will I work directly with the physical therapist?",
+      "Yes. Every visit is one-on-one with your physical therapist. You will not be passed between multiple providers or placed on exercise equipment and left on your own."
+    ],
+    [
+      "Do I need a referral from my doctor?",
+      "New Jersey allows patients to seek physical therapy directly in many circumstances. However, certain insurance, medical, or clinical situations may still require physician involvement. If you’re unsure whether physical therapy is appropriate for you, contact us and we’ll help determine the best next step."
+    ],
+    [
+      "What types of injuries do you treat?",
+      "We treat a wide range of orthopedic and musculoskeletal conditions, including back and neck pain; shoulder injuries; knee pain and injuries; hip and groin problems; ankle and foot injuries; sports injuries; post-operative rehabilitation; muscle strains and tendon injuries; running-related injuries; strength and movement deficits; and return-to-sport and return-to-performance needs."
+    ]
+  ]
+}
