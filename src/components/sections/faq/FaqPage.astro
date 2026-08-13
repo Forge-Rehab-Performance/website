@@ -51,7 +51,9 @@ const faqCategories = faqEntries.map(entry => entry.data).sort((a, b) => a.order
                     <span aria-hidden="true">+</span>
                   </summary>
                   <div>
-                    <p>{answer}</p>
+                    {answer.split('\n\n').map(paragraph => (
+                      <p>{paragraph}</p>
+                    ))}
                     {question === 'How much does physical therapy cost?' && (
                       <a class="text-link" href="/pricing/">View full pricing <span aria-hidden="true">→</span></a>
                     )}
