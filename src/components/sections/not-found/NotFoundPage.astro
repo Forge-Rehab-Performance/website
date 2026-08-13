@@ -1,0 +1,63 @@
+---
+import { siteConfig } from '../../../config/site';
+---
+
+<section class="not-found" aria-labelledby="not-found-title">
+  <div class="section-shell not-found__shell">
+    <div class="not-found__copy">
+      <p class="eyebrow">Wrong turn</p>
+      <h1 id="not-found-title">Page not found</h1>
+      <p class="not-found__lede">
+        That path isn't part of the plan. The page you're looking for has moved, never existed, or needs a different
+        route. Start again from the {siteConfig.shortName} home page.
+      </p>
+      <a class="btn-primary" href={`${siteConfig.basePath}/`}>Return home</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .not-found {
+    min-height: clamp(34rem, 66vh, 46rem);
+    display: grid;
+    align-items: center;
+    background:
+      radial-gradient(circle at 16% 50%, rgba(201, 154, 58, .1), transparent 22rem),
+      linear-gradient(135deg, #111311 0%, #090a09 72%);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .not-found__shell {
+    padding-block: clamp(4rem, 9vw, 8rem);
+  }
+
+  .not-found__copy {
+    max-width: 42rem;
+    padding-left: clamp(1.25rem, 3vw, 3rem);
+    border-left: 2px solid var(--gold);
+  }
+
+  .not-found h1 {
+    max-width: 10ch;
+    margin-bottom: 1.2rem;
+  }
+
+  .not-found__lede {
+    max-width: 34rem;
+    margin-bottom: 1.8rem;
+    color: var(--text-dim);
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
+  }
+
+  @media (max-width: 52rem) {
+    .not-found__shell {
+      padding-block: 3.5rem 4.5rem;
+    }
+  }
+
+  @media (max-width: 34rem) {
+    .not-found {
+      min-height: 0;
+    }
+  }
+</style>

@@ -1,6 +1,6 @@
 import { siteConfig } from './site';
 
-export type SitePage = 'home' | 'approach' | 'services' | 'about' | 'pricing' | 'faq' | 'contact';
+export type SitePage = 'home' | 'approach' | 'services' | 'about' | 'pricing' | 'faq' | 'contact' | 'not-found';
 
 const route = (path = '') => `${siteConfig.basePath}${path}/`.replace('//', '/');
 
