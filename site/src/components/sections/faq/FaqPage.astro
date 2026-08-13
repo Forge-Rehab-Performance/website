@@ -3,7 +3,7 @@ import BookingStatus from '../../BookingStatus.astro';
 import { faqCategories } from '../../../data/faq';
 ---
 
-<section class="inner-hero faq-v7-hero" aria-labelledby="faq-title">
+<section class="inner-hero faq-hero" aria-labelledby="faq-title">
   <div class="section-shell inner-hero__grid">
     <div>
       <p class="eyebrow">FAQ</p>
@@ -13,9 +13,9 @@ import { faqCategories } from '../../../data/faq';
       <p class="hero-lede">Everything you need to know about one-on-one care at Forge, pricing, insurance, the gym setting, and getting started.</p>
     </div>
   </div>
-</section><section class="faq-directory-v8">
+</section><section class="faq-directory">
   <div class="section-shell">
-    <div class="faq-directory-v8__grid">
+    <div class="faq-directory__grid">
       <!-- Left Sidebar -->
       <div class="faq-sidebar mobile-jump-menu">
         <button type="button" class="mobile-jump-menu__summary" id="faq-jump-toggle" aria-expanded="false" aria-controls="faq-jump-nav">
@@ -63,8 +63,8 @@ import { faqCategories } from '../../../data/faq';
   </div>
 </section>
 
-<section class="home-v3-close faq-v7-close" aria-labelledby="faq-close-title">
-  <div class="section-shell home-v3-close__grid">
+<section class="home-close faq-close" aria-labelledby="faq-close-title">
+  <div class="section-shell home-close__grid">
     <div>
       <p class="eyebrow">STILL HAVE QUESTIONS?</p>
       <h2 id="faq-close-title">We're happy to help.</h2>
@@ -140,20 +140,20 @@ import { faqCategories } from '../../../data/faq';
 </script>
 
 <style>
-  .faq-v7-hero {
+  .faq-hero {
     padding-block: clamp(2.8rem, 4.8vw, 4.6rem);
   }
 
-  .faq-v7-hero h1 {
+  .faq-hero h1 {
     font-size: clamp(3.35rem, 5.8vw, 5.9rem);
   }
 
-  .faq-directory-v8 {
+  .faq-directory {
     padding: clamp(2.2rem, 4vw, 3.7rem) 0;
     background: #0b0c0b;
   }
 
-  .faq-directory-v8__grid {
+  .faq-directory__grid {
     display: grid;
     grid-template-columns: 16rem minmax(0, 1fr);
     gap: 4rem;
@@ -297,20 +297,20 @@ import { faqCategories } from '../../../data/faq';
 
   .faq-item > div p { margin: 0 0 .55rem; }
 
-  .faq-v7-close {
+  .faq-close {
     padding-block: clamp(2.5rem, 4.5vw, 4rem);
   }
 
   @media (max-width: 52rem) {
-    .faq-v7-hero {
+    .faq-hero {
       padding-block: 2.5rem;
     }
 
-    .faq-v7-hero h1 {
+    .faq-hero h1 {
       font-size: clamp(3rem, 12vw, 4.4rem);
     }
 
-    .faq-directory-v8__grid {
+    .faq-directory__grid {
       grid-template-columns: 1fr;
       gap: 2rem;
     }
