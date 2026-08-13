@@ -22,7 +22,7 @@
 }
 .brand img { width: 4.25rem; height: 4.25rem; object-fit: contain; }
 .brand small { display: block; margin-top: .26rem; color: var(--gold-bright); font: 700 .58rem/1 Arial, sans-serif; letter-spacing: .13em; }
-.concept-nav { display: flex; justify-content: center; align-items: center; gap: clamp(.75rem, 1.4vw, 1.4rem); font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.concept-nav { display: flex; justify-content: flex-end; align-items: center; gap: clamp(.75rem, 1.4vw, 1.4rem); font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
 .concept-nav > a { display: inline-flex; align-items: center; padding: 4px 0; border-bottom: 1px solid transparent; text-decoration: none; }
 .concept-nav > a[aria-current='page'] { color: var(--gold-bright); border-color: currentColor; }
 .concept-nav__desktop { display: flex; align-items: center; gap: clamp(.55rem, .85vw, 1rem); }
