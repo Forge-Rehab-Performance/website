@@ -91,7 +91,8 @@ import BookingStatus from '../../BookingStatus.astro';
         </article>
 
         <article class="pricing-v7__package-card pricing-v7__package-card--featured featured-package">
-          <div class="pricing-v7__package-top"><div class="pricing-v7__package-eyebrow">Recommended</div><span>02</span><h3>Build</h3><p>$1,000</p></div>
+          <div class="recommended-badge">Recommended</div>
+          <div class="pricing-v7__package-top"><span>02</span><h3>Build</h3><p>$1,000</p></div>
           <p class="pricing-v7__visits">Evaluation + 5 Follow-Up Visits</p>
           <p>More time to progress strength, capacity, and confidence while continuing to work toward your specific goals.</p>
           <div class="pricing-v7__best"><span>Best for</span><strong>Those who need more time to rebuild and progress.</strong></div>
@@ -298,14 +299,18 @@ import BookingStatus from '../../BookingStatus.astro';
     box-shadow: 0 0 15px rgba(221,169,71,0.2);
   }
 
-  .pricing-v7__package-eyebrow {
-    grid-column: 1 / -1;
-    color: var(--gold-bright);
-    font-size: .6rem;
-    font-weight: 800;
-    letter-spacing: .12em;
+  .recommended-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: var(--black);
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: .2rem;
   }
 
   .pricing-v7__package-card--featured {
