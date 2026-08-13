@@ -271,10 +271,12 @@ import BookingStatus from '../../BookingStatus.astro';
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: .8rem;
-    align-items: start;
+    align-items: stretch;
   }
 
   .pricing-v7__package-card {
+    display: flex;
+    flex-direction: column;
     padding: 1.25rem;
     border: 1px solid var(--line);
     border-radius: var(--radius);
@@ -356,7 +358,7 @@ import BookingStatus from '../../BookingStatus.astro';
   }
 
   .pricing-v7__best {
-    margin-top: 1rem;
+    margin-top: auto;
     padding-top: .85rem;
     border-top: 1px solid var(--line);
   }
