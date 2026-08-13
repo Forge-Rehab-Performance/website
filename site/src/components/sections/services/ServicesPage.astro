@@ -166,6 +166,12 @@ import BookingStatus from '../../BookingStatus.astro';
     border-radius: var(--radius);
     background: var(--surface-3);
     box-shadow: var(--shadow-card);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .service-card-v7:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.08);
   }
 
   .service-card-v7--wide {

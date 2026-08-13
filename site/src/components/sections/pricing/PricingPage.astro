@@ -76,7 +76,8 @@ import BookingStatus from '../../BookingStatus.astro';
           <p class="pricing-v7__saving">Save $50</p>
         </article>
 
-        <article class="pricing-v7__package-card pricing-v7__package-card--featured">
+        <article class="pricing-v7__package-card pricing-v7__package-card--featured featured-package">
+          <div class="recommended-badge">Recommended</div>
           <div class="pricing-v7__package-top"><span>02</span><h3>Build</h3><p>$1,000</p></div>
           <p class="pricing-v7__visits">Evaluation + 5 Follow-Up Visits</p>
           <p>More time to progress strength, capacity, and confidence while continuing to work toward your specific goals.</p>
@@ -279,6 +280,32 @@ import BookingStatus from '../../BookingStatus.astro';
     border-radius: var(--radius);
     background: #141614;
     box-shadow: var(--shadow-card);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .pricing-v7__package-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.08);
+  }
+
+  .featured-package {
+    position: relative;
+    border: 1px solid rgba(221,169,71,.85);
+    box-shadow: 0 0 15px rgba(221,169,71,0.2);
+  }
+
+  .recommended-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: var(--black);
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
   }
 
   .pricing-v7__package-card--featured {

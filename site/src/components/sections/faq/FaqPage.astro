@@ -273,9 +273,14 @@ import { faqCategories } from '../../../data/faq';
     gap: .8rem;
     align-items: center;
     min-height: 3.8rem;
-    padding: .75rem 0;
+    padding: .75rem 1rem;
     cursor: pointer;
     list-style: none;
+    transition: background-color 0.2s ease;
+  }
+  
+  .faq-item summary:hover {
+    background-color: rgba(255, 255, 255, 0.02);
   }
 
   .faq-item summary::-webkit-details-marker { display: none; }
