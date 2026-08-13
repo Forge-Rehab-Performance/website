@@ -15,7 +15,7 @@ const paeth = (a, b, c) => {
 };
 
 test('site logo uses a PNG with an alpha channel', () => {
-  const logo = readFileSync(resolve(root, 'public/assets/forge-logo-transparent.png'));
+  const logo = readFileSync(resolve(root, 'src/assets/forge-logo-transparent.png'));
   const siteConfig = readFileSync(resolve(root, 'src/config/site.ts'), 'utf8');
 
   assert.equal(logo.subarray(0, 8).toString('hex'), '89504e470d0a1a0a');

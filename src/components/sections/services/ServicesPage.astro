@@ -1,5 +1,8 @@
 ---
 import BookingStatus from '../../BookingStatus.astro';
+import { Image } from 'astro:assets';
+import heroMobilityImg from '../../../assets/hero_mobility.jpg';
+import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
 ---
 
 <div class="services-page">
@@ -59,7 +62,7 @@ import BookingStatus from '../../BookingStatus.astro';
               <li>Individualized home exercise programming</li>
             </ul>
             <figure class="services__media">
-              <img src="/assets/hero_mobility.jpg" width="896" height="1200" alt="Mobility exercise in gym" loading="lazy" decoding="async" />
+              <Image src={heroMobilityImg} alt="Mobility exercise in gym" loading="lazy" />
             </figure>
             <div class="services__condition-list">
               <div>
@@ -102,7 +105,7 @@ import BookingStatus from '../../BookingStatus.astro';
             </ul>
             <p>Your rehabilitation progresses based on your procedure, your recovery, and your goals.</p>
             <figure class="services__media">
-              <img src="/assets/hero_rehabilitation.jpg" width="896" height="1200" alt="Rehabilitation session" loading="lazy" decoding="async" />
+              <Image src={heroRehabImg} alt="Rehabilitation session" loading="lazy" />
             </figure>
           </article>
 

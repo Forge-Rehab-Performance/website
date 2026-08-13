@@ -1,10 +1,12 @@
 ---
 import BookingStatus from '../../BookingStatus.astro';
+import { Image } from 'astro:assets';
+import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
 ---
 
 <section class="inner-hero inner-hero--about" aria-labelledby="about-title">
     <div class="section-shell about-hero__grid">
-      <div class="about-hero__mark"><img src="/assets/hero_rehabilitation.jpg" width="1200" height="896" fetchpriority="high" decoding="async" alt="Placeholder portrait of physical therapist" /></div>
+      <div class="about-hero__mark"><Image src={heroRehabImg} alt="Placeholder portrait of physical therapist" fetchpriority="high" /></div>
       <div class="about-hero__copy">
         <p class="eyebrow">MEET BRANDON</p>
         <h1 id="about-title">Physical therapist.<br /><span>Coach. Athlete.</span><br />Husband. Dad.</h1>
