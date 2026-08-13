@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
 @font-face {
   font-family: 'Oswald';
   font-style: normal;
@@ -24,8 +26,15 @@
   --paper-line: #d8d4ca;
   --shell: 1320px;
   --radius: 4px;
+  --surface-1: #101210;
+  --surface-2: #131513;
+  --surface-3: #151715;
+  --surface-4: #181a18;
+  --gold-muted: #9b6f19;
+  --text-dim: #aaa9a4;
+  --text-faint: #777a73;
   color: var(--ivory);
   background: var(--black);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
   line-height: 1.55;
 }
