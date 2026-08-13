@@ -6,37 +6,18 @@ import BookingStatus from '../../BookingStatus.astro';
 
   <section class="contact-main surface-light" aria-labelledby="contact-form-title"><div class="section-shell contact-main__grid">
     <div class="contact-form-copy"><p class="eyebrow">HAVE A QUESTION?</p><h2 id="contact-form-title">We'd love to hear from you.</h2><p>Whether you're not sure where to start, have a question about services, or want to learn more about how Forge works, send us a message.</p><p class="contact-privacy">Please do not include sensitive medical information in this form.</p></div>
-    <form class="contact-form" name="contact" method="POST" data-netlify="true" aria-label="Contact Forge form">
-      <label>Name<input type="text" name="name" autocomplete="name" placeholder="Your Name" required /></label>
-      <label>Email<input type="email" name="email" autocomplete="email" placeholder="Your Email" required /></label>
-      <label>Phone<input type="tel" name="phone" autocomplete="tel" placeholder="Your Phone" /></label>
-      <label class="contact-form__full">What can we help you with?<select name="interest"><option value="">Select an option</option><option>I'm interested in physical therapy</option><option>I'm recovering from surgery</option><option>I'm interested in sports rehabilitation</option><option>I'm interested in strength &amp; performance</option><option>I have a question about pricing</option><option>I'm not sure if Forge is right for me</option><option>Other</option></select></label>
-      <label class="contact-form__full">Message<textarea name="message" rows="6" placeholder="Tell us a little about what you're looking for" required></textarea></label>
-      <div class="contact-form__full contact-form__submit"><button type="submit">Send Message</button><span>Your information is secure and will only be used to contact you regarding your inquiry.</span></div>
-    </form>
+    <contact-form>
+      <form class="contact-form" name="contact" method="POST" data-netlify="true" aria-label="Contact Forge form">
+        <label>Name<input type="text" name="name" autocomplete="name" placeholder="Your Name" required /></label>
+        <label>Email<input type="email" name="email" autocomplete="email" placeholder="Your Email" required /></label>
+        <label>Phone<input type="tel" name="phone" autocomplete="tel" placeholder="Your Phone" /></label>
+        <label class="contact-form__full">What can we help you with?<select name="interest"><option value="">Select an option</option><option>I'm interested in physical therapy</option><option>I'm recovering from surgery</option><option>I'm interested in sports rehabilitation</option><option>I'm interested in strength &amp; performance</option><option>I have a question about pricing</option><option>I'm not sure if Forge is right for me</option><option>Other</option></select></label>
+        <label class="contact-form__full">Message<textarea name="message" rows="6" placeholder="Tell us a little about what you're looking for" required></textarea></label>
+        <div class="contact-form__full contact-form__submit"><button type="submit">Send Message</button><span>Your information is secure and will only be used to contact you regarding your inquiry.</span></div>
+      </form>
+    </contact-form>
 
-    <script>
-      import { isValidPhoneNumber } from 'libphonenumber-js/min';
-
-      const form = document.querySelector('form[name="contact"]') as HTMLFormElement;
-      const phoneInput = form?.querySelector('input[name="phone"]') as HTMLInputElement;
-
-      if (form && phoneInput) {
-        phoneInput.addEventListener('input', () => {
-          phoneInput.setCustomValidity('');
-        });
-
-        form.addEventListener('submit', (e) => {
-          const phoneValue = phoneInput.value.trim();
-          
-          if (phoneValue && !isValidPhoneNumber(phoneValue, 'US')) {
-            e.preventDefault();
-            phoneInput.setCustomValidity('Please enter a valid phone number.');
-            form.reportValidity();
-          }
-        });
-      }
-    </script>
+    <script src="../../../scripts/contact-form.ts"></script>
   </div></section>
 
   <section class="contact-direct" aria-labelledby="direct-title"><div class="section-shell"><header class="interior-heading"><div><p class="eyebrow">PREFER TO REACH OUT DIRECTLY?</p><h2 id="direct-title">Choose the way that works for you.</h2></div><p>Brandon hasn't supplied the final clinic phone, email, location, or hours yet, so the demo keeps those values explicit instead of inventing them.</p></header><div class="contact-cards"><article><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold-bright)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="contact-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><h3>Phone</h3><p>Phone number coming soon</p></article><article><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold-bright)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="contact-icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><h3>Email</h3><p>Email address coming soon</p></article><article><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold-bright)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="contact-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><h3>Location</h3><p>Forge Rehab &amp; Performance</p><p>Gym name coming soon</p><p>Address coming soon</p></article><article><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold-bright)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="contact-icon"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><h3>Hours</h3><p>Hours coming soon</p></article></div></div></section>
