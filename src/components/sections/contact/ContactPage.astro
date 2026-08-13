@@ -6,13 +6,13 @@ import BookingStatus from '../../BookingStatus.astro';
 
   <section class="contact-main surface-light" aria-labelledby="contact-form-title"><div class="section-shell contact-main__grid">
     <div class="contact-form-copy"><p class="eyebrow">HAVE A QUESTION?</p><h2 id="contact-form-title">We'd love to hear from you.</h2><p>Whether you're not sure where to start, have a question about services, or want to learn more about how Forge works, send us a message.</p><p class="contact-privacy">Please do not include sensitive medical information in this form.</p></div>
-    <form class="contact-form" aria-label="Contact Forge demo form">
-      <label>Name<input type="text" name="name" autocomplete="name" placeholder="Your Name" /></label>
-      <label>Email<input type="email" name="email" autocomplete="email" placeholder="Your Email" /></label>
+    <form class="contact-form" name="contact" method="POST" data-netlify="true" aria-label="Contact Forge form">
+      <label>Name<input type="text" name="name" autocomplete="name" placeholder="Your Name" required /></label>
+      <label>Email<input type="email" name="email" autocomplete="email" placeholder="Your Email" required /></label>
       <label>Phone<input type="tel" name="phone" autocomplete="tel" placeholder="Your Phone" /></label>
       <label class="contact-form__full">What can we help you with?<select name="interest"><option value="">Select an option</option><option>I'm interested in physical therapy</option><option>I'm recovering from surgery</option><option>I'm interested in sports rehabilitation</option><option>I'm interested in strength &amp; performance</option><option>I have a question about pricing</option><option>I'm not sure if Forge is right for me</option><option>Other</option></select></label>
-      <label class="contact-form__full">Message<textarea name="message" rows="6" placeholder="Tell us a little about what you're looking for"></textarea></label>
-      <div class="contact-form__full contact-form__submit"><button type="button">Send Message</button><span>Demo form · message delivery will be connected before launch.</span></div>
+      <label class="contact-form__full">Message<textarea name="message" rows="6" placeholder="Tell us a little about what you're looking for" required></textarea></label>
+      <div class="contact-form__full contact-form__submit"><button type="submit">Send Message</button><span>Your information is secure and will only be used to contact you regarding your inquiry.</span></div>
     </form>
   </div></section>
 
