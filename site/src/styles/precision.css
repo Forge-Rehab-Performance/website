@@ -33,17 +33,29 @@
 .site-header > .booking-status span { display: none; }
 
 .booking-status { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1rem; }
+.btn-primary,
+.booking-status a,
 .booking-status button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-height: 48px;
   padding: .85rem 1.3rem;
-  border: 1px solid var(--gold);
+  border: none;
   border-radius: var(--radius);
-  color: var(--ivory);
-  background: transparent;
-  font: 800 .72rem Arial, sans-serif;
+  color: var(--black);
+  background: var(--gold);
+  font: 700 .72rem Arial, sans-serif;
   letter-spacing: .065em;
   text-transform: uppercase;
-  cursor: not-allowed;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .18s ease;
+}
+.btn-primary:hover,
+.booking-status a:hover,
+.booking-status button:hover {
+  background: var(--gold-bright);
 }
 .booking-status span { color: var(--muted); font-size: .74rem; }
 
@@ -646,6 +658,7 @@ h3 { margin-bottom: .7rem; font-size: clamp(1.25rem, 2vw, 1.9rem); line-height: 
   background: linear-gradient(145deg, #171917 0%, #121412 100%);
   border: 1px solid #30332f;
   border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
 }
 
 .approach-v4-card::before {

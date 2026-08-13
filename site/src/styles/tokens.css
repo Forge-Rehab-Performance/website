@@ -33,6 +33,7 @@
   --gold-muted: #9b6f19;
   --text-dim: #aaa9a4;
   --text-faint: #777a73;
+  --shadow-card: 0 1px 3px rgba(0,0,0,.3), 0 0 0 1px rgba(255,255,255,.04);
   color: var(--ivory);
   background: var(--black);
   font-family: 'Inter', Arial, Helvetica, sans-serif;
