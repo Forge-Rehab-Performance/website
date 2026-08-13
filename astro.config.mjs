@@ -21,8 +21,7 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      // Concept 01 is the active client direction. Historical concepts stay in the repo but out of search indexes.
-      filter: (page) => new URL(page).pathname.startsWith('/concept-01/'),
+      // All pages are now in the active client direction.
       namespaces: { news: false, xhtml: false, video: false },
     }),
   ],

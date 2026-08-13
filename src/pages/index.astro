@@ -1,38 +1,12 @@
 ---
-import '../styles/global.css';
-
-const concepts = [
-  { id: 'concept-01', name: 'Cinematic Clinic', description: 'Cinematic clinical authority with a premium black-and-gold edge.' },
-  { id: 'concept-02', name: 'Performance Journal', description: 'An editorial account of individualized progressive care.' },
-  { id: 'concept-03', name: 'Training Culture', description: 'A kinetic sports-magazine direction built around meaningful goals.' }
-];
+import SiteLayout from '../layouts/SiteLayout.astro';
+import HomePage from '../components/sections/home/HomePage.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="robots" content="noindex, nofollow" />
-    <meta name="description" content="Three website directions for Forge Rehab & Performance." />
-    <title>Forge Rehab & Performance | Concept Review</title>
-  </head>
-  <body>
-    <main>
-      <header>
-        <p>Forge Rehab &amp; Performance</p>
-        <h1>Choose a website direction</h1>
-        <p class="scope">Each concept includes two working pages: Home and Forge Approach. Other planned pages are shown as non-interactive labels.</p>
-      </header>
-      <div class="concept-list">
-        {concepts.map((concept) => (
-          <article id={concept.id}>
-            <h2>{concept.name}</h2>
-            <p>{concept.description}</p>
-            <a href={`/${concept.id}`}>View concept</a>
-          </article>
-        ))}
-      </div>
-    </main>
-  </body>
-</html>
+<SiteLayout
+  title="Forge Rehab & Performance | Recover. Build. Perform."
+  description="One-on-one physical therapy for active people who expect more from their recovery."
+  currentPage="home"
+>
+  <HomePage />
+</SiteLayout>

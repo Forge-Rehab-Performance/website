@@ -16,7 +16,7 @@ Produce fast, maintainable, accessible static marketing sites that can be handed
 6. **Keep global CSS intentional.** Design tokens, resets/base styles, utilities, and truly site-wide theme rules may live in `src/styles/`. Prefer component-scoped styles for component-specific presentation.
 7. **Prefer Astro's static model.** Do not add React/Vue/Svelte or client-side JavaScript unless a real interaction requires it. Use native HTML behavior such as `<details>` for individual disclosures; use small framework-free scripts for interaction patterns such as the V7 FAQ category explorer when native HTML alone cannot express the requested behavior cleanly.
 8. **Preserve accessibility.** Maintain semantic headings, landmarks, labels, keyboard operation, visible focus, reduced-motion behavior, alt text, and contrast.
-9. **Preserve historical concepts.** Concept 02/03 and QA provenance are historical assets. Do not delete or rewrite them unless explicitly requested.
+
 
 ## SEO rules
 
@@ -30,7 +30,7 @@ Every new public page must have an intentional:
 
 `BaseLayout` owns canonical, Open Graph, Twitter, robots, sitemap discovery, structured-data hooks, and analytics. Do not reimplement these in page sections.
 
-The active client concept is allowed into the sitemap. Historical concepts must remain excluded and `noindex, nofollow`.
+All public client pages are allowed into the sitemap unless intentionally marked `noindex, nofollow`.
 
 Never add SEO fields such as fake locations, fabricated reviews, or unsupported medical claims.
 
@@ -63,18 +63,16 @@ For healthcare forms, do not silently introduce collection of sensitive medical 
 
 ## Completion checks
 
-Before claiming implementation is complete, run fresh verification from `site/`:
+Before claiming implementation is complete, run fresh verification from the repository root:
 
 ```bash
-npm test
 npm run check
 npm run build
-npm run verify:seo
 ```
 
 Also inspect the changed pages at desktop and mobile widths when browser tooling is available.
 
-A change is not complete merely because it builds. Confirm the requested behavior, SEO output, analytics state, and historical-concept preservation.
+A change is not complete merely because it builds. Confirm the requested behavior, SEO output, and analytics state.
 
 ## Scope discipline
 
