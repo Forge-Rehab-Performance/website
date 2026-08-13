@@ -9,7 +9,7 @@
     "dev": "astro dev",
     "check": "astro check",
     "build": "astro build",
-    "test": "astro check && astro build",
+    "test": "astro check && node --test tests/*.test.mjs",
     "verify": "npm run test",
     "preview": "astro preview",
     "cf:preview": "npm run build && wrangler dev",

@@ -1,3 +1,7 @@
+.site-header-wrapper {
+  width: 100%;
+  border-bottom: 1px solid rgba(255,255,255,.09);
+}
 .site-header {
   position: relative;
   z-index: 100;
@@ -8,7 +12,7 @@
   width: min(var(--shell), calc(100% - 3rem));
   min-height: 6.5rem;
   margin: auto;
-  border-bottom: 1px solid rgba(255,255,255,.09);
+  border-bottom: 0;
 }
 .brand {
   display: inline-flex;
