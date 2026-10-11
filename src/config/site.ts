@@ -13,10 +13,10 @@ export const siteConfig = {
     specialty: 'Board-Certified Orthopedic Clinical Specialist',
   },
   contact: {
-    phone: null as string | null,
-    email: null as string | null,
-    gymName: null as string | null,
-    address: null as string | null,
+    phone: '(973) 222-0839' as string | null,
+    email: 'brandon@rehabforge.com' as string | null,
+    gymName: 'Redshed Crossfit' as string | null,
+    address: '3 Gold Mine Rd, Roxbury, NJ' as string | null,
     hours: null as string | null,
   },
   booking: {

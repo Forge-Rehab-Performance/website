@@ -21,9 +21,10 @@ const contact = siteConfig.contact;
       
       <div class="footer-contact">
         <h2>Contact</h2>
-        <p>{contact.phone ?? 'Phone coming soon'}</p>
-        <p>{contact.email ?? 'Email coming soon'}</p>
+        <p>{contact.phone ? <a href={`tel:${contact.phone.replace(/\D/g, '')}`}>{contact.phone}</a> : 'Phone coming soon'}</p>
+        <p>{contact.email ? <a href={`mailto:${contact.email}`}>{contact.email}</a> : 'Email coming soon'}</p>
         <p>{contact.address ?? 'Location coming soon'}</p>
+        {contact.gymName && <p>Inside {contact.gymName}</p>}
         <p class="footer-booking-note">{siteConfig.booking.url ? 'Online scheduling available' : 'Online scheduling coming soon'}</p>
       </div>
       
