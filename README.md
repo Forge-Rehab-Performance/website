@@ -79,6 +79,7 @@ All commands are run from the root of the project, from your terminal:
 | `npm run test`            | Runs the test suite via Node's native test runner|
 | `npm run check`           | Runs Astro's strict type checking and diagnostics|
 | `node tests/home-page.browser.mjs` | After building, checks home-page layouts, comparison accessibility, SEO, and contact links in Chromium |
+| `node tests/pricing-page.browser.mjs` | After building, checks pricing text sizes, package prices, responsive layouts, and Rapid Reset accessibility in Chromium |
 
 ## Deployment
 
