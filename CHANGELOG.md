@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Added a Redshed Crossfit member-benefit note below Rapid Reset pricing: 5% off Physical Therapy Packages only, excluding Rapid Reset packages and individual visits.
+
 ## [1.2.1] - 2026-10-11
 
 ### Changed

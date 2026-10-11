@@ -1,6 +1,7 @@
 ---
 import BookingStatus from '../../BookingStatus.astro';
 import { rapidResetPackages } from '../../../data/pricing';
+import { siteConfig } from '../../../config/site';
 ---
 
 <div class="pricing">
@@ -125,6 +126,11 @@ import { rapidResetPackages } from '../../../data/pricing';
           ))}
         </div>
       </section>
+
+      <aside class="pricing__member-benefit" aria-labelledby="member-benefit-title">
+        <h3 id="member-benefit-title">{siteConfig.contact.gymName} Member Benefit</h3>
+        <p>{siteConfig.contact.gymName} members receive <strong>5% off Physical Therapy Packages</strong>. This discount does not apply to Rapid Reset packages or individual visits.</p>
+      </aside>
     </div>
   </section>
 
@@ -557,6 +563,27 @@ import { rapidResetPackages } from '../../../data/pricing';
     color: var(--gold-bright);
     font: 700 clamp(2rem, 3vw, 2.5rem)/1 'Oswald', sans-serif;
   }
+
+  .pricing__member-benefit {
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+    border-left: 3px solid var(--gold-bright);
+    background: rgba(201, 154, 58, .08);
+  }
+
+  .pricing__member-benefit h3 {
+    margin: 0 0 .5rem;
+    color: var(--gold-bright);
+    font-size: 1.5rem;
+  }
+
+  .pricing__member-benefit p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 1rem;
+  }
+
+  .pricing__member-benefit strong { color: var(--ivory); }
 
   .pricing__close {
     padding-block: clamp(2.5rem, 4.5vw, 4rem);
