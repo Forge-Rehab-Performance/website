@@ -7,18 +7,14 @@ import heroBasketballImg from '../../../assets/hero_basketball.jpg';
 import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
 ---
 
+<div class="section-shell home-scheduling"><BookingStatus /></div>
+
 <section class="home-hero" aria-labelledby="hero-title">
     <div class="section-shell home-hero__grid">
       <div class="home-hero__copy">
         <p class="eyebrow">FORGE REHAB &amp; PERFORMANCE</p>
         <h1 id="hero-title">Rehabilitation<br /><span>built around</span> your goals.</h1>
         <p class="hero-lede">One-on-one physical therapy for active people who expect more from their recovery.</p>
-        <div class="home-hero__practitioner">
-          <strong>Brandon Coveney, PT, DPT, OCS</strong>
-          <span>Board-Certified Orthopedic Clinical Specialist</span>
-          <p>8+ years of outpatient orthopedic experience combining clinical expertise with strength and performance training.</p>
-        </div>
-        <BookingStatus />
       </div>
 
       <figure class="home-hero__media">
@@ -27,11 +23,6 @@ import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
       </figure>
     </div>
 
-    <div class="section-shell home-proof" aria-label="Practice highlights">
-      <div><span>01</span><strong>One-on-one care</strong><small>Your session. Your goals. Your time.</small></div>
-      <div><span>OCS</span><strong>Board-certified specialist</strong><small>Advanced orthopedic clinical expertise.</small></div>
-      <div><span>8+</span><strong>Years of experience</strong><small>Orthopedic care with a performance mindset.</small></div>
-    </div>
   </section>
 
   <section class="home-problem" aria-labelledby="problem-title">
@@ -137,3 +128,15 @@ import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
       <BookingStatus />
     </div>
   </section>
+
+<style>
+  .home-scheduling {
+    display: flex;
+    justify-content: flex-end;
+    padding-block: 1.25rem;
+  }
+
+  @media (max-width: 52rem) {
+    .home-scheduling { justify-content: flex-start; }
+  }
+</style>
