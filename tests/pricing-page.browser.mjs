@@ -22,6 +22,10 @@ try {
     assert.ok(bodySizes.every((size) => size >= 16), `body text must be at least 16px at ${width}px: ${bodySizes}`);
     const labelSizes = await page.locator('.pricing__label, .pricing__visits, .pricing__best span, .pricing__best strong, .pricing__saving, .recommended-badge, .founding-banner__status span').evaluateAll((elements) => elements.map((element) => parseFloat(getComputedStyle(element).fontSize)));
     assert.ok(labelSizes.every((size) => size >= 14), `secondary text must be at least 14px: ${labelSizes}`);
+    const founding = page.locator('.founding-banner');
+    assert.equal(await founding.getByRole('heading', { name: 'Founding Forge 10', exact: true }).count(), 1);
+    assert.match(await founding.innerText(), /first 10 members/);
+    assert.equal(await founding.locator('.founding-banner__number').textContent(), '10');
     assert.equal(await page.getByRole('heading', { name: 'Physical Therapy Packages', exact: true }).count(), 1);
     assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), 'https://rehabforge.com/pricing/');
     assert.match(await page.locator('meta[name="description"]').getAttribute('content'), /Rapid Reset/);
