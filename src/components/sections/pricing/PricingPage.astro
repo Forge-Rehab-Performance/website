@@ -1,5 +1,6 @@
 ---
 import BookingStatus from '../../BookingStatus.astro';
+import { rapidResetPackages } from '../../../data/pricing';
 ---
 
 <div class="pricing">
@@ -76,7 +77,7 @@ import BookingStatus from '../../BookingStatus.astro';
       <div class="pricing__package-heading">
         <div>
           <p class="eyebrow">FORGE PACKAGES</p>
-          <h2>Commit to your progress.</h2>
+          <h2>Physical Therapy Packages</h2>
         </div>
         <p>For those who know they want to invest in a more complete rehabilitation process, Forge packages provide a simple way to plan your care while offering savings compared with à la carte visits.</p>
       </div>
@@ -109,6 +110,21 @@ import BookingStatus from '../../BookingStatus.astro';
       </div>
 
       <p class="pricing__note">Packages are completely optional. You can pay for visits individually and decide how you'd like to proceed after your evaluation.</p>
+
+      <section class="pricing__rapid-reset" aria-labelledby="rapid-reset-title">
+        <header class="pricing__rapid-heading">
+          <h2 id="rapid-reset-title">Rapid Reset Packages</h2>
+          <p>Fast tracked, high yield symptom management designed to keep you moving. This track is strictly dedicated to joint manipulations and targeted dry needling for rapid pain relief and mechanical resets. (Note: Does not include comprehensive movement screenings or corrective exercise programming).</p>
+        </header>
+        <div class="pricing__packages">
+          {rapidResetPackages.map((option) => (
+            <article class="pricing__package-card pricing__rapid-card">
+              <h3>{option.name}</h3>
+              <p class="pricing__rapid-price">{option.price}</p>
+            </article>
+          ))}
+        </div>
+      </section>
     </div>
   </section>
 
@@ -142,6 +158,12 @@ import BookingStatus from '../../BookingStatus.astro';
 </div>
 
 <style>
+  .pricing :global(.booking-status a),
+  .pricing :global(.booking-status span),
+  .pricing .text-link {
+    font-size: .875rem;
+  }
+
   .pricing__hero {
     padding-block: clamp(2.8rem, 4.8vw, 4.6rem);
   }
@@ -178,8 +200,8 @@ import BookingStatus from '../../BookingStatus.astro';
   .pricing__package-heading > p {
     max-width: 34rem;
     margin: 0;
-    color: #999a94;
-    font-size: .8rem;
+    color: var(--text-dim);
+    font-size: 1rem;
     line-height: 1.6;
     justify-self: end;
   }
@@ -214,7 +236,7 @@ import BookingStatus from '../../BookingStatus.astro';
   .pricing__label {
     margin: 0 0 .45rem;
     color: var(--gold-bright);
-    font-size: .62rem;
+    font-size: .875rem;
     font-weight: 800;
     letter-spacing: .1em;
     text-transform: uppercase;
@@ -229,14 +251,14 @@ import BookingStatus from '../../BookingStatus.astro';
   .pricing__price-row strong {
     max-width: 22ch;
     color: #e2dfd7;
-    font: 700 clamp(.9rem, 1.35vw, 1.08rem)/1.35 'Oswald', sans-serif;
+    font: 700 clamp(1rem, 1.35vw, 1.08rem)/1.35 'Oswald', sans-serif;
     text-transform: uppercase;
   }
 
   .pricing__visit-card > p {
     margin: 1rem 0 0;
     color: var(--text-dim);
-    font-size: .78rem;
+    font-size: 1rem;
     line-height: 1.6;
   }
 
@@ -252,8 +274,8 @@ import BookingStatus from '../../BookingStatus.astro';
   .pricing__visit-card li {
     padding-left: .9rem;
     color: #c5c3bc;
-    font-size: .7rem;
-    line-height: 1.45;
+    font-size: 1rem;
+    line-height: 1.55;
   }
 
   .pricing__visit-card li::before {
@@ -305,7 +327,7 @@ import BookingStatus from '../../BookingStatus.astro';
     transform: translateX(-50%);
     background: var(--gold);
     color: var(--black);
-    font-size: 0.65rem;
+    font-size: .875rem;
     padding: 2px 8px;
     border-radius: 10px;
     font-weight: 700;
@@ -328,7 +350,7 @@ import BookingStatus from '../../BookingStatus.astro';
 
   .pricing__package-top span {
     color: var(--gold-bright);
-    font: 700 .62rem/1 'Oswald', sans-serif;
+    font: 700 .875rem/1 'Oswald', sans-serif;
   }
 
   .pricing__package-top h3 {
@@ -346,17 +368,17 @@ import BookingStatus from '../../BookingStatus.astro';
   .pricing__visits {
     margin: .9rem 0 .65rem;
     color: var(--gold-bright);
-    font-size: .62rem;
+    font-size: .875rem;
     font-weight: 800;
     letter-spacing: .05em;
     text-transform: uppercase;
   }
 
-  .pricing__package-card > p:not(.pricing__visits):not(.pricing__saving) {
+  .pricing__package-card > p:not(.pricing__visits):not(.pricing__saving):not(.pricing__rapid-price) {
     margin: 0;
     color: var(--text-dim);
-    font-size: .75rem;
-    line-height: 1.55;
+    font-size: 1rem;
+    line-height: 1.6;
   }
 
   .pricing__best {
@@ -368,8 +390,8 @@ import BookingStatus from '../../BookingStatus.astro';
   .pricing__best span {
     display: block;
     margin-bottom: .3rem;
-    color: var(--text-faint);
-    font-size: .56rem;
+    color: var(--text-dim);
+    font-size: .875rem;
     font-weight: 800;
     letter-spacing: .08em;
     text-transform: uppercase;
@@ -377,22 +399,22 @@ import BookingStatus from '../../BookingStatus.astro';
 
   .pricing__best strong {
     color: #e0ddd6;
-    font: 700 .74rem/1.35 'Oswald', sans-serif;
+    font: 700 1rem/1.45 'Oswald', sans-serif;
     text-transform: uppercase;
   }
 
   .pricing__saving {
     margin: .75rem 0 0;
     color: var(--gold-bright);
-    font-size: .62rem;
+    font-size: .875rem;
     font-weight: 800;
     text-transform: uppercase;
   }
 
   .pricing__note {
     margin: 1rem 0 0;
-    color: #858781;
-    font-size: .7rem;
+    color: var(--text-dim);
+    font-size: 1rem;
   }
 
   .pricing__support {
@@ -422,7 +444,7 @@ import BookingStatus from '../../BookingStatus.astro';
     max-width: 36rem;
     margin: 0;
     color: #555752;
-    font-size: .8rem;
+    font-size: 1rem;
     line-height: 1.65;
   }
 
@@ -466,7 +488,7 @@ import BookingStatus from '../../BookingStatus.astro';
   .founding-banner__content p {
     margin: 0 0 1.5rem;
     color: var(--text-dim);
-    font-size: .85rem;
+    font-size: 1rem;
     line-height: 1.6;
     max-width: 38ch;
   }
@@ -483,7 +505,7 @@ import BookingStatus from '../../BookingStatus.astro';
 
   .founding-banner__status span {
     color: var(--gold-bright);
-    font-size: .65rem;
+    font-size: .875rem;
     font-weight: 800;
     letter-spacing: .08em;
     text-transform: uppercase;
@@ -504,6 +526,36 @@ import BookingStatus from '../../BookingStatus.astro';
     letter-spacing: -0.02em;
     user-select: none;
     text-shadow: 0 4px 24px rgba(221,169,71,0.15);
+  }
+
+  .pricing__rapid-reset {
+    margin-top: clamp(2.8rem, 5vw, 4.5rem);
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .pricing__rapid-heading h2 {
+    margin: 0 0 1rem;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+  }
+
+  .pricing__rapid-heading > p {
+    max-width: 75ch;
+    margin: 0 0 1.5rem;
+    color: var(--text-dim);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .pricing__rapid-card h3 {
+    margin: 0 0 1rem;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+  }
+
+  .pricing__rapid-card > .pricing__rapid-price {
+    margin: auto 0 0;
+    color: var(--gold-bright);
+    font: 700 clamp(2rem, 3vw, 2.5rem)/1 'Oswald', sans-serif;
   }
 
   .pricing__close {
