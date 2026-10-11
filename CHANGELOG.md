@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-10-11
+
 ### Added
 - Added the home-page “Why Choose Forge?” care benefits and comparison table, including keyboard-accessible horizontal scrolling on small screens.
 - Added locally stored family and kettlebell stock photography for the home-page audience section, with source and licensing references.
@@ -14,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Chromium browser checks for responsive home, contact, and pricing layouts, pricing text sizes, package prices, SEO output, and accessibility of the updated home-page sections and Rapid Reset section.
 
 ### Changed
+- Updated side-rail navigation hover states to use the brand gold color.
 - Moved home-page scheduling below the navigation and above the hero.
 - Updated Active Adults and Strength & Fitness Enthusiasts copy and placed audience captions below photos.
 - Published the supplied phone, email, Roxbury address, and Redshed Crossfit location in centralized configuration, the footer, and the contact page, with telephone/email links and map directions.
@@ -26,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed the home-page hero practitioner block and three practice-highlight boxes.
 - Removed the Sports & Injury Rehabilitation closing blurb from the Services page.
 - Removed the superseded raster logos and duplicate SVG mark.
+- Removed the misleading arrow above “Build toward what comes next” in the home-page Problem section.
 
 ### Fixed
 - Improved contrast for the home-page audience eyebrow and stock-photo captions.
