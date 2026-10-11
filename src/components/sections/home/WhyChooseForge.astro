@@ -1,0 +1,105 @@
+---
+import { careBenefits, careComparison } from '../../../data/home';
+import { siteConfig } from '../../../config/site';
+---
+
+<section class="home-why" aria-labelledby="why-forge-title">
+  <div class="section-shell">
+    <header>
+      <p class="eyebrow">YOUR CARE. YOUR ENTIRE SESSION.</p>
+      <h2 id="why-forge-title">Why Choose Forge?</h2>
+    </header>
+    <ul class="home-why__benefits">
+      {careBenefits.map((benefit) => (
+        <li><h3>{benefit.title}</h3><p>{benefit.description}</p></li>
+      ))}
+    </ul>
+    <h3 id="comparison-title" class="home-why__comparison-title">How We Compare</h3>
+    <p id="comparison-hint" class="home-why__hint">On smaller screens, scroll the table to compare care side by side.</p>
+    <div class="home-why__table" role="region" aria-labelledby="comparison-title" aria-describedby="comparison-hint" tabindex="0">
+      <table>
+        <caption class="visually-hidden">How typical PT clinic care compares with Forge Rehab &amp; Performance</caption>
+        <thead>
+          <tr><th scope="col">Feature</th><th scope="col">Typical PT Clinic</th><th scope="col">{siteConfig.name}</th></tr>
+        </thead>
+        <tbody>
+          {careComparison.map((row) => (
+            <tr><th scope="row">{row.feature}</th><td>{row.typical}</td><td>{row.forge}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<style>
+  .home-why {
+    padding-block: clamp(3.5rem, 5.5vw, 5rem);
+    background: var(--surface-1);
+    border-block: 1px solid var(--line);
+  }
+
+  .home-why__benefits {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 3rem;
+    padding: 0;
+    margin: 2rem 0 3rem;
+    list-style: none;
+  }
+
+  .home-why__benefits li {
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .home-why__benefits h3 {
+    color: var(--gold-bright);
+    font-size: 1.5rem;
+  }
+
+  .home-why__benefits p {
+    margin-bottom: 0;
+    color: var(--text-dim);
+  }
+
+  .home-why__comparison-title { font-size: 2rem; }
+  .home-why__hint { color: var(--text-dim); font-size: .8rem; }
+  .home-why__table { overflow-x: auto; }
+  .home-why__table:focus-visible { outline: 3px solid var(--gold-bright); outline-offset: 4px; }
+
+  table {
+    width: 100%;
+    min-width: 42rem;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: .9rem;
+  }
+
+  th, td {
+    padding: 1.25rem;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+
+  thead th {
+    color: var(--ivory);
+    font-size: .8rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  tbody th { width: 20%; color: var(--ivory); }
+  td { width: 40%; color: var(--text-dim); }
+  th:last-child, td:last-child { background: rgba(201, 154, 58, .08); color: var(--ivory); }
+  thead th:last-child { color: var(--gold-bright); border-top: 2px solid var(--gold-bright); }
+
+  @media (min-width: 52rem) {
+    .home-why__hint { display: none; }
+  }
+
+  @media (max-width: 52rem) {
+    .home-why__benefits { grid-template-columns: 1fr; gap: 1.25rem; }
+    th, td { padding: 1rem; }
+  }
+</style>

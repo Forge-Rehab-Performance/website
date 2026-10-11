@@ -5,7 +5,7 @@ import { loadEnv } from 'vite';
 // Astro evaluates this file before application modules. CLI-provided variables
 // are available on process.env; .env files are loaded explicitly for config use.
 const fileEnv = loadEnv(process.env.NODE_ENV ?? 'production', process.cwd(), '');
-const site = process.env.SITE_URL || fileEnv.SITE_URL || 'https://example.com';
+const site = process.env.SITE_URL || fileEnv.SITE_URL || 'https://rehabforge.com';
 
 export default defineConfig({
   output: 'static',

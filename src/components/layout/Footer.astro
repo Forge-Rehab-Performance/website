@@ -1,8 +1,6 @@
 ---
-import { Image } from 'astro:assets';
 import { primaryNavigation } from '../../config/navigation';
 import { siteConfig } from '../../config/site';
-import logoImage from '../../assets/forge-logo-transparent.png';
 const contact = siteConfig.contact;
 ---
 <footer class="site-footer-wrapper">
@@ -10,7 +8,7 @@ const contact = siteConfig.contact;
     <div class="site-footer__grid">
       <div class="footer-brand">
         <a class="brand brand--footer" href={`${siteConfig.basePath}/`} aria-label={`${siteConfig.accessibleName} home`}>
-          <Image src={logoImage} alt="" />
+          <img src={siteConfig.logo} alt="" width="492" height="431" loading="lazy" />
           <span>{siteConfig.shortName} <small>Rehab &amp; Performance</small></span>
         </a>
         <p>Recover. <b>Build.</b> Perform.</p>
@@ -23,9 +21,10 @@ const contact = siteConfig.contact;
       
       <div class="footer-contact">
         <h2>Contact</h2>
-        <p>{contact.phone ?? 'Phone coming soon'}</p>
-        <p>{contact.email ?? 'Email coming soon'}</p>
+        <p>{contact.phone ? <a href={`tel:${contact.phone.replace(/\D/g, '')}`}>{contact.phone}</a> : 'Phone coming soon'}</p>
+        <p>{contact.email ? <a href={`mailto:${contact.email}`}>{contact.email}</a> : 'Email coming soon'}</p>
         <p>{contact.address ?? 'Location coming soon'}</p>
+        {contact.gymName && <p>Inside {contact.gymName}</p>}
         <p class="footer-booking-note">{siteConfig.booking.url ? 'Online scheduling available' : 'Online scheduling coming soon'}</p>
       </div>
       

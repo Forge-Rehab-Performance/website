@@ -1,11 +1,14 @@
 ---
 import BookingStatus from '../../BookingStatus.astro';
+import WhyChooseForge from './WhyChooseForge.astro';
 import { Image } from 'astro:assets';
 import heroStrengthImg from '../../../assets/hero_strength.jpg';
-import heroRunningImg from '../../../assets/hero_running.jpg';
-import heroBasketballImg from '../../../assets/hero_basketball.jpg';
+import familyImg from '../../../assets/home-family.webp';
+import kettlebellImg from '../../../assets/home-kettlebell.webp';
 import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
 ---
+
+<div class="section-shell home-scheduling"><BookingStatus /></div>
 
 <section class="home-hero" aria-labelledby="hero-title">
     <div class="section-shell home-hero__grid">
@@ -13,12 +16,6 @@ import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
         <p class="eyebrow">FORGE REHAB &amp; PERFORMANCE</p>
         <h1 id="hero-title">Rehabilitation<br /><span>built around</span> your goals.</h1>
         <p class="hero-lede">One-on-one physical therapy for active people who expect more from their recovery.</p>
-        <div class="home-hero__practitioner">
-          <strong>Brandon Coveney, PT, DPT, OCS</strong>
-          <span>Board-Certified Orthopedic Clinical Specialist</span>
-          <p>8+ years of outpatient orthopedic experience combining clinical expertise with strength and performance training.</p>
-        </div>
-        <BookingStatus />
       </div>
 
       <figure class="home-hero__media">
@@ -27,11 +24,6 @@ import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
       </figure>
     </div>
 
-    <div class="section-shell home-proof" aria-label="Practice highlights">
-      <div><span>01</span><strong>One-on-one care</strong><small>Your session. Your goals. Your time.</small></div>
-      <div><span>OCS</span><strong>Board-certified specialist</strong><small>Advanced orthopedic clinical expertise.</small></div>
-      <div><span>8+</span><strong>Years of experience</strong><small>Orthopedic care with a performance mindset.</small></div>
-    </div>
   </section>
 
   <section class="home-problem" aria-labelledby="problem-title">
@@ -47,7 +39,7 @@ import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
         <li><strong>Play with your kids.</strong></li>
         <li><strong>Get back on the field.</strong></li>
         <li><strong>Train without constantly worrying about your injury.</strong></li>
-        <li class="home-problem__accent"><span>→</span><strong>Build toward what comes next.</strong></li>
+        <li class="home-problem__accent"><strong>Build toward what comes next.</strong></li>
       </ul>
     </div>
   </section>
@@ -74,19 +66,19 @@ import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
       </header>
       <div class="home-audiences__grid">
         <figure class="home-audience-feature">
-          <Image src={heroRunningImg} alt="Two runners stand at starting blocks on an outdoor track" loading="lazy" />
-          <figcaption>Licensed demo stock.</figcaption>
+          <Image src={familyImg} alt="A family plays together with a flying disc in a sunny yard" loading="lazy" />
+          <figcaption>Stock photography.</figcaption>
           <div class="home-audience-feature__labels">
-            <article><h3>Active Adults</h3><p>Stay active and keep doing the things you enjoy.</p></article>
+            <article><h3>Active Adults</h3><p>Whether you're walking the dog, chasing kids, or gardening, stay pain-free in your daily life.</p></article>
             <article><h3>Weekend Warriors</h3><p>Run. Lift. Golf. Ski. Play. Don't let injury dictate your weekends.</p></article>
           </div>
         </figure>
         <figure class="home-audience-feature">
-          <Image src={heroBasketballImg} alt="A basketball player moves on an indoor court" loading="lazy" />
-          <figcaption>Licensed demo stock.</figcaption>
+          <Image src={kettlebellImg} alt="A person lifts a yellow kettlebell during a gym workout" loading="lazy" />
+          <figcaption>Stock photography.</figcaption>
           <div class="home-audience-feature__labels">
             <article><h3>Athletes</h3><p>Return to your sport prepared for the demands of competition.</p></article>
-            <article><h3>Strength &amp; Fitness Enthusiasts</h3><p>Recover intelligently while building back stronger.</p></article>
+            <article><h3>Strength &amp; Fitness Enthusiasts</h3><p>Keep training in the gym, lifting, or taking classes without working around pain.</p></article>
           </div>
         </figure>
       </div>
@@ -131,9 +123,35 @@ import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
     </div>
   </section>
 
+  <WhyChooseForge />
+
   <section class="home-close" aria-labelledby="final-title">
     <div class="section-shell home-close__grid">
       <div><p class="eyebrow">YOUR NEXT STEP</p><h2 id="final-title">Ready to get back to what you love?</h2><p>You don't have to settle for simply feeling better. Take the next step toward your goals.</p></div>
       <BookingStatus />
     </div>
   </section>
+
+<style>
+  .home-scheduling {
+    display: flex;
+    justify-content: flex-end;
+    padding-block: 1.25rem;
+  }
+
+  .home-audiences .eyebrow { color: #865f15; }
+  .home-audience-feature { min-height: 0; }
+  .home-audience-feature::after { display: none; }
+  .home-audience-feature > img { height: auto; aspect-ratio: 3 / 2; filter: none; }
+  .home-audience-feature__labels { position: static; }
+  .home-audience-feature > figcaption {
+    padding: .25rem .5rem;
+    color: var(--ivory);
+    background: rgba(10, 11, 10, .85);
+    border-radius: var(--radius);
+  }
+
+  @media (max-width: 52rem) {
+    .home-scheduling { justify-content: flex-start; }
+  }
+</style>

@@ -1,16 +1,14 @@
 ---
-import { Image } from 'astro:assets';
 import { siteConfig } from '../../config/site';
 import Navigation from './Navigation.astro';
 import type { SitePage } from '../../config/navigation';
-import logoImage from '../../assets/forge-logo-transparent.png';
 interface Props { currentPage: SitePage; }
 const { currentPage } = Astro.props;
 ---
 <div class="site-header-wrapper">
   <header class="site-header">
     <a class="brand" href={`${siteConfig.basePath}/`} aria-label={`${siteConfig.accessibleName} home`}>
-      <Image src={logoImage} alt="" />
+      <img src={siteConfig.logo} alt="" width="492" height="431" />
       <span>{siteConfig.shortName} <small>Rehab &amp; Performance</small></span>
     </a>
     <Navigation currentPage={currentPage} />
