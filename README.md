@@ -61,7 +61,14 @@ The site uses **Netlify Forms**. Forms are built natively in HTML using the `dat
 ### Client Data Centralization
 Do not hardcode business details into page markup. The practice name, practitioner details, phone, email, address, and booking links are maintained centrally in `src/config/site.ts`. Hours and the booking URL remain unset until supplied. The default production origin is `https://rehabforge.com`; `SITE_URL` can override it.
 
-The supplied SVG originals are retained in `logo-svg/`. The header/footer use Vector 03 at `public/assets/forge-logo.svg`, with a raster social image at `public/assets/forge-logo.png`. Sources and licensing references for the home-page stock photos are documented in `src/assets/README.md`.
+Definitive logo assets live in `public/assets/branding/` and are served directly without modification:
+
+- `forge-wordmark.svg` — supplied Vector 01, logo with practice name.
+- `forge-wordmark-tagline.svg` — supplied Vector 02, logo with practice name and tagline.
+- `forge-mark.svg` — supplied Vector 03, standalone mark used by the header/footer.
+- `forge-social.png` — raster social image derived from the standalone mark.
+
+The active logo and social image paths are configured in `src/config/site.ts`. Sources and licensing references for the home-page stock photos are documented in `src/assets/README.md`.
 
 ### Analytics
 Google Analytics (GA4) is pre-configured but strictly opt-in. The integration lives in `src/components/integrations/analytics/GoogleAnalytics.astro` and is automatically injected into the `<head>` of all pages via `BaseLayout`. It only executes if a valid `PUBLIC_GA_MEASUREMENT_ID` environment variable is provided during the build or at runtime. Raw analytics scripts should never be pasted directly into page markup.
