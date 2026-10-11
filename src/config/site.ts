@@ -5,7 +5,7 @@ export const siteConfig = {
   tagline: 'Recover. Build. Perform.',
   description: 'One-on-one physical therapy for active people who expect more from their recovery.',
   basePath: '',
-  logo: '/assets/forge-logo-transparent.png',
+  logo: '/assets/forge-logo.svg',
   socialImage: '/assets/forge-logo.png',
   practitioner: {
     name: 'Brandon Coveney',
