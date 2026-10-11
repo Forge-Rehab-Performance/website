@@ -142,6 +142,12 @@ import BookingStatus from '../../BookingStatus.astro';
 </div>
 
 <style>
+  .pricing :global(.booking-status a),
+  .pricing :global(.booking-status span),
+  .pricing .text-link {
+    font-size: .875rem;
+  }
+
   .pricing__hero {
     padding-block: clamp(2.8rem, 4.8vw, 4.6rem);
   }
@@ -178,8 +184,8 @@ import BookingStatus from '../../BookingStatus.astro';
   .pricing__package-heading > p {
     max-width: 34rem;
     margin: 0;
-    color: #999a94;
-    font-size: .8rem;
+    color: var(--text-dim);
+    font-size: 1rem;
     line-height: 1.6;
     justify-self: end;
   }
@@ -214,7 +220,7 @@ import BookingStatus from '../../BookingStatus.astro';
   .pricing__label {
     margin: 0 0 .45rem;
     color: var(--gold-bright);
-    font-size: .62rem;
+    font-size: .875rem;
     font-weight: 800;
     letter-spacing: .1em;
     text-transform: uppercase;
@@ -229,14 +235,14 @@ import BookingStatus from '../../BookingStatus.astro';
   .pricing__price-row strong {
     max-width: 22ch;
     color: #e2dfd7;
-    font: 700 clamp(.9rem, 1.35vw, 1.08rem)/1.35 'Oswald', sans-serif;
+    font: 700 clamp(1rem, 1.35vw, 1.08rem)/1.35 'Oswald', sans-serif;
     text-transform: uppercase;
   }
 
   .pricing__visit-card > p {
     margin: 1rem 0 0;
     color: var(--text-dim);
-    font-size: .78rem;
+    font-size: 1rem;
     line-height: 1.6;
   }
 
@@ -252,8 +258,8 @@ import BookingStatus from '../../BookingStatus.astro';
   .pricing__visit-card li {
     padding-left: .9rem;
     color: #c5c3bc;
-    font-size: .7rem;
-    line-height: 1.45;
+    font-size: 1rem;
+    line-height: 1.55;
   }
 
   .pricing__visit-card li::before {
@@ -305,7 +311,7 @@ import BookingStatus from '../../BookingStatus.astro';
     transform: translateX(-50%);
     background: var(--gold);
     color: var(--black);
-    font-size: 0.65rem;
+    font-size: .875rem;
     padding: 2px 8px;
     border-radius: 10px;
     font-weight: 700;
@@ -328,7 +334,7 @@ import BookingStatus from '../../BookingStatus.astro';
 
   .pricing__package-top span {
     color: var(--gold-bright);
-    font: 700 .62rem/1 'Oswald', sans-serif;
+    font: 700 .875rem/1 'Oswald', sans-serif;
   }
 
   .pricing__package-top h3 {
@@ -346,7 +352,7 @@ import BookingStatus from '../../BookingStatus.astro';
   .pricing__visits {
     margin: .9rem 0 .65rem;
     color: var(--gold-bright);
-    font-size: .62rem;
+    font-size: .875rem;
     font-weight: 800;
     letter-spacing: .05em;
     text-transform: uppercase;
@@ -355,8 +361,8 @@ import BookingStatus from '../../BookingStatus.astro';
   .pricing__package-card > p:not(.pricing__visits):not(.pricing__saving) {
     margin: 0;
     color: var(--text-dim);
-    font-size: .75rem;
-    line-height: 1.55;
+    font-size: 1rem;
+    line-height: 1.6;
   }
 
   .pricing__best {
@@ -368,8 +374,8 @@ import BookingStatus from '../../BookingStatus.astro';
   .pricing__best span {
     display: block;
     margin-bottom: .3rem;
-    color: var(--text-faint);
-    font-size: .56rem;
+    color: var(--text-dim);
+    font-size: .875rem;
     font-weight: 800;
     letter-spacing: .08em;
     text-transform: uppercase;
@@ -377,22 +383,22 @@ import BookingStatus from '../../BookingStatus.astro';
 
   .pricing__best strong {
     color: #e0ddd6;
-    font: 700 .74rem/1.35 'Oswald', sans-serif;
+    font: 700 1rem/1.45 'Oswald', sans-serif;
     text-transform: uppercase;
   }
 
   .pricing__saving {
     margin: .75rem 0 0;
     color: var(--gold-bright);
-    font-size: .62rem;
+    font-size: .875rem;
     font-weight: 800;
     text-transform: uppercase;
   }
 
   .pricing__note {
     margin: 1rem 0 0;
-    color: #858781;
-    font-size: .7rem;
+    color: var(--text-dim);
+    font-size: 1rem;
   }
 
   .pricing__support {
@@ -422,7 +428,7 @@ import BookingStatus from '../../BookingStatus.astro';
     max-width: 36rem;
     margin: 0;
     color: #555752;
-    font-size: .8rem;
+    font-size: 1rem;
     line-height: 1.65;
   }
 
@@ -466,7 +472,7 @@ import BookingStatus from '../../BookingStatus.astro';
   .founding-banner__content p {
     margin: 0 0 1.5rem;
     color: var(--text-dim);
-    font-size: .85rem;
+    font-size: 1rem;
     line-height: 1.6;
     max-width: 38ch;
   }
@@ -483,7 +489,7 @@ import BookingStatus from '../../BookingStatus.astro';
 
   .founding-banner__status span {
     color: var(--gold-bright);
-    font-size: .65rem;
+    font-size: .875rem;
     font-weight: 800;
     letter-spacing: .08em;
     text-transform: uppercase;
