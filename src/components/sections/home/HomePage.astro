@@ -136,6 +136,18 @@ import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
     padding-block: 1.25rem;
   }
 
+  .home-audiences .eyebrow { color: #865f15; }
+  .home-audience-feature { min-height: 0; }
+  .home-audience-feature::after { display: none; }
+  .home-audience-feature > img { height: auto; aspect-ratio: 3 / 2; filter: none; }
+  .home-audience-feature__labels { position: static; }
+  .home-audience-feature > figcaption {
+    padding: .25rem .5rem;
+    color: var(--ivory);
+    background: rgba(10, 11, 10, .85);
+    border-radius: var(--radius);
+  }
+
   @media (max-width: 52rem) {
     .home-scheduling { justify-content: flex-start; }
   }
