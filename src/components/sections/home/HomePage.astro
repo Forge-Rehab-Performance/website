@@ -2,8 +2,8 @@
 import BookingStatus from '../../BookingStatus.astro';
 import { Image } from 'astro:assets';
 import heroStrengthImg from '../../../assets/hero_strength.jpg';
-import heroRunningImg from '../../../assets/hero_running.jpg';
-import heroBasketballImg from '../../../assets/hero_basketball.jpg';
+import familyImg from '../../../assets/home-family.webp';
+import kettlebellImg from '../../../assets/home-kettlebell.webp';
 import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
 ---
 
@@ -65,19 +65,19 @@ import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
       </header>
       <div class="home-audiences__grid">
         <figure class="home-audience-feature">
-          <Image src={heroRunningImg} alt="Two runners stand at starting blocks on an outdoor track" loading="lazy" />
-          <figcaption>Licensed demo stock.</figcaption>
+          <Image src={familyImg} alt="A family plays together with a flying disc in a sunny yard" loading="lazy" />
+          <figcaption>Stock photography.</figcaption>
           <div class="home-audience-feature__labels">
-            <article><h3>Active Adults</h3><p>Stay active and keep doing the things you enjoy.</p></article>
+            <article><h3>Active Adults</h3><p>Whether you're walking the dog, chasing kids, or gardening, stay pain-free in your daily life.</p></article>
             <article><h3>Weekend Warriors</h3><p>Run. Lift. Golf. Ski. Play. Don't let injury dictate your weekends.</p></article>
           </div>
         </figure>
         <figure class="home-audience-feature">
-          <Image src={heroBasketballImg} alt="A basketball player moves on an indoor court" loading="lazy" />
-          <figcaption>Licensed demo stock.</figcaption>
+          <Image src={kettlebellImg} alt="A person lifts a yellow kettlebell during a gym workout" loading="lazy" />
+          <figcaption>Stock photography.</figcaption>
           <div class="home-audience-feature__labels">
             <article><h3>Athletes</h3><p>Return to your sport prepared for the demands of competition.</p></article>
-            <article><h3>Strength &amp; Fitness Enthusiasts</h3><p>Recover intelligently while building back stronger.</p></article>
+            <article><h3>Strength &amp; Fitness Enthusiasts</h3><p>Keep training in the gym, lifting, or taking classes without working around pain.</p></article>
           </div>
         </figure>
       </div>
