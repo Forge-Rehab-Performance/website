@@ -2029,6 +2029,7 @@ figcaption {
   font-weight: 800;
   letter-spacing: .05em;
   text-transform: uppercase;
+  margin-top: 0.5rem;
 }
 
 .about-story,
