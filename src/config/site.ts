@@ -8,12 +8,12 @@ export const siteConfig = {
   logo: '/assets/branding/forge-mark.svg',
   socialImage: '/assets/branding/forge-social.png',
   practitioner: {
-    name: 'Brandon Coveney',
+    name: 'Dr. Brandon Coveney',
     credentials: 'PT, DPT, OCS',
     specialty: 'Board-Certified Orthopedic Clinical Specialist',
   },
   contact: {
-    phone: '(973) 222-0839' as string | null,
+    phone: '973-554-3655' as string | null,
     email: 'brandon@rehabforge.com' as string | null,
     gymName: 'Redshed Crossfit' as string | null,
     address: '3 Gold Mine Rd, Roxbury, NJ' as string | null,

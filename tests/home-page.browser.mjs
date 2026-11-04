@@ -33,7 +33,7 @@ try {
     assert.equal(await page.locator('.home-why tbody tr:last-child td:last-child').innerText(), 'Faster, targeted recovery built around your active goals');
     assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), 'https://rehabforge.com/');
     assert.equal(await page.locator('script[src*="googletagmanager"]').count(), 0);
-    assert.equal(await page.locator('.footer-contact a[href="tel:9732220839"]').count(), 1);
+    assert.equal(await page.locator('.footer-contact a[href="tel:9735543655"]').count(), 1);
     assert.equal(await page.locator('.footer-contact a[href="mailto:brandon@rehabforge.com"]').count(), 1);
     await page.locator('.home-why').scrollIntoViewIfNeeded();
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth);
@@ -55,7 +55,7 @@ try {
   }
   const page = await browser.newPage();
   await page.goto(`${origin}/contact/`);
-  assert.equal(await page.locator('.contact-cards a[href="tel:9732220839"]').count(), 1);
+  assert.equal(await page.locator('.contact-cards a[href="tel:9735543655"]').count(), 1);
   assert.equal(await page.locator('.contact-cards a[href="mailto:brandon@rehabforge.com"]').count(), 1);
   assert.match(await page.locator('iframe').getAttribute('src'), /Redshed%20Crossfit%203%20Gold%20Mine%20Rd/);
   assert.equal(await page.locator('form[data-netlify="true"][method="POST"]').count(), 1);
