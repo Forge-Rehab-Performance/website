@@ -1,5 +1,11 @@
 ---
 import { siteConfig } from '../config/site';
+
+interface Props {
+  hideAvailability?: boolean;
+}
+
+const { hideAvailability = false } = Astro.props;
 const bookingUrl = siteConfig.booking.url;
 ---
 <div class="booking-status">
@@ -8,5 +14,7 @@ const bookingUrl = siteConfig.booking.url;
   ) : (
     <a class="btn-primary booking-link" href="/contact/">Get notified when scheduling opens &rarr;</a>
   )}
-  <span>{bookingUrl ? 'Online scheduling available' : 'Online scheduling coming soon'}</span>
+  {(!bookingUrl || !hideAvailability) && (
+    <span>{bookingUrl ? 'Online scheduling available' : 'Online scheduling coming soon'}</span>
+  )}
 </div>

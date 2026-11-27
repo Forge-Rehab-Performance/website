@@ -126,9 +126,9 @@ import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
   <WhyChooseForge />
 
   <section class="home-close" aria-labelledby="final-title">
-    <div class="section-shell home-close__grid">
+    <div class="section-shell home-close__stack">
       <div><p class="eyebrow">YOUR NEXT STEP</p><h2 id="final-title">Ready to get back to what you love?</h2><p>You don't have to settle for simply feeling better. Take the next step toward your goals.</p></div>
-      <BookingStatus />
+      <BookingStatus hideAvailability />
     </div>
   </section>
 
@@ -137,6 +137,13 @@ import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
     display: flex;
     justify-content: flex-end;
     padding-block: 1.25rem;
+  }
+
+  .home-close__stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
   }
 
   .home-audiences .eyebrow { color: #865f15; }
