@@ -90,15 +90,13 @@ All commands are run from the root of the project, from your terminal:
 
 ## Deployment
 
-This project is built as a completely static site (`npm run build`) and is specifically configured to be hosted on **Netlify**. This ensures that our static HTML form integration (Netlify Forms) works natively out-of-the-box without any backend code.
+Netlify hosts the static build (`npm run build`, publish `dist`) and handles the contact form once form detection is enabled. See the [go-live walkthrough](docs/go-live.md) for GitHub, Netlify Forms, and Porkbun DNS setup.
 
-### Required Environment Variables
-
-When setting up the project in the Netlify Dashboard, ensure the following environment variables are configured:
+### Environment Variables
 
 | Variable | Description |
 | :--- | :--- |
-| `SITE_URL` | The primary production URL of the site (e.g., `https://forgerehab.com`). Required by Astro to generate absolute canonical URLs and the `sitemap-index.xml`. |
+| `SITE_URL` | (Optional) Override the default `https://rehabforge.com` used for canonical URLs and `sitemap-index.xml`. |
 | `PUBLIC_GA_MEASUREMENT_ID` | (Optional) Your Google Analytics 4 Measurement ID (e.g., `G-XXXXXXXXXX`). If provided, the site will automatically inject the GA tracking script. |
 
 ## Maintenance & AI Guidelines
