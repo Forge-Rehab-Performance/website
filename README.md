@@ -90,7 +90,10 @@ All commands are run from the root of the project, from your terminal:
 
 ## Deployment
 
-Netlify hosts the static build (`npm run build`, publish `dist`) and handles the contact form once form detection is enabled. See the [go-live walkthrough](docs/go-live.md) for GitHub, Netlify Forms, and Porkbun DNS setup.
+Netlify hosts the static build (`npm run build`, publish `dist`) and handles the contact form once form detection is enabled.
+
+- [How the website works](docs/website-overview.md) — diagrams for publishing updates, hosting, contact messages, and bookings, plus who manages each service.
+- [Go-live walkthrough](docs/go-live.md) — step-by-step setup for GitHub, Netlify Forms, and Porkbun DNS.
 
 ### Environment Variables
 
