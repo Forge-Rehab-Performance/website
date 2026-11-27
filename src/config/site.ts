@@ -20,7 +20,7 @@ export const siteConfig = {
     hours: null as string | null,
   },
   booking: {
-    url: null as string | null,
+    url: 'https://app.pteverywhere.com/s/6afe1c3816dc891738277f68/register' as string | null,
   },
 } as const;
 

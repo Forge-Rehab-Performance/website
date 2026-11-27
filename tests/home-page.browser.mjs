@@ -25,7 +25,7 @@ try {
     const hero = await page.locator('.home-hero').boundingBox();
     assert.ok(scheduling.y >= header.y + header.height - 1, JSON.stringify({ width, header, scheduling, hero }));
     assert.ok(hero.y >= scheduling.y + scheduling.height - 1);
-    assert.equal(await page.locator('.home-scheduling a').getAttribute('href'), '/contact/');
+    assert.equal(await page.locator('.home-scheduling').getByRole('link', { name: 'Schedule a Visit', exact: true }).getAttribute('href'), 'https://app.pteverywhere.com/s/6afe1c3816dc891738277f68/register');
     assert.match(await page.locator('.home-audiences').innerText(), /Whether you're walking the dog, chasing kids, or gardening, stay pain-free in your daily life\./);
     assert.match(await page.locator('.home-audiences').innerText(), /Keep training in the gym, lifting, or taking classes without working around pain\./);
     assert.equal(await page.locator('.home-why tbody tr').count(), 4);
