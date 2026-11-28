@@ -73,13 +73,43 @@ try {
   assert.equal(await page.locator('.contact-cards a[href="tel:9735543655"]').count(), 1);
   assert.equal(await page.locator('.contact-cards a[href="mailto:brandon@rehabforge.com"]').count(), 1);
   assert.match(await page.locator('iframe').getAttribute('src'), /Redshed%20Crossfit%203%20Gold%20Mine%20Rd/);
-  assert.equal(await page.locator('form[data-netlify="true"][method="POST"]').count(), 1);
+  const form = page.locator('form[data-netlify="true"][method="POST"]');
+  assert.equal(await form.count(), 1);
+  assert.equal(await form.getAttribute('action'), '/contact/thanks/');
   for (const width of [1440, 390, 320]) {
     await page.setViewportSize({ width, height: 900 });
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false, `contact page overflow at ${width}px`);
     await page.screenshot({ path: `/tmp/forge-contact-${width}.png`, fullPage: true });
   }
-  console.log('Contact links, location, form, and responsive layouts verified');
+  const thanks = `${origin}/contact/thanks/`;
+  // Astro preview doesn't handle Netlify POSTs; simulate only the server response.
+  await page.route(thanks, route => route.request().method() === 'POST'
+    ? route.fulfill({ status: 303, headers: { location: thanks } })
+    : route.continue());
+  await form.getByLabel('Name', { exact: true }).fill('Test Visitor');
+  await form.getByLabel('Email', { exact: true }).fill('visitor@example.com');
+  await form.getByLabel('Message', { exact: true }).fill('Local confirmation test.');
+  const [submission] = await Promise.all([
+    page.waitForRequest(request => request.url() === thanks && request.method() === 'POST'),
+    form.getByRole('button', { name: 'Send Message' }).click(),
+  ]);
+  assert.equal(submission.isNavigationRequest(), true, 'the browser submits directly, without the Astro router');
+  for (const width of [320, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.waitForURL(thanks);
+    const heading = page.getByRole('heading', { name: 'Thanks for reaching out.', exact: true });
+    await heading.waitFor();
+    assert.equal(await page.getByRole('link', { name: 'Back to Home', exact: true }).getAttribute('href'), '/');
+    assert.equal(await page.locator('meta[name="robots"]').getAttribute('content'), 'noindex, nofollow');
+    assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), 'https://rehabforge.com/contact/thanks/');
+    assert.equal(await page.locator('script[src*="googletagmanager"]').count(), 0);
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false, `thank-you page overflow at ${width}px`);
+    await page.screenshot({ path: `/tmp/forge-contact-thanks-${width}.png`, fullPage: true });
+  }
+  const sitemap = await (await page.request.get(`${origin}/sitemap-0.xml`)).text();
+  assert.match(sitemap, /https:\/\/rehabforge\.com\/contact\//);
+  assert.doesNotMatch(sitemap, /\/contact\/thanks\//);
+  console.log('Contact details, native form navigation, and thank-you page verified');
 } finally {
   await browser?.close();
   server.kill();

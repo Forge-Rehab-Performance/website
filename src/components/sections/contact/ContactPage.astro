@@ -10,7 +10,7 @@ const mapQuery = encodeURIComponent(`${contact.gymName ?? ''} ${contact.address 
   <section class="contact-main surface-light" aria-labelledby="contact-form-title"><div class="section-shell contact-main__grid">
     <div class="contact-form-copy"><p class="eyebrow">HAVE A QUESTION?</p><h2 id="contact-form-title">We'd love to hear from you.</h2><p>Whether you're not sure where to start, have a question about services, or want to learn more about how Forge works, send us a message.</p><p class="contact-privacy">Please do not include sensitive medical information in this form.</p></div>
     <contact-form>
-      <form class="contact-form" name="contact" method="POST" data-netlify="true" aria-label="Contact Forge form">
+      <form class="contact-form" name="contact" method="POST" action="/contact/thanks/" data-netlify="true" data-astro-reload aria-label="Contact Forge form">
         <label>Name<input type="text" name="name" autocomplete="name" placeholder="Your Name" required /></label>
         <label>Email<input type="email" name="email" autocomplete="email" placeholder="Your Email" required /></label>
         <label>Phone<input type="tel" name="phone" autocomplete="tel" placeholder="Your Phone" /></label>

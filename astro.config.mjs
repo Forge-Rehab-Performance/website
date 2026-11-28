@@ -21,7 +21,7 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      // All pages are now in the active client direction.
+      filter: (page) => new URL(page).pathname.replace(/\/$/, '') !== '/contact/thanks',
       namespaces: { news: false, xhtml: false, video: false },
     }),
   ],
