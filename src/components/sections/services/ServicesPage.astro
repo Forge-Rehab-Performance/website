@@ -51,7 +51,7 @@ import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
             <h3>Orthopedic Physical Therapy</h3>
             <p>Physical therapy at Forge is designed to identify the factors contributing to your symptoms and create a plan to get you back to the activities that matter to you.</p>
             <h4>Treatment may include</h4>
-            <ul class="services__list">
+            <ul class="services__list services__list--two">
               <li>Comprehensive movement and strength assessment</li>
               <li>Manual therapy when appropriate</li>
               <li>Therapeutic exercise</li>
@@ -216,6 +216,19 @@ import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
     font-size: clamp(3.35rem, 5.8vw, 5.9rem);
   }
 
+  .services-page p:not(.eyebrow),
+  .services__feed li {
+    font-size: 1.125rem;
+  }
+
+  .services__hero .hero-lede {
+    font-size: clamp(1.125rem, 1.45vw, 1.25rem);
+  }
+
+  .services-page .text-link {
+    font-size: 1rem;
+  }
+
   .services-directory {
     padding: clamp(2.8rem, 5vw, 4.5rem) 0;
     background: var(--surface-1, #131413);
@@ -238,7 +251,6 @@ import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
     max-width: 35rem;
     margin: 0;
     color: var(--text-dim, #999a94);
-    font-size: .8rem;
     line-height: 1.6;
     justify-self: end;
   }
@@ -284,7 +296,7 @@ import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
     text-decoration: none;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
-    font-size: 0.85rem;
+    font-size: 1rem;
     position: relative;
     transition: color 0.3s ease, transform 0.3s ease;
   }
@@ -338,7 +350,6 @@ import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
 
   .services__feed p {
     color: var(--text-dim, #999a94);
-    font-size: .85rem;
     line-height: 1.6;
     margin: 0 0 1.5rem;
   }
@@ -346,7 +357,7 @@ import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
   .services__feed h4 {
     margin: 2rem 0 1rem;
     color: var(--gold-bright, var(--gold, #dda947));
-    font-size: .75rem;
+    font-size: 1rem;
     letter-spacing: .07em;
     text-transform: uppercase;
   }
@@ -355,8 +366,11 @@ import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
     margin: 0 0 1.5rem;
     padding-left: 1.2rem;
     color: #b7b6b0;
-    font-size: .8rem;
     line-height: 1.6;
+  }
+
+  .services__list li {
+    break-inside: avoid;
   }
 
   .services__list li + li {
@@ -400,13 +414,11 @@ import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
     margin: 0;
     padding-left: 1.2rem;
     color: #b7b6b0;
-    font-size: .8rem;
     line-height: 1.5;
   }
 
   .services__condition-list p {
     margin: 0;
-    font-size: .8rem;
     color: #b7b6b0;
   }
 
@@ -416,7 +428,7 @@ import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
     padding: 1rem 1.2rem;
     border-left: 2px solid var(--gold-bright, var(--gold, #dda947));
     color: var(--ivory, #f1efe7);
-    font: 700 .9rem/1.45 'Oswald', sans-serif;
+    font: 700 1.125rem/1.45 'Oswald', sans-serif;
     text-transform: uppercase;
   }
 
@@ -431,7 +443,7 @@ import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
     padding: .5rem .75rem;
     border: 1px solid #373a35;
     color: #d4d1c9;
-    font: 700 .75rem/1.25 'Oswald', sans-serif;
+    font: 700 1rem/1.25 'Oswald', sans-serif;
     text-transform: uppercase;
   }
 
@@ -476,7 +488,7 @@ import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
       top: 0;
       z-index: 20;
       padding: 0;
-      margin: 0 -1.5rem;
+      margin-inline: -1rem;
     }
 
     .services__sidebar:not(.is-open) nav {
@@ -496,7 +508,7 @@ import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
       cursor: pointer;
       font-family: 'Inter', sans-serif;
       font-weight: 500;
-      font-size: 0.9rem;
+      font-size: 1rem;
       color: var(--ivory, #fff);
       transition: background-color 0.3s ease, border-color 0.3s ease;
     }
@@ -553,10 +565,10 @@ import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
       gap: 1.5rem;
     }
 
-    .services__list--two {
+    :not(#service-ortho) > .services__list--two {
       columns: 1;
     }
-    
+
     .services__feed article {
       scroll-margin-top: 4rem;
     }
@@ -565,6 +577,10 @@ import heroRehabImg from '../../../assets/hero_rehabilitation.jpg';
   @media (max-width: 34rem) {
     .services-directory {
       padding-block: 2.25rem;
+    }
+
+    .services__list--two {
+      columns: 1;
     }
   }
 </style>

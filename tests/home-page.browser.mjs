@@ -59,6 +59,10 @@ try {
     await page.addScriptTag({ content: readFileSync('node_modules/axe-core/axe.min.js', 'utf8') });
     const audit = await page.evaluate(async () => (await window.axe.run({ include: ['.home-audiences', '.home-why'] })).violations);
     assert.deepEqual(audit.map(({ id }) => id), [], `section accessibility at ${width}px: ${JSON.stringify(audit.map(({ nodes }) => nodes.map(({ target, failureSummary }) => ({ target, failureSummary }))))}`);
+    for (const image of await page.locator('img[loading="lazy"]').all()) {
+      await image.scrollIntoViewIfNeeded();
+      await image.evaluate((element) => element.decode());
+    }
     await page.screenshot({ path: `/tmp/forge-home-${width}.png`, fullPage: true });
     assert.equal(await page.locator('img').evaluateAll((images) => images.filter((image) => !image.complete || image.naturalWidth === 0).length), 0);
     console.log(`Home page verified at ${width}px`);

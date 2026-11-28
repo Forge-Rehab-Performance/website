@@ -314,10 +314,11 @@ const faqCategories = faqEntries.map(entry => entry.data).sort((a, b) => a.order
     max-width: 48rem;
     padding: 0 2rem 1rem 1rem;
     color: var(--text-dim);
-    font-size: .8rem;
+    font-size: 1.125rem;
     line-height: 1.65;
   }
 
+  .faq-item > div .text-link { font-size: 1rem; }
   .faq-item > div p, .faq-bullet-list { margin: 0 0 .55rem; }
   .faq-bullet-list { padding-left: 1.25rem; }
   .faq-bullet-list li { margin-bottom: .25rem; }
@@ -346,7 +347,7 @@ const faqCategories = faqEntries.map(entry => entry.data).sort((a, b) => a.order
       top: 0;
       z-index: 20;
       padding: 0;
-      margin: 0 -1.25rem;
+      margin-inline: -1rem;
     }
 
     .faq-sidebar:not(.is-open) nav {

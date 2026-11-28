@@ -770,7 +770,7 @@ figcaption {
 .home-audience-feature__labels p {
   margin-bottom: 0;
   color: #dedcd5;
-  font-size: .75rem;
+  font-size: 1.125rem;
 }
 
 .home-audiences .stock-disclosure {
@@ -1327,7 +1327,7 @@ figcaption {
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   color: #ddd9d1;
-  font: 700 .72rem/1.2 'Oswald', sans-serif;
+  font: 700 1.125rem/1.2 'Oswald', sans-serif;
   text-transform: uppercase;
   counter-increment: step;
 }
@@ -1337,7 +1337,7 @@ figcaption {
   margin-bottom: 2rem;
   color: var(--gold-bright);
   content: '0' counter(step);
-  font-size: .66rem;
+  font-size: .875rem;
 }
 
 @media (max-width: 64rem) {
@@ -1539,7 +1539,7 @@ figcaption {
   max-width: 38rem;
   margin: 0 0 .2rem;
   color: var(--text-dim);
-  font-size: .86rem;
+  font-size: 1.125rem;
   line-height: 1.72;
 }
 
@@ -1606,7 +1606,7 @@ figcaption {
 .approach-card__kicker {
   margin: 0 0 .45rem;
   color: #989994;
-  font-size: .61rem;
+  font-size: .875rem;
   font-weight: 800;
   letter-spacing: .08em;
   line-height: 1.35;
@@ -1623,14 +1623,14 @@ figcaption {
   min-height: 3.2em;
   margin-bottom: .8rem;
   color: var(--ivory);
-  font: 700 .96rem/1.45 'Oswald', sans-serif;
+  font: 700 1.125rem/1.45 'Oswald', sans-serif;
   text-transform: uppercase;
 }
 
 .approach-card>p:not(.approach-card__lead) {
   margin-bottom: 1rem;
   color: var(--text-dim);
-  font-size: .79rem;
+  font-size: 1.125rem;
   line-height: 1.68;
 }
 
@@ -1647,7 +1647,7 @@ figcaption {
   padding: .43rem .58rem;
   border: 1px solid #3b3e39;
   color: #d1cfc8;
-  font-size: .59rem;
+  font-size: .875rem;
   font-weight: 800;
   letter-spacing: .045em;
   line-height: 1.15;
@@ -1665,7 +1665,7 @@ figcaption {
 
 .approach-card__goal span {
   color: var(--gold-bright);
-  font-size: .56rem;
+  font-size: .875rem;
   font-weight: 800;
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -1673,7 +1673,7 @@ figcaption {
 
 .approach-card__goal strong {
   color: #ebe8e0;
-  font: 700 .79rem/1.4 'Oswald', sans-serif;
+  font: 700 1rem/1.4 'Oswald', sans-serif;
   text-transform: uppercase;
 }
 
