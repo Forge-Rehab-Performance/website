@@ -770,7 +770,7 @@ figcaption {
 .home-audience-feature__labels p {
   margin-bottom: 0;
   color: #dedcd5;
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 
 .home-audiences .stock-disclosure {
@@ -1327,7 +1327,7 @@ figcaption {
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   color: #ddd9d1;
-  font: 700 1.125rem/1.2 'Oswald', sans-serif;
+  font: 700 1rem/1.2 'Oswald', sans-serif;
   text-transform: uppercase;
   counter-increment: step;
 }
@@ -1539,7 +1539,7 @@ figcaption {
   max-width: 38rem;
   margin: 0 0 .2rem;
   color: var(--text-dim);
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.72;
 }
 
@@ -1623,14 +1623,14 @@ figcaption {
   min-height: 3.2em;
   margin-bottom: .8rem;
   color: var(--ivory);
-  font: 700 1.125rem/1.45 'Oswald', sans-serif;
+  font: 700 1rem/1.45 'Oswald', sans-serif;
   text-transform: uppercase;
 }
 
 .approach-card>p:not(.approach-card__lead) {
   margin-bottom: 1rem;
   color: var(--text-dim);
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.68;
 }
 

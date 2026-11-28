@@ -16,8 +16,8 @@ try {
   const bodyText = {
     '/': '.home-audience-feature__labels p',
     '/approach/': '.approach-progression__heading > p, .approach-card > p, .approach-one-on-one li',
-    '/services/': '.services-page p:not(.eyebrow), .services__feed li',
-    '/about/': '.about-hero__copy .hero-lede, .about-story .prose-column p, .journey-path__content p, .about-forge .prose-column p, .about-values p:not(.eyebrow), .about-philosophy p:not(.eyebrow), [aria-labelledby="about-close-title"] p:not(.eyebrow)',
+    '/services/': '.services-page p:not(.eyebrow, .hero-lede), .services__feed li, .services__feed blockquote',
+    '/about/': '.about-story .prose-column p:not(.editorial-quote), .journey-path__content p, .about-forge .prose-column p, .about-values p:not(.eyebrow), .about-philosophy p:not(.eyebrow), [aria-labelledby="about-close-title"] p:not(.eyebrow)',
     '/faq/': '.faq-item > div p, .faq-bullet-list li',
   };
   for (const width of [1440, 1050, 768, 390, 320]) {
@@ -29,11 +29,8 @@ try {
         await document.fonts.ready;
         for (const item of document.querySelectorAll('.faq-item')) item.open = true;
       });
-      const tooSmall = await page.locator(selector).evaluateAll(elements => elements
-        .filter(el => parseFloat(getComputedStyle(el).fontSize) < 18)
-        .map(el => `${getComputedStyle(el).fontSize}: ${el.textContent.slice(0, 40)}`));
-      assert.ok(await page.locator(selector).count(), `body text found on ${label}`);
-      assert.deepEqual(tooSmall, [], `body text should be at least 18px on ${label}`);
+      const sizes = await page.locator(selector).evaluateAll(elements => elements.map(el => getComputedStyle(el).fontSize));
+      assert.deepEqual([...new Set(sizes)], ['16px'], `body text should be 16px on ${label}`);
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `no page overflow on ${label}`);
       assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), `https://rehabforge.com${route}`);
       assert.equal(await page.locator('script[src*="googletagmanager"]').count(), 0);
