@@ -35,8 +35,7 @@ try {
     const cta = await bottomLink.boundingBox();
     const copy = await page.locator('.home-close p').last().boundingBox();
     assert.ok(Math.abs(cta.x - copy.x) <= 1 && cta.y >= copy.y + copy.height, `closing button sits below and aligns with the copy at ${width}px`);
-    assert.equal(await topBooking.getByText('Online scheduling available', { exact: true }).isVisible(), true);
-    assert.equal(await bottomBooking.getByText('Online scheduling available', { exact: true }).count(), 0);
+    assert.equal(await page.getByText('Online scheduling available', { exact: true }).count(), 0);
     assert.match(await page.locator('.home-audiences').innerText(), /Whether you're walking the dog, chasing kids, or gardening, stay pain-free in your daily life\./);
     assert.match(await page.locator('.home-audiences').innerText(), /Keep training in the gym, lifting, or taking classes without working around pain\./);
     assert.equal(await page.locator('.home-why tbody tr').count(), 4);
@@ -70,6 +69,7 @@ try {
   }
   const page = await browser.newPage();
   await page.goto(`${origin}/contact/`);
+  assert.equal(await page.locator('.footer-booking-note').innerText(), 'Online scheduling available');
   assert.equal(await page.locator('.contact-cards a[href="tel:9735543655"]').count(), 1);
   assert.equal(await page.locator('.contact-cards a[href="mailto:brandon@rehabforge.com"]').count(), 1);
   assert.match(await page.locator('iframe').getAttribute('src'), /Redshed%20Crossfit%203%20Gold%20Mine%20Rd/);

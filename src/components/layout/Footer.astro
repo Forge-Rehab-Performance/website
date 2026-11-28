@@ -1,7 +1,12 @@
 ---
 import { primaryNavigation } from '../../config/navigation';
 import { siteConfig } from '../../config/site';
-const contact = siteConfig.contact;
+interface Props {
+  hideAvailability?: boolean;
+}
+
+const { hideAvailability = false } = Astro.props;
+const { contact, booking } = siteConfig;
 ---
 <footer class="site-footer-wrapper">
   <div class="site-footer">
@@ -25,7 +30,9 @@ const contact = siteConfig.contact;
         <p>{contact.email ? <a href={`mailto:${contact.email}`}>{contact.email}</a> : 'Email coming soon'}</p>
         <p>{contact.address ?? 'Location coming soon'}</p>
         {contact.gymName && <p>Inside {contact.gymName}</p>}
-        <p class="footer-booking-note">{siteConfig.booking.url ? 'Online scheduling available' : 'Online scheduling coming soon'}</p>
+        {(!booking.url || !hideAvailability) && (
+          <p class="footer-booking-note">{booking.url ? 'Online scheduling available' : 'Online scheduling coming soon'}</p>
+        )}
       </div>
       
       <div class="footer-about">

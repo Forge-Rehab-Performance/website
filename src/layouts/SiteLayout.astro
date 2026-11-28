@@ -22,5 +22,5 @@ const { title, description, currentPage, canonicalPath, noindex = false, structu
   <a class="skip-link" href="#main-content">Skip to content</a>
   <Header currentPage={currentPage} />
   <main id="main-content"><slot /></main>
-  <Footer />
+  <Footer hideAvailability={currentPage === 'home'} />
 </BaseLayout>
